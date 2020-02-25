@@ -25,7 +25,6 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
-            /*Console.WriteLine("Hello World!");*/
             Dice diceOne = new Dice();
             Dice diceTwo = new Dice();
             for (int s = 0; s< 6; s++) {
