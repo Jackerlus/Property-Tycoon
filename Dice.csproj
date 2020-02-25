@@ -1,8 +1,38 @@
-<Project Sdk="Microsoft.NET.Sdk">
+using System;
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-  </PropertyGroup>
+namespace Monopoly
+{
+    public class Dice {
 
-</Project>
+        private int counter;
+        private Random randomiser= new Random();
+
+        private void setDice(int die) {
+            counter = die;
+        }
+        private int getDieValue() {
+            return counter;
+        }
+        public int rollDice() {
+            int value = randomiser.Next(6) + 1;
+            setDice(value);
+            return value;
+        }
+
+    }
+ 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*Console.WriteLine("Hello World!");*/
+            Dice diceOne = new Dice();
+            Dice diceTwo = new Dice();
+            for (int s = 0; s< 6; s++) {
+                Console.WriteLine("dice 1 returns " + diceOne.rollDice() + " ");
+                Console.WriteLine("dice 2 returns " + diceTwo.rollDice() + " ");
+                Console.WriteLine(" ");
+            }
+        }
+    }
+}
