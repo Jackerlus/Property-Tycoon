@@ -1,30 +1,6 @@
-using System;
-
-namespace Monopoly
+﻿using System;
+namespace Game
 {
-    public class Dice
-    {
-
-        private int counter;
-        private Random randomiser = new Random();
-
-        private void setDice(int die)
-        {
-            counter = die;
-        }
-        private int getDieValue()
-        {
-            return counter;
-        }
-        public int rollDice()
-        {
-            int value = randomiser.Next(6) + 1;
-            setDice(value);
-            return value;
-        }
-
-    }
-
     public class Roll
     {
         private int numOfDoubles = 0;
@@ -35,17 +11,11 @@ namespace Monopoly
         {
             int die1 = diceOne.rollDice();
             int die2 = diceTwo.rollDice();
-            Boolean doubleCheck = IsEqual(die1, die2);
+            Boolean doubleCheck = isEqual(die1, die2);
             if (doubleCheck)
             {
                 Console.WriteLine("Die 1 returns " + die1 + " and Die 2 returns " + die2 + " which are doubles!");
                 Console.WriteLine("The streak of doubles is equal to: " + numOfDoubles);
-                if (numOfDoubles > 2)
-                {
-                    Console.WriteLine("Caught 'speeding', Go to Jail!");
-                    numOfDoubles = 0;
-
-                }
             }
             else
             {
@@ -53,7 +23,8 @@ namespace Monopoly
                 Console.WriteLine("The streak of doubles is equal to: " + numOfDoubles);
             }
         }
-        public Boolean IsEqual(int val1, int val2)
+
+        public Boolean isEqual(int val1, int val2)
         {
             if (val1 == val2)
             {
@@ -67,20 +38,4 @@ namespace Monopoly
             }
         }
     }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Roll roll1 = new Roll();
-            for (int i = 1; i <= 100; i++)
-            {
-                roll1.rolls();
-            }
-
-
-
-        }
-    }
 }
-
