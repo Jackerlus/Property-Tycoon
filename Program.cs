@@ -22,6 +22,63 @@ namespace Monopoly
             setDice(value);
             return value;
         }
+    
+    }
+
+    public class Property{
+
+        private string propertyName;
+        private Boolean isOwned;
+        private int houseCount;
+        private Boolean hotel;
+        // private Player owner;
+        private int rent;
+        private int price;
+        private Boolean isMorgaged;
+        private int MorgagePrice;
+
+        public Property( string Name,int initalRent, int cost, int Morgagecost){
+
+            rent = initalRent;
+            price = cost;
+            MorgagePrice = Morgagecost;
+            houseCount = 0;
+            hotel = false;
+            // owner = " ";
+            propertyName = Name;
+            isMorgaged = false;
+            isOwned = false;
+        }
+        public int addHouse(int newRentVal){
+            if (houseCount > 4){
+                houseCount = 0;
+                hotel = true;
+                rent = newRentVal;
+            }
+            houseCount ++;
+            rent = newRentVal;
+        }
+        public void morgageProperty(){
+            isMorgaged = true;
+        }
+        public void unMorgageProperty(){
+
+            isMorgaged = false;
+        }
+        public Boolean isMorgaged(){
+            return isMorgaged;
+        }
+        public string getOwner(){
+            return owner;
+        }
+        public void setOwner( string name){
+            owner = name;
+        }
+        public int getRent(){
+            return rent;
+        }
+        public void getNumberOfHouses(){
+            console.WriteLine("There are "+houseCount+" number of houses");
 
     }
 
@@ -72,12 +129,13 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
-            Roll roll1 = new Roll();
-            for (int i = 1; i <= 100; i++)
-            {
-                roll1.rolls();
-            }
-
+            // Roll roll1 = new Roll();
+            // for (int i = 1; i <= 100; i++)
+            // {
+            //     roll1.rolls();
+            // }
+            Property p = new Property("BTN station", 22, 300,150);
+            p.getNumberOfHouses;
 
 
         }
