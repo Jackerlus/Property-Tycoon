@@ -1,31 +1,40 @@
 ﻿using System;
-namespace Game
+namespace Property_Tycoon
 {
     public class Roll
     {
         private int numOfDoubles = 0;
-        Dice diceOne = new Dice();
-        Dice diceTwo = new Dice();
 
-        public void rolls()
+        public String Rolls()
         {
+
+            //Initiate dice
+            Dice diceOne = new Dice();
+            Dice diceTwo = new Dice();
+
+            //Roll Dice
             int die1 = diceOne.rollDice();
             int die2 = diceTwo.rollDice();
+
             Boolean doubleCheck = isEqual(die1, die2);
-            if (doubleCheck)
-            {
-                Console.WriteLine("Die 1 returns " + die1 + " and Die 2 returns " + die2 + " which are doubles!");
-                Console.WriteLine("The streak of doubles is equal to: " + numOfDoubles);
+
+            String consoleOutput = "";
+
+            //Send result of dice roll to console
+            consoleOutput += "Dice 1 returns " + die1;
+            consoleOutput += "\nDice 2 returns " + die2;
+
+            //Check for double
+            if (doubleCheck) {
+                consoleOutput += "\nDouble roll!";
             }
-            else
-            {
-                Console.WriteLine("Die 1 returns " + die1 + " and Die 2 returns " + die2 + " which are not doubles!");
-                Console.WriteLine("The streak of doubles is equal to: " + numOfDoubles);
-            }
+            consoleOutput += "\n------------------";
+            return consoleOutput;
         }
 
         public Boolean isEqual(int val1, int val2)
         {
+            //Check if dice are equal
             if (val1 == val2)
             {
                 numOfDoubles++;

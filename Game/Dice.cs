@@ -1,7 +1,6 @@
-﻿
-using System;
+﻿using System;
 
-namespace Game
+namespace Property_Tycoon
 {
     public class Dice
     {
