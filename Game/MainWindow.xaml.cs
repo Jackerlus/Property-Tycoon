@@ -10,13 +10,13 @@ namespace Property_Tycoon
         public MainWindow()
         {
             InitializeComponent();
-            lblConsole.Content = "";           
+            //lblConsole.Content = "";           
         }
 
         public void WriteToConsole(string input) //Write to a label element called "lblConsole"
         {
-            string currentText = lblConsole.Content.ToString();
-            lblConsole.Content = currentText + "\n" + input;
+            //string currentText = lblConsole.Content.ToString();
+            //lblConsole.Content = currentText + "\n" + input;
         }
 
         private void RollDice(object sender, RoutedEventArgs e)
