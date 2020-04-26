@@ -14,12 +14,13 @@ namespace Property_Tycoon
 		Window1 pickOrDraw;
 		ArrayList opportunityKnocks = new ArrayList();
         ArrayList potLuck = new ArrayList();
-		Board currentGame;
+		Board Game;
 		Random rand = new Random();
 		
 		public enum CardType { POT,OPP }
-		public Cards()
+		public Cards(Board currentGame)
 		{
+			Game = currentGame;
 			text = "";
 
 			for (int i = 0; i < 16; i++)
@@ -90,7 +91,7 @@ namespace Property_Tycoon
 					recievedInterest(p);
 					break;
 				case 13:
-					birthday();
+					birthday(p);
 					break;
 				case 14:
 					getOutofJailFree(p);
@@ -124,12 +125,17 @@ namespace Property_Tycoon
 			
 		}
 
-		private void birthday()
+		private void birthday(Player p )
 		{
 			
 			text = "It's Your birthday"
 			+ "from each player "
 			+ "Collect £10";
+			for (int i = 0; i < Game.getNoOfPlayers(); i++)
+			{
+				p.addmoney(10);
+			}
+			
 			MessageBox.Show(text);
 
 		}
@@ -276,7 +282,7 @@ namespace Property_Tycoon
 				divided(p);
 				break;
 			case 1:
-				lipsync(p);
+				lipSync(p);
 				break;
 			case 3:
 				moveToTuringHeights(p);
@@ -315,7 +321,7 @@ namespace Property_Tycoon
 				goToJail(p);
 				break;
 			case 16:
-				drunkincharge(p);
+				drunkInCharge(p);
 				break;
 
 			default:
@@ -323,7 +329,7 @@ namespace Property_Tycoon
 		}
 	}
 
-		private void drunkincharge(Player p)
+		private void drunkInCharge(Player p)
 		{
 			p.addmoney(-20);
 
@@ -446,7 +452,7 @@ namespace Property_Tycoon
 			MessageBox.Show(text);
 		}
 
-		private void lipsync(Player p)
+		private void lipSync(Player p)
 		{
 			p.addmoney(100);
 

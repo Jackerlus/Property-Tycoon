@@ -12,6 +12,9 @@ namespace Property_Tycoon
         {
             counter = die;
         }
+        private void addCounter() {
+            counter++;
+        }
         private int getDieValue()
         {
             return counter;

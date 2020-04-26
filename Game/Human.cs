@@ -14,21 +14,18 @@ namespace Property_Tycoon
         private int FREE = 5;
         private int Pot1 = 3;
         private int Pot2 = 34;
-
-
         private ArrayList properties;
+        
         private String playerName;
         private int money;
         private int position;
         private bool inJail;
         private int jailTurn;
-        private int playerNumber;
-        private bool justVisiting;
         private bool rollBan;
         private int numJailFree;
-        private Roll roll;
-        private int rollcounter;
-        private int goTile;
+        int moveSpace;
+  
+      
         private Board CurrentGame;
 
         public Human(string name, int money, int position, int playerno, Board cg)
@@ -41,14 +38,52 @@ namespace Property_Tycoon
             this.inJail = false;
             this.position = position;
             this.properties = new ArrayList();
-            rollcounter = 0;
-            roll = new Roll();
+            moveSpace = 0;
+ 
             rollBan = false;
             CurrentGame = cg;
             
         }
+        /// <summary>
+        /// This method sets the current player postion
+        /// </summary>
+        /// <param name="val"></param>
+        public void setPosition(int val) {
+            position = val;
+        }
+        /// <summary>
+        /// This method checks to see if the player owns both utilites
+        /// </summary>
+        /// <returns></returns>
+        public bool hasBothUtilities() {
+            int counter = 0;
+            foreach (Property item in properties)
+            {
+                if (item.getColour().Equals(Group.Utility))
+                {
+                    counter++;
+                }
+            }
+            return (counter == 2);
+            
+        }
+        /// <summary>
+        /// This method gets the number of Stations that the player has 
+        /// </summary>
+        /// <returns></returns>
+        public int getNumOfStations()
+        {
+            int counter = 0;
+            foreach (Property item in properties)
+            {
+                if (item.getColour().Equals(Group.Station))
+                {
+                    counter++;
+                }
+            }
+            return counter;
+        }
 
-        
 
         /// <summary>
         /// this method adds to the get out of jail free cards part
@@ -74,6 +109,7 @@ namespace Property_Tycoon
             return money;
 
         }
+      
         /// <summary>
         /// this method allows the user to purchase a property
         /// </summary>
@@ -83,7 +119,7 @@ namespace Property_Tycoon
             String s = "";
             if (p.isBankOwned())
             {
-                s = p.getName()+"aquired";
+                s = p.getName() + " aquired";
                 money = money - p.getCost();
                 p.setBankOwned(false);
                 p.SetOwner(this);
@@ -92,29 +128,42 @@ namespace Property_Tycoon
 
             else if (p.getPlayer() == this)
             {
-                s = "you already own this";
+                s = "You already own this";
+            }
+            else if (getMoney() < p.getCost()) {
+                s = " You cannot afford this property";
             }
 
-            else {
-                s = "this property is owned by" + p.getName();
+            else
+            {
+                s = p.getName() + " is owned by" + p.getOwner();
             }
-      
+            MessageBox.Show(s);
             return s;
         }
 
         public void drawcard() {
             
         }
-
+        /// <summary>
+        /// this method returns the number of get out of jail free cards avalible to the player.
+        /// </summary>
+        /// <returns></returns>
         public int getJailFreeNo()
         {
             return numJailFree;
         }
 
+        /// <summary>
+        /// this method allows the user to see how many turns left in jail they have.
+        /// </summary>
+        /// <returns></returns>
         public int getJailTurns()
         {
             return jailTurn;
         }
+
+
         /// <summary>
         /// returns the amount of money the player has
         /// </summary>
@@ -123,6 +172,8 @@ namespace Property_Tycoon
         {
             return money;
         }
+
+
         /// <summary>
         /// this method calls the GO tiles action method
         /// </summary>
@@ -133,6 +184,8 @@ namespace Property_Tycoon
             goSpace.action(p);
             return "you have recieved 200";
         }
+
+
         /// <summary>
         /// returns player name
         /// </summary>
@@ -141,6 +194,8 @@ namespace Property_Tycoon
         {
             return playerName;
         }
+
+
         /// <summary>
         /// returns property list
         /// </summary>
@@ -148,6 +203,30 @@ namespace Property_Tycoon
         public ArrayList getProperties()
         {
             return properties;
+        }
+
+
+        /// <summary>
+        /// this method gets the names of the properties
+        /// </summary>
+        /// <returns></returns>
+        public ArrayList getPropertyNames() {
+            ArrayList names = new ArrayList();
+            String s;
+            foreach (Property item in getProperties())
+            {
+                s = item.getName();
+                names.Add(s);
+            }
+            return names;
+        }
+        /// <summary>
+        /// this method returns the property at the index
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public Property GetProperty(int index) {
+            return (Property)properties[index];
         }
         /// <summary>
         /// method that simulates jail
@@ -186,117 +265,154 @@ namespace Property_Tycoon
         /// <returns></returns>
         public int move(int val)
         {
-                if (!inJail)
-                {
-                    position = position + val;
-                    if (position > 40 && position != JAIL)
-                    {
-                        position = position % 40;
-                        
-                    }
-                    if (position == JAIL) {
-                        goToJail();
-
-                    }
-                    if (position == GO)
-                    {
-                    CurrentGame.GoTile.action(this);
-                    }
-                    if (position == FREE)
-                    {
-                    CurrentGame.justVising.action(this);
-                    }
-                    if (position == Pot1 || position == Pot2) {
-                        MessageBox.Show(" PotLuck");
-                        CurrentGame.potLuck.action(this);
-                    }
-                    if (position == 8 || position == 23)
-                    {
-                        MessageBox.Show(" Opportunity knocks");
-                        CurrentGame.opportunities.action(this);
-                    }
+            setPosition(getPosition() + val);
+            if (getPosition() > 40 && position != JAIL)
+            {
+                setPosition(getPosition() % 40);
+                CurrentGame.GoTile.action(getPlayer());
+            }               
+            if (getPosition() == JAIL) {
+                   goToJail();
+               }
+            if (getPosition() == FREE)
+            {
+                CurrentGame.justVising.action(getPlayer());
             }
-            
-            
+            if (getPosition()== GO)
+            {
+                CurrentGame.GoTile.action(getPlayer());
+            }
+            if (getPosition() == 8 || getPosition() == 23)
+            {
+                MessageBox.Show(" Opportunity knocks");
+                CurrentGame.opportunities.action(this);
+            }
+            if (getPosition() == Pot1 || getPosition() == Pot2)
+            {
+                MessageBox.Show(" PotLuck");
+                CurrentGame.potLuck.action(this);
+            }
+            if (getPosition() == 5)
+            {
+                MessageBox.Show(CurrentGame.incomeTax.action(this));
+            }
+            if (getPosition() == 39)
+            {
+                MessageBox.Show(CurrentGame.SuperTax.action(this));
+            }
+            if (CurrentGame.GetProperty(getPosition()) != null)
+            {
+                if (CurrentGame.GetProperty(getPosition()).isBankOwned() == false) {
+                    if (CurrentGame.GetProperty(getPosition()).getPlayer() != getPlayer() )
+                    {
+                     CurrentGame.GetProperty(getPosition()).getPlayer().addmoney(CurrentGame.GetProperty(getPosition()).getRent());
+                    addmoney(-CurrentGame.GetProperty(getPosition()).getRent());
+                    MessageBox.Show("rent of " + CurrentGame.GetProperty(getPosition()).getRent()+" paid from " + getName() +" to " + CurrentGame.GetProperty(getPosition()).getOwner());
+                    }
+                    
+                }
+            }
+
+
+
             return position;
         }
+
         /// <summary>
-        /// methood to gget the value of the dice roll
+        /// methood to get the value of the dice roll
         /// </summary>
         /// <returns></returns>
 
         public int getRollValue()
         {
-            return roll.rollDice();
+            return moveSpace;
         }
+
         /// <summary>
         /// this method rolls the dice classes and returns a result. unless there is a double the user cannot roll again. if there are 
         /// too many doubles in a row then the current player is sent to jail
         /// </summary>
         /// <returns></returns>
         public String rolldice()
-        {
-            String s = "";
+        {   
+            Roll dice = new Roll();
+            dice.Rolls();
+            moveSpace = 0;
             if (rollBan == false)
             {
-                roll.Rolls();
-                
-                if (!inJail)
+
+
+                if (isInJail() == false)
                 {
 
-                    move(roll.Rolls());
-                    if (roll.isEqual(roll.getDie1(), roll.getDie2()))
+                    moveSpace = moveSpace + dice.rollValue();
+                    MessageBox.Show(moveSpace + "");
+                    if (dice.getDie1() == dice.getDie2())
                     {
-                        s = "Double "+roll.getDie1()+"!! roll again ";
-                        move(getRollValue());
-                        rollBan = false;
-                        return s;
-                    }
+                        MessageBox.Show("Double 1!! both dice show " + dice.getDie1());
 
-                    if (roll.getDoubleCounter() == 3)
-                    {
-                        goToJail();
-                        s = "third double to jail you go";
-                        rollBan = true;
-                    }
-                    else {
-                        rollBan = true;
-                    }
-                    
-                }
+                        dice.Rolls();
 
-                else if (getPosition() == JAIL && inJail && jailTurn < 3)
-                {
-                    jailTurn++;
-                    s = "No double. you remain in jail";
+                        moveSpace = moveSpace + dice.rollValue();
+
+                        if (dice.getDie1() == dice.getDie2())
+                        {
+                            MessageBox.Show("Double 2 !! Again! both dice show " + dice.getDie1());
+                            dice.Rolls();
+                            moveSpace = moveSpace + dice.rollValue();
+
+
+                            if (dice.getDie1() == dice.getDie2())
+                            {
+                                MessageBox.Show("Jail time for you");
+                                goToJail();
+                                moveSpace = VISITING;
+                            }
+                        }
+                    }
                     rollBan = true;
-                }
-                else if (getPosition() == JAIL && inJail && jailTurn == 3)
-                {
-                    leaveJail();
 
-                    s = "youve paid 50 and have left jail";
-                    addmoney(-50);
-                    move(getRollValue());
-                    rollBan = true;
                 }
-
+                move(moveSpace);
             }
-            else {
-                s = "you have previously rolled. end turn";
-                }
-            MessageBox.Show(s);
-            return s;
+            else if (inJail && jailTurn < 3 && dice.getDie1() == dice.getDie2())
+            {
 
+                jailTurn++;
+                rollBan = true;
+                MessageBox.Show("No double.you remain in jail");
+            }
+            else if (inJail && jailTurn == 3)
+            {
+                leaveJail();
+                addmoney(-50);
+                rollBan = true;
+                jailTurn = 0;
+                MessageBox.Show("youve paid 50 and have left jail");
+            }
+            else 
+            {
+                MessageBox.Show("You have Previously Rolled please end your turn");
+            }
+
+            return "";
         }
 
+
+
+        /// <summary>
+        /// this method moves to moves the player to a position specified buy pos
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <returns></returns>
         public int moveto(int pos)
         {
-
             position = pos;
-            MessageBox.Show("this is the new position" + position);
             return position;
         }
+        /// <summary>
+        /// this method adds to the current players get out of jail free cards 
+        /// </summary>
         public void addGetOutOfJail() {
             numJailFree++;
         }
@@ -343,13 +459,32 @@ namespace Property_Tycoon
         {
             return this;
         }
-        /*
-        public String checkRent() {
-            if (this.position == pr)
-            {
 
-            } 
-        }*/
+        public bool Checkgrouping(Property p) {
+            ArrayList temp = CurrentGame.getList(p);
+            int counter = 0;
+            bool flag = true;
+            while (flag == true && counter < temp.Count)
+            {
+                if (temp[counter] is Property)
+                {
+                    Property T = (Property)temp[counter];
+                    if (T.getPlayer() == getPlayer())
+                    {
+                        flag = true;
+                    }
+                    else {
+                        flag = false;
+                    }
+                }
+                counter++;
+            }
+            return flag;
+        }
+
+
+
+        
     }
     
 }

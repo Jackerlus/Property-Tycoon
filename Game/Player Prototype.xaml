@@ -1,0 +1,30 @@
+﻿<Window x:Class="Property_Tycoon.Player_Prototype"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Property_Tycoon"
+        mc:Ignorable="d"
+        Title="Player_Prototype" Height="450" Width="800">
+    <Grid Height="440">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="389*"/>
+            <ColumnDefinition Width="322*"/>
+            <ColumnDefinition Width="89*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="End Turn" HorizontalAlignment="Left" Height="64" Margin="247,277,0,0" VerticalAlignment="Top" Width="74" Click="EndTurn" Grid.Column="1"/>
+        <Button Content="Buy property" HorizontalAlignment="Left" Height="64" Margin="0,277,0,0" VerticalAlignment="Top" Width="75" Click="BuyProperty" Grid.Column="2"/>
+        <Button Content="add House" HorizontalAlignment="Left" Height="68" Margin="247,342,0,0" VerticalAlignment="Top" Width="74" Click="addHouse" Grid.Column="1"/>
+        <Button Content="morgage prperty " HorizontalAlignment="Left" Height="68" Margin="0,342,0,0" VerticalAlignment="Top" Width="75" Click="morgageProperty" Grid.Column="2"/>
+        <Label x:Name="Player" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="186" Margin="8,10,0,0"/>
+        <Button Content="Roll" HorizontalAlignment="Left" Margin="176,277,0,0" VerticalAlignment="Top" Height="64" Width="70" Click="RollDice" Grid.Column="1"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="176,342,0,0" VerticalAlignment="Top" Height="68" Width="70" Click="Update" Grid.Column="1"/>
+        <Label x:Name="Selected" HorizontalAlignment="Left" Height="44" Margin="101,355,0,0" VerticalAlignment="Top" Width="116"/>
+        <ComboBox Name="PropertyList" HorizontalAlignment="Left" Height="46" Margin="0,288,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label Content="Properties" HorizontalAlignment="Left" Margin="0,254,0,0" VerticalAlignment="Top" Height="34" Width="105"/>
+        <Label x:Name="CurrentProperty" HorizontalAlignment="Left" Height="54" Margin="232,355,0,0" VerticalAlignment="Top" Width="117"/>
+        <Button Content="Opp" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="54,334,0,0" VerticalAlignment="Top" Width="78" Click="Button_Click"/>
+
+
+    </Grid>
+</Window>
