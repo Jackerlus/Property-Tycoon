@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Property_Tycoon"
         mc:Ignorable="d"
+        
         Title="MainWindow" Height="763" Width="1318">
     <Grid SnapsToDevicePixels="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="0,0,10,-6">
         <Grid.ColumnDefinitions>

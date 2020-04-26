@@ -24,7 +24,7 @@ namespace Property_Tycoon
             //Initialises a new Roll object and returns the dice roll result
 
             Roll roll1 = new Roll();
-            WriteToConsole(roll1.Rolls());
+            //WriteToConsole(roll1.Rolls());
         }
     }
 }

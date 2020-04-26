@@ -3,27 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Windows;
 
 namespace Property_Tycoon
 {
     public class Board
     {
-
-        Property currentprop;
-        private int players;
-        private Player currentPlayer;
         public ArrayList properties;
         public ArrayList Tiles = new ArrayList(40);
-        private ArrayList Brown = new ArrayList();
-        private ArrayList Blue = new ArrayList();
-        private ArrayList Purple = new ArrayList();
-        private ArrayList Orange = new ArrayList();
-        private ArrayList Red = new ArrayList();
-        private ArrayList Green = new ArrayList();
-        private ArrayList Yellow = new ArrayList();
-        private ArrayList dBlue = new ArrayList();
-        private ArrayList station = new ArrayList();
-        private ArrayList Utility = new ArrayList();
+        public ArrayList Brown = new ArrayList();
+        public ArrayList Blue = new ArrayList();
+        public ArrayList Purple = new ArrayList();
+        public ArrayList Orange = new ArrayList();
+        public ArrayList Red = new ArrayList();
+        public ArrayList Green = new ArrayList();
+        public ArrayList Yellow = new ArrayList();
+        public ArrayList dBlue = new ArrayList();
+        public ArrayList station = new ArrayList();
+        public ArrayList Utility = new ArrayList();
         public ArrayList Players = new ArrayList();
 
         public NonProperties GoTile = new Go(0);
@@ -36,12 +33,12 @@ namespace Property_Tycoon
         public NonProperties potLuck;
         public NonProperties opportunities;
 
-        private Property Brighton = new Property(6, 70, "Brighton st", 25, 25, 25, 25, 25, 25, Group.Station);
-        private Property Hove = new Property(16, 70, "Hove st", 25, 25, 25, 25, 25, 25, Group.Station);
-        private Property Lewes = new Property(26, 70, "Lewes st", 25, 25, 25, 25, 25, 25, Group.Station);
-        private Property Falmer = new Property(36, 70, "Falmer st", 25, 25, 25, 25, 25, 25, Group.Station);
-        private Property Tesla = new Property(13, 70, "Tesla Power Co", 25, 25, 25, 25, 25, 25, Group.Utility);
-        private Property Edison = new Property(29, 70, "Edison Water", 25, 25, 25, 25, 25, 25, Group.Utility);
+        private Property Brighton = new Property(6, 70, "Brighton st", 0, 0, 0, 0, 0, 0, Group.Station);
+        private Property Hove = new Property(16, 70, "Hove st", 0, 0, 0, 0, 0, 0, Group.Station);
+        private Property Lewes = new Property(26, 70, "Lewes st", 0, 0, 0, 0, 0, 0, Group.Station);
+        private Property Falmer = new Property(36, 70, "Falmer st", 0, 0, 0, 0, 0, 0, Group.Station);
+        private Property Tesla = new Property(13, 70, "Tesla Power Co", 0, 0, 0, 0, 0, 0, Group.Utility);
+        private Property Edison = new Property(29, 70, "Edison Water", 0, 0, 0, 0, 0, 0, Group.Utility);
 
         public Cards Decks;
  
@@ -50,15 +47,27 @@ namespace Property_Tycoon
         public Board() {
             Tiles = new ArrayList();
             properties = new ArrayList();
+            
+            Decks = new Cards(this);
+            potLuck = new Pot(8, Decks);
+            opportunities = new Opportunity(8, Decks);
+            Brown = new ArrayList();
+            Blue = new ArrayList();
+            Purple = new ArrayList();
+            Orange = new ArrayList();
+            Red = new ArrayList();
+            Green = new ArrayList();
+            Yellow = new ArrayList();
+            dBlue = new ArrayList();
+            station = new ArrayList();
+            Utility = new ArrayList();
+
             Players = new ArrayList();
             populatePlayers();
             PopulateGame();
-            //createGrouping();
-     
-             Decks = new Cards();
-             potLuck = new Pot(8,Decks);
-             opportunities = new Opportunity(8, Decks);
-    }
+            addGroup();
+            
+        }
 
         private void populatePlayers()
         {
@@ -74,51 +83,90 @@ namespace Property_Tycoon
         public int getNoOfPlayers() {
             return Players.Count;
         }
+        public ArrayList getList(Property p) {
+
+            switch (p.getColour())
+            {
+                case Group.Brown:
+                    return Brown;
+                case Group.Blue:
+                    return Blue;
+                case Group.Purple:
+                    return Purple;
+                case Group.Orange:
+                    return Orange;
+                case Group.Red:
+                    return Red;
+                case Group.Yellow:
+                    return Yellow;
+                case Group.Green:
+                    return Green;
+                case Group.Deep_Blue:
+                    return dBlue;
+                case Group.Station:
+                    return station;
+                case Group.Utility:
+                    return Utility;
+                    
+                   
+                default:
+                    return null;
+            }
+        }
         private void addGroup()
         {
-            foreach (Property item in Tiles)
+            
+            for (int i = 0; i < Tiles.Count; i++)
             {
-                if (item is Property)
+                if (Tiles[i] is Property)
                 {
-                    switch (item.getColour())
+                    Property a = (Property)Tiles[i];
+                    
+                    switch (a.getColour())
                     {
                         case Group.Brown:
-                            Brown.Add(item);
+                            Brown.Add(a);
                             break;
                         case Group.Blue:
-                            Blue.Add(item);
+                            Blue.Add(a);
                             break;
                         case Group.Purple:
-                            Purple.Add(item);
+                            Purple.Add(a);
                             break;
                         case Group.Orange:
-                            Orange.Add(item);
+                            Orange.Add(a);
                             break;
                         case Group.Red:
-                            Red.Add(item);
+                            Red.Add(a);
                             break;
                         case Group.Yellow:
-                            Yellow.Add(item);
+                            Yellow.Add(a);
                             break;
                         case Group.Green:
-                            Green.Add(item);
+                            Green.Add(a);
                             break;
                         case Group.Deep_Blue:
-                            dBlue.Add(item);
+                            dBlue.Add(a);
                             break;
                         case Group.Station:
-                            station.Add(item);
+                            station.Add(a);
                             break;
                         case Group.Utility:
-                            Utility.Add(item);
+                            Utility.Add(a);
                             break;
                         default:
                             break;
                     }
                 }
-            }
-        }
+                else { 
+                
+                }
+               
 
+            }
+            
+        }
+    
         private void PopulateGame()
         {
             String file1 = ("H:/PropertyTycoon2/Game/properties.csv");
@@ -171,9 +219,9 @@ namespace Property_Tycoon
                             break;
                     }
                     properties.Add(new Property(Int32.Parse(cSValues[0]), Int32.Parse(cSValues[1]), cSValues[2], Int32.Parse(cSValues[3]), Int32.Parse(cSValues[4]), Int32.Parse(cSValues[5]), Int32.Parse(cSValues[6]), Int32.Parse(cSValues[7]), Int32.Parse(cSValues[8]), name));
-                    addGroup();
+                
                     Tiles = properties;
-
+                    
                 }
 
             Tiles.Insert(0, GoTile);
@@ -195,7 +243,20 @@ namespace Property_Tycoon
             Tiles.Insert(34, potLuck);
             Tiles.Insert(36, Lewes);
             Tiles.Insert(37, opportunities);
-
+            
+        }
+        public ArrayList getProperties() {
+            return properties;
+        }
+        public Property GetProperty(int val) {
+            if (Tiles[val] is Property)
+            {
+                return ((Property)Tiles[val]);
+            }
+            else {
+                return null;
+            }
+            
         }
     }
 }
