@@ -1,0 +1,21 @@
+﻿<Window x:Class="Property_Tycoon.setPlayers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Property_Tycoon"
+        mc:Ignorable="d"
+        Title="setPlayers" Height="314" Width="459">
+    <Grid Height="315">
+        <Label Content="Current Players:" HorizontalAlignment="Left" Height="30" Margin="30,54,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="AddPlayer" Content="+ Add player" HorizontalAlignment="Left" Margin="275,49,0,0" VerticalAlignment="Top" Height="70" Width="110" Click="AddPlayer_Click"/>
+        <ListBox x:Name="ListView" HorizontalAlignment="Left" Height="180" Margin="30,99,0,0" VerticalAlignment="Top" Width="140" />
+        <Button Name="Abridged" Content="Abridged " HorizontalAlignment="Left" Height="70" Margin="235,209,0,0" VerticalAlignment="Top" Width="95" Click="Abridged_Click" />
+        <Button Name="Normal"  Content="Normal" HorizontalAlignment="Left" Height="70" Margin="340,209,0,0" VerticalAlignment="Top" Width="95" Click="Normal_Click"/>
+        <Label Content="Select Version:" Height="25" Margin="235,164,129,126"/>
+        <Border BorderThickness="1" BorderBrush="Black" Margin="10,14,14,26">
+
+
+        </Border>
+    </Grid>
+</Window>

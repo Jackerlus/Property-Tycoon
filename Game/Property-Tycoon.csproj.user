@@ -2,24 +2,48 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="addPlayer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Player Prototype.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PlayerMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="setPlayers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SetTime.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Window1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="GetPlayerWindow.xaml.cs">
+    <Compile Update="Window2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="addPlayer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Player Prototype.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PlayerMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="setPlayers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SetTime.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Window1.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GetPlayerWindow.xaml">
+    <Page Update="Window2.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

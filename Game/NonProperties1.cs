@@ -9,13 +9,19 @@ namespace Property_Tycoon
     /// interface for the non purchaceable tiles
     /// </summary>
     public interface  NonProperties {
+       
         string action(Player p);
+        String getName();
     }
     class IncomeTax : Space, NonProperties
     {
         public IncomeTax(int position) : base(position)
         {
 
+        }
+
+        public String getName() {
+            return "Income Tax"; ;
         }
 
         public string action(Player player)
@@ -33,7 +39,11 @@ namespace Property_Tycoon
 
              c = Deck;
         }
-
+ 
+        public String getName()
+        {
+            return "Opportinity Knocks"; ;
+        }
         public string action(Player p)
         {
            
@@ -51,6 +61,11 @@ namespace Property_Tycoon
             c = Deck;
 
         }
+        
+        public String getName()
+        {
+            return "Pot Luck"; ;
+        }
 
         public string action(Player p)
         {
@@ -67,6 +82,11 @@ namespace Property_Tycoon
         public SuperTax(int position) : base(position)
         {
 
+        }
+        
+        public String getName()
+        {
+            return "Super Tax" ;
         }
 
         public string action(Player player)
@@ -88,6 +108,10 @@ namespace Property_Tycoon
         {
 
         }
+        public String getName()
+        {
+            return "Go"; ;
+        }
 
         public string action(Player p)
         {
@@ -105,6 +129,10 @@ namespace Property_Tycoon
         {
 
         }
+        public String getName()
+        {
+            return "Jail"; ;
+        }
 
         public string action(Player player) {
             player.goToJail();
@@ -121,6 +149,11 @@ namespace Property_Tycoon
         {
 
         }
+        String name;
+        public String getName()
+        {
+            return "Just Visiting"; ;
+        }
 
         public string action(Player player)
         {
@@ -136,8 +169,14 @@ namespace Property_Tycoon
         private int FreeMoney;
         public FreeParking(int position) : base(position)
         {
+          
             FreeMoney = 0;
 
+        }
+    
+        public String getName()
+        {
+            return "Free Parking"; ;
         }
         /// <summary>
         /// This method adds money to the Free parking tile

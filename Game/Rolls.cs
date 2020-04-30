@@ -1,20 +1,30 @@
 ﻿using System;
 namespace Property_Tycoon
 {
+    /// <summary>
+    /// class for each roll of the dice
+    /// </summary>
     public class Roll
     {
+        //class variables 
         private int numOfDoubles;
         private int sumOfDice;
         private int die1, die2;
         private Dice diceOne;
         private Dice diceTwo; 
-
+        /// <summary>
+        /// constuctor for the class
+        /// </summary>
         public Roll() {
             diceOne = new Dice();
             diceTwo = new Dice();
             numOfDoubles = 0;
             sumOfDice = 0;
         }
+        /// <summary>
+        /// this method rolls the two dice objects
+        /// </summary>
+        /// <returns> the sum of the two dice objects</returns>
         public int Rolls()
         {
             //Roll Dice
@@ -25,20 +35,41 @@ namespace Property_Tycoon
             numOfDoubles++;
             return sumOfDice;
         }
+        /// <summary>
+        /// gets the sum of the two dice variables
+        /// </summary>
+        /// <returns>returns sum of dice variable</returns>
         public int rollValue() {
             return sumOfDice;
         }
+        /// <summary>
+        /// gets the value of the dice number
+        /// </summary>
+        /// <returns>integer value of the roll function of die one </returns>
         public int  getDie1() {
             return die1;    
         }
+        /// <summary>
+        /// gets the value of the dice number
+        /// </summary>
+        /// <returns>integer value of the roll function of die two </returns>
         public int getDie2()
         {
             return die2;
         }
+        /// <summary>
+        /// This method gets the number of doubles
+        /// </summary>
+        /// <returns> current number of doubles </returns>
         public int getDoubleCounter() {
             return numOfDoubles;
         }
-
+        /// <summary>
+        /// this method checks to see if the dice are equal
+        /// </summary>
+        /// <param name="val1"></param>
+        /// <param name="val2"></param>
+        /// <returns> boolean value. True if val 1 is equal to val 2</returns>
         public Boolean isEqual(int val1, int val2)
         {
             //Check if dice are equal
@@ -53,6 +84,10 @@ namespace Property_Tycoon
                 return false;
             }
         }
+        /// <summary>
+        /// message when both dice are rolled
+        /// </summary>
+        /// <returns>A string if the dice are equal</returns>
         public string DiceRollsText()
         {
 
