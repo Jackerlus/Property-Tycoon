@@ -19,17 +19,18 @@ namespace Property_Tycoon
     /// </summary>
     public partial class Player_Prototype : Window
     {
+        int A = 12;
 
         Property  currentprop;
         public Board currentGame;
-        private ArrayList properties = new ArrayList(40);
+        private ArrayList properties = new ArrayList(39);
         private ArrayList prop;
         private Player currentPlayer;
         public Player_Prototype()
         {
             
             currentGame = new Board();
-            properties = currentGame.Tiles;
+            properties = currentGame.returnProperties();
             prop = currentGame.getPlayerList();
     
             currentPlayer = (Player )prop[0];
@@ -39,7 +40,11 @@ namespace Property_Tycoon
       
                     InitializeComponent();
              Player2details();
-         }
+            currentPlayer.buyProperty((Property) properties[1]);
+            currentPlayer.buyProperty((Property)properties[4]);
+            currentPlayer.buyProperty((Property)properties[13]);
+            currentPlayer.buyProperty((Property)properties[16]);
+        }
 
         public bool checkOwnership(ArrayList target) {
             bool flag = false;
@@ -74,6 +79,7 @@ namespace Property_Tycoon
 
             checkRent(currentPlayer);
             currentPlayer.endTurn();
+            currentprop = null;
             Update(this, e);
             
         }
@@ -105,7 +111,7 @@ namespace Property_Tycoon
         public string ListAllProperties()
         {
             string s = "";
-           for(int i = 0; i < 40; i++)
+           for(int i = 0; i < 39; i++)
                 if (properties[i] is Property)
                 {
                    Property p = (Property)properties[i];
@@ -157,6 +163,7 @@ namespace Property_Tycoon
             try
             {
             currentprop.addHouse();
+                MessageBox.Show("Houses: "+currentprop.checkHouses()+" Rent Value: "+currentprop.getRent());
             }
             catch (System.NullReferenceException NoHouseSelected)
             {
@@ -172,7 +179,15 @@ namespace Property_Tycoon
 
         private void morgageProperty(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                currentPlayer.MortgageProperty(currentprop);
+            }
+            catch (System.NullReferenceException NoHouseSelected)
+            {
 
+                MessageBox.Show("Please select a property you own before attempting to add a house");
+            }
         }
 
 
@@ -198,14 +213,54 @@ namespace Property_Tycoon
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CurrentProperty.Content = currentPlayer.GetProperty(PropertyList.SelectedIndex).getName();
-           Update(this, e);
-            currentprop = currentPlayer.GetProperty(PropertyList.SelectedIndex);
+            try
+            {
+                CurrentProperty.Content = currentPlayer.GetProperty(PropertyList.SelectedIndex).getName();
+                Update(this, e);
+
+                currentprop = currentPlayer.GetProperty(PropertyList.SelectedIndex);
+            }
+            catch (Exception)
+            {
+
+                
+            }
+  
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                PlayerMenu p = new PlayerMenu(currentprop);
+                p.Show();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Select a current property before entering the menu");
+                
+            }
+        }
+
+        private void roll6_Click(object sender, RoutedEventArgs e)
+        {
+            currentPlayer.move(6);
+        }
+
+        private void randroll_Click(object sender, RoutedEventArgs e)
+        {
+            currentPlayer.move(12);
+        }
+
+        private void Tesla_Click(object sender, RoutedEventArgs e)
+        {
+            currentPlayer.move(13);
+        }
+
+        private void Completeutil_Click(object sender, RoutedEventArgs e)
+        {
+            currentPlayer.buyProperty((Property)properties[29]);
         }
     }
 }

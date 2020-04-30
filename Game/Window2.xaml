@@ -1,0 +1,18 @@
+﻿<Window x:Class="Property_Tycoon.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Property_Tycoon"
+        mc:Ignorable="d"
+        
+        Title="Add Player" Height="119" Width="304">
+    <Grid Height="98">
+        <Button x:Name="Remove" Content="X" HorizontalAlignment="Left" Margin="20,16,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" Height="18" Width="35" Grid.Row="2" Grid.RowSpan="2" Click="Remove_Click"/>
+        <ComboBox x:Name="Plist" HorizontalAlignment="Left" Margin="185,16,0,0" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="Plist_SelectionChanged"/>
+        <TextBox  x:Name="UserBox" HorizontalAlignment="Left" Margin="58,16,0,0" Text="Enter Text" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="UserBox_TextChanged" Height="22"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="90,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.631,-0.016" Click="Button_Click"/>
+        <CheckBox Name="HumanCheckBox" IsChecked="True" Content="Human ?" HorizontalAlignment="Left" Margin="184,47,0,0" VerticalAlignment="Top"  Checked="CheckBox_Checked"/>
+
+    </Grid>
+</Window>

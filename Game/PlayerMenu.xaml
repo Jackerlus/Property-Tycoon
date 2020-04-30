@@ -1,0 +1,23 @@
+﻿<Window x:Class="Property_Tycoon.PlayerMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Property_Tycoon"
+        mc:Ignorable="d"
+        Title="PlayerMenu" Height="450" Width="800">
+    <Grid>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="335" Margin="45,69,0,0" VerticalAlignment="Top" Width="230">
+
+        </Border>
+
+        <StackPanel HorizontalAlignment="Left" Height="325" Margin="45,79,0,0" VerticalAlignment="Top" Width="225">
+            <Rectangle x:Name="rect" Height="70" Stroke="Black" Margin="10" Width="185"/>
+            <Label x:Name="PropertyName" FontSize="15" FontWeight="Black" BorderThickness="3px" Height="55" Width="195"/>
+            <Label x:Name="PropertyInfo" FontWeight="DemiBold"  FontSize="12" BorderThickness="3px" Height="175" Width="195"/>
+
+        </StackPanel>
+
+
+    </Grid>
+</Window>

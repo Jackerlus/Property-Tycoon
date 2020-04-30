@@ -14,7 +14,7 @@ namespace Property_Tycoon
         private int FREE = 5;
         private int Pot1 = 3;
         private int Pot2 = 34;
-        private ArrayList properties;
+        public ArrayList properties;
         
         private String playerName;
         private int money;
@@ -23,12 +23,20 @@ namespace Property_Tycoon
         private int jailTurn;
         private bool rollBan;
         private int numJailFree;
+        private Piece piece;
         int moveSpace;
   
       
         private Board CurrentGame;
-
-        public Human(string name, int money, int position, int playerno, Board cg)
+        /// <summary>
+        /// This method is the constructor to make a new Player Object.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="money"></param>
+        /// <param name="position"></param>
+        /// <param name="playerno"></param>
+        /// <param name="cg"></param>
+        public Human(string name, int money, Piece _piece, Board cg)
         {
             
             this.money = money;
@@ -36,7 +44,8 @@ namespace Property_Tycoon
             this.jailTurn = 0;
             this.numJailFree = 0;
             this.inJail = false;
-            this.position = position;
+            this.position = 0;
+            piece = _piece;
             this.properties = new ArrayList();
             moveSpace = 0;
  
@@ -44,6 +53,7 @@ namespace Property_Tycoon
             CurrentGame = cg;
             
         }
+   
         /// <summary>
         /// This method sets the current player postion
         /// </summary>
@@ -76,17 +86,19 @@ namespace Property_Tycoon
             int counter = 0;
             foreach (Property item in properties)
             {
-                if (item.getColour().Equals(Group.Station))
+                if (item.getColour().Equals(Group.Station) && item.getPlayer() == this)
                 {
-                    counter++;
+
+                    counter = counter +1;
                 }
             }
             return counter;
         }
 
 
+
         /// <summary>
-        /// this method adds to the get out of jail free cards part
+        /// This method adds to the get out of jail free cards part
         /// </summary>
         /// <param name="val"></param>
         public void addGetOutofJail(int val)
@@ -140,10 +152,6 @@ namespace Property_Tycoon
             }
             MessageBox.Show(s);
             return s;
-        }
-
-        public void drawcard() {
-            
         }
         /// <summary>
         /// this method returns the number of get out of jail free cards avalible to the player.
@@ -255,7 +263,16 @@ namespace Property_Tycoon
             if (this.properties.Contains(p))
             {
                 money = money + (p.getCost() / 2);
-                p.mortgageProperty();
+                p.mortgageProperty(p);
+            }
+        }
+
+        public void UnMortgageProperty(Property p)
+        {
+            if (this.properties.Contains(p))
+            {
+                addmoney(-((p.getCost()/2)+Convert.ToInt32(0.1*p.getCost())));
+                p.mortgageProperty(p);
             }
         }
         /// <summary>
@@ -481,6 +498,7 @@ namespace Property_Tycoon
             }
             return flag;
         }
+        
 
 
 

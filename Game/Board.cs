@@ -7,47 +7,87 @@ using System.Windows;
 
 namespace Property_Tycoon
 {
+    public enum Group
+    {
+        
+        Brown,
+        Blue,
+        Purple,
+        Orange,
+        Red,
+        Yellow,
+        Green,
+        Deep_Blue,
+        Utility,
+        Station,
+
+    }
+    public enum BoardPiece {
+        Boot, Smartphone, Goblet, Hatstand, Cat, Spoon,empty
+    }
     public class Board
     {
-        public ArrayList properties;
-        public ArrayList Tiles = new ArrayList(40);
-        public ArrayList Brown = new ArrayList();
-        public ArrayList Blue = new ArrayList();
-        public ArrayList Purple = new ArrayList();
-        public ArrayList Orange = new ArrayList();
-        public ArrayList Red = new ArrayList();
-        public ArrayList Green = new ArrayList();
-        public ArrayList Yellow = new ArrayList();
-        public ArrayList dBlue = new ArrayList();
-        public ArrayList station = new ArrayList();
-        public ArrayList Utility = new ArrayList();
-        public ArrayList Players = new ArrayList();
 
+        /// <summary>
+        /// arrays for all the properties and their groups along with the player array
+        /// </summary>
+        private ArrayList properties;
+        private ArrayList Tiles = new ArrayList(39);
+        private ArrayList Brown = new ArrayList();
+        private ArrayList Blue = new ArrayList();
+        private ArrayList Purple = new ArrayList();
+        private ArrayList Orange = new ArrayList();
+        private ArrayList Red = new ArrayList();
+        private ArrayList Green = new ArrayList();
+        private ArrayList Yellow = new ArrayList();
+
+
+        private ArrayList dBlue = new ArrayList();
+
+
+
+        private ArrayList station = new ArrayList();
+        private ArrayList Utility = new ArrayList();
+        private ArrayList Players = new ArrayList();
+        private ArrayList pieces = new ArrayList();
+        
+
+
+        /// <summary>
+        /// intitalises all the Non obtainable properties
+        /// </summary>
         public NonProperties GoTile = new Go(0);
+
+
+
         public NonProperties justVising = new Visting(11);
         public NonProperties Jail = new GoToJail(31);
         public NonProperties FreeParking = new FreeParking(21);
-     
+
         public NonProperties incomeTax = new IncomeTax(2);
         public NonProperties SuperTax = new SuperTax(39);
         public NonProperties potLuck;
         public NonProperties opportunities;
 
-        private Property Brighton = new Property(6, 70, "Brighton st", 0, 0, 0, 0, 0, 0, Group.Station);
-        private Property Hove = new Property(16, 70, "Hove st", 0, 0, 0, 0, 0, 0, Group.Station);
-        private Property Lewes = new Property(26, 70, "Lewes st", 0, 0, 0, 0, 0, 0, Group.Station);
-        private Property Falmer = new Property(36, 70, "Falmer st", 0, 0, 0, 0, 0, 0, Group.Station);
+        /// <summary>
+        /// initalises all the different Special properties
+        /// </summary>
+        private Property Brighton = new Property(6, 70, "Brighton station", 25, 50, 100, 200, 0, 0, Group.Station);
+        private Property Hove = new Property(16, 70, "Hove station", 25, 50, 100, 200, 0, 0, Group.Station);
+        private Property Lewes = new Property(26, 70, "Lewes station", 25, 50, 100, 200, 0, 0, Group.Station);
+        private Property Falmer = new Property(36, 70, "Falmer station", 25, 50, 100, 200, 0, 0, Group.Station);
         private Property Tesla = new Property(13, 70, "Tesla Power Co", 0, 0, 0, 0, 0, 0, Group.Utility);
         private Property Edison = new Property(29, 70, "Edison Water", 0, 0, 0, 0, 0, 0, Group.Utility);
-
+        private int mode;
+        int time;
         public Cards Decks;
- 
+
 
 
         public Board() {
             Tiles = new ArrayList();
             properties = new ArrayList();
-            
+
             Decks = new Cards(this);
             potLuck = new Pot(8, Decks);
             opportunities = new Opportunity(8, Decks);
@@ -61,28 +101,120 @@ namespace Property_Tycoon
             dBlue = new ArrayList();
             station = new ArrayList();
             Utility = new ArrayList();
+            //mode = GameMode;
 
             Players = new ArrayList();
+            populatePieces();
+            
             populatePlayers();
             PopulateGame();
             addGroup();
+
+        }
+        public int getGameType()
+        {
+            return mode;
+        }
+        public void SetGameType(int val)
+        {
+             mode = val;
+        }
+        public int getTime()
+        {
+            return time;
+        }
+        public  void setTime(int val) {
+            time = val;
+        }
+
+
+        private void populatePieces()
+        {
+                pieces.Add(new Piece("Boot"));
+                pieces.Add(new Piece("Smartphone"));
+                pieces.Add(new Piece("Goblet"));
+                pieces.Add(new Piece("Hatstand"));
+                pieces.Add(new Piece("Cat"));
+                pieces.Add(new Piece("Spoon"));
             
         }
 
+        public ArrayList getBoardPieces() {
+            ArrayList A = new ArrayList();
+            foreach (Piece item in pieces)
+            {
+                if (item.getPicked() == false)
+                {
+                    A.Add(item);
+                }
+            }
+            return A;
+        }
+        
+        public Piece getPiece(int val) {
+            return (Piece)pieces[val];
+        }
+
+
+
+
+        /// <summary>
+        /// this method gets the Tiles array
+        /// </summary>
+        /// <returns></returns>
+        public ArrayList returnProperties()
+        {
+            return Tiles;
+        }
+        /// <summary>
+        /// this mehtod adds the new players to the game (Player array)
+        /// </summary>
         private void populatePlayers()
         {
-            Players.Add(new Human("Thomas", 1500, 0, 1, this));
-            Players.Add(new Human("Tom", 1300, 0, 1, this));
-            Players.Add( new Human("Jack", 1300, 0, 2, this));
-            Players.Add(new Human("Mike", 1300, 0, 3, this));
+            setPlayers p = new setPlayers(this);
+            try
+            {
+                p.ShowDialog();
+                checkPlayers();
+            }
+            catch (NotEnoughPlayersException)
+            {
+                
+                
+            }
+            
+
+
         }
+        private void checkPlayers()
+        {
+            if (getNoOfPlayers() < 2)
+            {
+                throw new NotEnoughPlayersException();
+            }
+        }
+        public void addToArray(Player p) {
+            Players.Add(p);
+        }
+        /// <summary>
+        /// this method returns a list of all the current players
+        /// </summary>
+        /// <returns></returns>
         public ArrayList getPlayerList() {
             return Players;
         }
-
+        /// <summary>
+        /// This method gets the count of all the players currently in the game
+        /// </summary>
+        /// <returns></returns>
         public int getNoOfPlayers() {
             return Players.Count;
         }
+        /// <summary>
+        /// This method gets the grouping array of the property P
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public ArrayList getList(Property p) {
 
             switch (p.getColour())
@@ -113,6 +245,9 @@ namespace Property_Tycoon
                     return null;
             }
         }
+        /// <summary>
+        /// this method goes though the tiles array and assigns each property to its colour array
+        /// </summary>
         private void addGroup()
         {
             
@@ -166,7 +301,41 @@ namespace Property_Tycoon
             }
             
         }
-    
+
+        public ArrayList getPlayerNames()
+        {
+            ArrayList names = new ArrayList();
+            String s;
+            foreach (Player item in getPlayerList())
+            {
+                if (item is Human)
+                {
+                    s = item.getName();
+                    names.Add(s);
+                }
+
+            }
+            return names;
+        }
+        public ArrayList getPieceNames()
+        {
+            ArrayList names = new ArrayList();
+            String s;
+            foreach (Piece item in getBoardPieces())
+            {
+                if (item is Piece)
+                {
+                    s = item.getName();
+                    names.Add(s);
+                }
+
+            }
+            return names;
+        }
+
+        /// <summary>
+        /// This method reads in the properties from the CSV and constructs each property from this data
+        /// </summary>
         private void PopulateGame()
         {
             String file1 = ("H:/PropertyTycoon2/Game/properties.csv");
@@ -191,7 +360,7 @@ namespace Property_Tycoon
                         case "Blue":
                             name = Group.Blue;
                             break;
-                        case "purple":
+                        case "Purple":
                             name = Group.Purple;
                             break;
                         case "Orange":
@@ -206,7 +375,7 @@ namespace Property_Tycoon
                         case "Green":
                             name = Group.Green;
                             break;
-                        case "Deep_Blue":
+                        case "Deep blue":
                             name = Group.Deep_Blue;
                             break;
                         case "Station":
@@ -223,31 +392,42 @@ namespace Property_Tycoon
                     Tiles = properties;
                     
                 }
-
             Tiles.Insert(0, GoTile);
-            Tiles.Insert(2, incomeTax);
-            Tiles.Insert(3, potLuck);
-            Tiles.Insert(6, Brighton);
-            Tiles.Insert(8, opportunities);
-            Tiles.Insert(11, justVising);
-            Tiles.Insert(13, Tesla);
-            Tiles.Insert(16, Hove);
-            Tiles.Insert(18, potLuck);
-            Tiles.Insert(21, FreeParking);
+            Tiles.Insert(2, potLuck);
 
-            Tiles.Insert(23, opportunities);
+            Tiles.Insert(4, incomeTax);
+            
+            Tiles.Insert(5, Brighton);
+            Tiles.Insert(7, opportunities);
+            Tiles.Insert(10, justVising);
+            Tiles.Insert(12, Tesla);
+            Tiles.Insert(15, Hove);
+            Tiles.Insert(17, potLuck);
+            Tiles.Insert(20, FreeParking);
 
-            Tiles.Insert(26, Falmer);
-            Tiles.Insert(29, Edison);
-            Tiles.Insert(31, Jail);
-            Tiles.Insert(34, potLuck);
-            Tiles.Insert(36, Lewes);
-            Tiles.Insert(37, opportunities);
+            Tiles.Insert(22, opportunities);
+
+            Tiles.Insert(25, Falmer);
+            Tiles.Insert(28, Edison);
+            Tiles.Insert(30, Jail);
+            Tiles.Insert(33, potLuck);
+            Tiles.Insert(35, Lewes);
+            Tiles.Insert(36, opportunities);
+            Tiles.Insert(38, SuperTax);
             
         }
+        /// <summary>
+        /// this method returns the properties
+        /// </summary>
+        /// <returns></returns>
         public ArrayList getProperties() {
             return properties;
         }
+        /// <summary>
+        /// this method gets the property at the specific index
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public Property GetProperty(int val) {
             if (Tiles[val] is Property)
             {
@@ -257,6 +437,175 @@ namespace Property_Tycoon
                 return null;
             }
             
+        }
+        public String getspaceName(int val) {
+            if (Tiles[val] is Property)
+            {
+                Property p = (Property)Tiles[val];
+                return p.getName();
+            }
+            if (Tiles[val] is Go)
+            {
+                Go g = (Go)Tiles[val];
+                return g.getName();
+            }
+            if (Tiles[val] is Visting)
+            {
+                Visting j = (Visting)Tiles[val];
+                return j.getName() ;
+            }
+            if (Tiles[val] is GoToJail)
+            {
+                GoToJail j = (GoToJail)Tiles[val];
+                return j.getName();
+            }
+            if (Tiles[val] is IncomeTax  )
+            {
+                IncomeTax i = (IncomeTax)Tiles[val];
+                return i.getName();
+            }
+            if (Tiles[val] is SuperTax)
+            {
+                SuperTax s = (SuperTax)Tiles[val];
+                return s.getName();
+            }
+            if (Tiles[val] is Pot)
+            {
+                return "Pot Luck";
+
+            }
+            if (Tiles[val] is Opportunity)
+            {
+                return "Opportunity Knocks";
+            }
+            if (Tiles[val] is FreeParking)
+            {
+                return "Free Parking";
+            }
+            else {
+                return "NotFound ";
+            }
+        }
+        public void abridgeGame()
+        {
+            string S ="";
+            foreach (Human item in Players)
+            {
+                S= S + "\n Player: " + item.getName() + "finished with £" + calcAssets(item) + " worth of assets";
+            }
+            MessageBox.Show(S);
+        }
+
+        private int calcAssets(Human p)
+        {
+            int houseCounter = 0;
+            foreach (Property item in p.getProperties())
+            {
+                switch (item.getColour())
+                {
+                    case Group.Brown:
+                        houseCounter = houseCounter + (item.checkHouses() * 50);
+                        break;
+                    case Group.Blue:
+                        houseCounter = houseCounter + (item.checkHouses() * 50);
+                        break;
+                    case Group.Purple:
+                        houseCounter = houseCounter + (item.checkHouses() * 100);
+                        break;
+                    case Group.Orange:
+                        houseCounter = houseCounter + (item.checkHouses() * 100);
+                        break;
+                    case Group.Red:
+                        houseCounter = houseCounter + (item.checkHouses() * 150);
+                        break;
+                    case Group.Yellow:
+                        houseCounter = houseCounter + (item.checkHouses() * 150);
+                        break;
+                    case Group.Green:
+                        houseCounter = houseCounter + (item.checkHouses() * 200);
+                        break;
+                    case Group.Deep_Blue:
+                        houseCounter = houseCounter + (item.checkHouses() * 200);
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            int HoteCounter = 0;
+            foreach (Property item in p.getProperties())
+            {
+                switch (item.getColour())
+                {
+                    case Group.Brown:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 *50;
+                        }
+                        
+                        break;
+                    case Group.Blue:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 * 50;
+                        }
+                        break;
+                    case Group.Purple:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 * 100;
+                        }
+                        break;
+                    case Group.Orange:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 * 100;
+                        }
+                        break;
+                    case Group.Red:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 * 150;
+                        }
+                        break;
+                    case Group.Yellow:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 * 150;
+                        }
+                        break;
+                    case Group.Green:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 * 200;
+                        }
+                        break;
+                    case Group.Deep_Blue:
+                        if (item.hotelCheck() == true)
+                        {
+                            HoteCounter = HoteCounter + 5 * 200;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            int propcost = 0;
+            foreach (Property item in p.getProperties())
+            {
+                if (item.getMortgaged() == false)
+                {
+                    propcost = propcost + item.getCost();
+                }
+                else{
+                    propcost = propcost + (item.getCost() / 2);
+                }
+                
+            }
+
+
+            return HoteCounter + houseCounter + p.getMoney() + propcost;
         }
     }
 }

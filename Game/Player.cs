@@ -22,7 +22,7 @@ namespace Property_Tycoon
         ArrayList getProperties();
         ArrayList getPropertyNames();
         Property GetProperty(int index);
-
+        void setPosition(int val);
         int addmoney(int val);
         void leaveJail();
         void goToJail();
