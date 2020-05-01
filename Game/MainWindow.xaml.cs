@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Property_Tycoon
 {
@@ -18,6 +19,7 @@ namespace Property_Tycoon
         private ArrayList properties = new ArrayList(39);
         private ArrayList prop;
         private Player currentPlayer;
+        private Property CurrentProperty;
         private Timer timer1;
         private int counter;
 
@@ -38,6 +40,10 @@ namespace Property_Tycoon
 
 
 
+        }
+        public void update()
+        {
+            
         }
         private void StartTime()
         {
@@ -143,8 +149,53 @@ namespace Property_Tycoon
 
             }
 
- 
+        private void EndTurnBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (prop.Count == prop.IndexOf(currentPlayer) + 1)
+            {
+                currentPlayer = (Player)prop[0];
+            }
+            else
+            {
+                currentPlayer = (Player)prop[prop.IndexOf(currentPlayer) + 1];
+            }
+            
+            currentPlayer.endTurn();
+            ImageBox.Source = new BitmapImage(new Uri("H:/PropertyTycoon2/Game/" + currentPlayer.getPieceImg()));
+            CurrentPlayerInfo.Content =
+             "Name:  " + currentPlayer.getName() + "\n" +
+                              "pos: " + currentPlayer.getPosition() + "\n" +
+                              "money: " + currentPlayer.getMoney() + "\n" +
+                              "GOJFC: " + currentPlayer.getJailFreeNo() + "\n"
+                              + "injail?: " + currentPlayer.isInJail() + "\n" +
+                              "jailno: " + currentPlayer.getJailTurns() + "\n" + "Properties List: \n";
+
+        }
+
+        private void EndTurnBtn_Click1(object sender, RoutedEventArgs e)
+        {
+            Uri resourceUri = new Uri("H:/PropertyTycoon2/Game/Images/utility.png", UriKind.Relative);
+            System.Windows.MessageBox.Show(ImageBox.Source.ToString());
+            //@"H:\PropertyTycoon2/Game\Images\utility.png")
+
+           ImageBox.Source = new BitmapImage(new Uri("H:/PropertyTycoon2/Game/"+currentPlayer.getPieceImg() ));
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+               
+                CurrentProperty  = currentPlayer.GetProperty(OwnedProperties.SelectedIndex);
+             
+
+                currentprop = currentPlayer.GetProperty(OwnedProperties.SelectedIndex);
+            }
+            catch (Exception)
+            {
 
 
+            }
+        }
     }
 }
