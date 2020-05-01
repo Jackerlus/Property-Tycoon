@@ -21,7 +21,7 @@ namespace Property_Tycoon
     {
         int A = 12;
 
-        Property  currentprop;
+        Property currentprop;
         public Board currentGame;
         private ArrayList properties = new ArrayList(39);
         private ArrayList prop;

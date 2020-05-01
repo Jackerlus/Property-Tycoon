@@ -757,6 +757,12 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
+        <Image Name="ImageBox" HorizontalAlignment="Left" Height="135" Margin="760,194,0,0"  VerticalAlignment="Top" Width="115" Source="H:\PropertyTycoon2\Game\Images\bank.png"/>
+        <Button  x:Name="EndTurnBtn" Content="Button" HorizontalAlignment="Left" Height="55" Margin="1130,489,0,0" VerticalAlignment="Top" Width="110" Click="EndTurnBtn_Click_1"/>
+
+        <Label x:Name="CurrentPlayerInfo" Content="" HorizontalAlignment="Left" Height="160" Margin="760,334,0,0" VerticalAlignment="Top" Width="275" FontSize="16" FontWeight="Bold"/>
+        <ComboBox Name="OwnedProperties" HorizontalAlignment="Left" Height="45" Margin="760,504,0,0" VerticalAlignment="Top" Width="270" SelectionChanged="ComboBox_SelectionChanged"/>
+
 
     </Grid>
 </Window>
