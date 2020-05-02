@@ -130,12 +130,12 @@ namespace Property_Tycoon
 
         private void populatePieces()
         {
-                pieces.Add(new Piece("Boot"));
-                pieces.Add(new Piece("Smartphone"));
-                pieces.Add(new Piece("Goblet"));
-                pieces.Add(new Piece("Hatstand"));
-                pieces.Add(new Piece("Cat"));
-                pieces.Add(new Piece("Spoon"));
+                pieces.Add(new Piece("Boot", "/Images/boot.png"));
+                pieces.Add(new Piece("Smartphone", "/Images/phone.png"));
+                pieces.Add(new Piece("Goblet", "/Images/chalice.png"));
+                pieces.Add(new Piece("Hatstand", "/Images/hatstand.png"));
+                pieces.Add(new Piece("Cat", "/Images/cat.png"));
+                pieces.Add(new Piece("Spoon", "/Images/spoon.png"));
             
         }
 
@@ -532,6 +532,7 @@ namespace Property_Tycoon
                 }
 
             }
+
             int HoteCounter = 0;
             foreach (Property item in p.getProperties())
             {
