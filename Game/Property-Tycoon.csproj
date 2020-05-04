@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="585f90f0cb11b227491c3573.png" />
+    <None Remove="Clipart-Email-10502696.png" />
+    <None Remove="FreeParking.png" />
+    <None Remove="GoToJail.png" />
+    <None Remove="lightbulb.png" />
+    <None Remove="monopoly-chance-clipart-1.jpg" />
+    <None Remove="monopolyquestionmark.jpg" />
+    <None Remove="water.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <COMReference Include="Microsoft.Office.Excel.dll">
       <Guid>00020813-0000-0000-c000-000000000046</Guid>
       <VersionMajor>1</VersionMajor>
@@ -17,6 +28,17 @@
       <Lcid>0</Lcid>
       <Isolated>false</Isolated>
     </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="585f90f0cb11b227491c3573.png" />
+    <Resource Include="Clipart-Email-10502696.png" />
+    <Resource Include="FreeParking.png" />
+    <Resource Include="GoToJail.png" />
+    <Resource Include="lightbulb.png" />
+    <Resource Include="monopoly-chance-clipart-1.jpg" />
+    <Resource Include="monopolyquestionmark.jpg" />
+    <Resource Include="water.png" />
   </ItemGroup>
 
 </Project>
