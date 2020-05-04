@@ -33,6 +33,7 @@ namespace Property_Tycoon
         int getJailTurns();
         bool isInJail();
         int getNumOfStations();
+        String getPieceImg();
         bool Checkgrouping(Property p);
     }
 }

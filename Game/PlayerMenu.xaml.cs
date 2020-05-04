@@ -74,13 +74,15 @@ namespace Property_Tycoon
             rect.Fill = getColour();
             PropertyName.Content = property.getName();
             if (!property.getColour().Equals(Group.Utility) || !property.getColour().Equals(Group.Station))
-            { PropertyInfo.Content = 
-                  "Base rent :            \t £" + property.getRent1() +"\n"
-                + "Rent with 1 property  :\t £" + property.getRent2() + "\n"
-                + "Rent with 2 properties:\t £" + property.getRent3() + "\n"
-                + "Rent with 3 properties:\t £" + property.getRent4() + "\n"
-                + "Rent with 4 properties:\t £" + property.getRent5() + "\n"
-                + "Rent with Hotel:       \t £" + property.getHotel() + "\n";
+            {
+                PropertyInfo.Content =
+                    "Base rent :            \t £" + property.getRent1() + "\n"
+                  + "Rent with 1 property  :\t £" + property.getRent2() + "\n"
+                  + "Rent with 2 properties:\t £" + property.getRent3() + "\n"
+                  + "Rent with 3 properties:\t £" + property.getRent4() + "\n"
+                  + "Rent with 4 properties:\t £" + property.getRent5() + "\n"
+                  + "Rent with Hotel:       \t £" + property.getHotel() + "\n"
+                  + " Owner: \t" + property.getOwner(); 
             }
             if (property.getColour().Equals(Group.Station))
             {
@@ -88,7 +90,8 @@ namespace Property_Tycoon
                  "Rent with 1 Station : \t£" + property.getRent1() + "\n"
                 + "Rent with 2 Stations: \t£" + property.getRent2() + "\n"
                 + "Rent with 3 Stations: \t£" + property.getRent3() + "\n"
-                + "Rent with 4 Stations: \t£" + property.getRent4() + "\n";
+                + "Rent with 4 Stations: \t£" + property.getRent4() + "\n"
+                + " Owner: \t" + property.getOwner();
 
             }
 
@@ -98,7 +101,9 @@ namespace Property_Tycoon
                 PropertyInfo.FontSize = 13;
                 PropertyInfo.Content = "\n"
                 + "Rent with 1 Utility: 4* the value \n\tshown on the dice. \n\n"
-                + "Rent with 2 Utilities: 10* the \n\t value shown on the\n\t dice.\n";
+                + "Rent with 2 Utilities: 10* the \n\t value shown on the\n\t dice.\n"
+                + " Owner: \t" + property.getOwner();
+
 
             }
         }

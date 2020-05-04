@@ -476,6 +476,9 @@ namespace Property_Tycoon
         {
             return this;
         }
+        public String getPieceImg() {
+            return piece.getfilePath();
+        }
 
         public bool Checkgrouping(Property p) {
             ArrayList temp = CurrentGame.getList(p);
