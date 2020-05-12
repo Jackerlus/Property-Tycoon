@@ -577,7 +577,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Rectangle HorizontalAlignment="Left" Height="90" Margin="231,629,0,0" Stroke="Black" VerticalAlignment="Top" Width="59"/>
+        <Rectangle HorizontalAlignment="Left" Height="90" Margin="231,629,0,0" Stroke="Black" VerticalAlignment="Top" Width="59" AutomationProperties.Name=""/>
         <Rectangle x:Name="Property6_Copy" HorizontalAlignment="Left" Height="18" Margin="297,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property8_Copy" HorizontalAlignment="Left" Height="18" Margin="181,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property9_Copy" HorizontalAlignment="Left" Height="18" Margin="122,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="43"/>
@@ -740,7 +740,7 @@
             </Image.RenderTransform>
         </Image>
         <Image HorizontalAlignment="Left" Height="52" Margin="524,41,0,0" VerticalAlignment="Top" Width="52" Source="/water.png"/>
-        <TextBlock x:Name="Label39_Copy" HorizontalAlignment="Left" Height="26" Margin="-33,227,0,0" Text="Opportunity Knocks" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBlock x:Name="Label39_Copy" HorizontalAlignment="Left" Height="26" Margin="-33,227,0,0" Text="Pot Luck" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -782,7 +782,7 @@
             </Image.RenderTransform>
         </Image>
         <Image HorizontalAlignment="Left" Height="55" Margin="234,651,0,0" VerticalAlignment="Top" Width="55" Source="/monopolyquestionmark.jpg"/>
-        <TextBlock x:Name="Label39_Copy2" HorizontalAlignment="Left" Height="26" Margin="-321,228,0,0" Text="Pot Luck" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBlock x:Name="Label39_Copy2" HorizontalAlignment="Left" Height="26" Margin="-321,228,0,0" Text="Opportunity Knocks" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
