@@ -123,10 +123,13 @@ namespace Property_Tycoon
 
         private void MortgageBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (currentProperty.getMortgaged() == false)
+            if (currentProperty.getMortgaged() == false && currentProperty.hotelCheck() == false && currentProperty.checkHouses() == 0)
             {
                 CurrentPlayer.MortgageProperty(currentProperty);
-                
+
+            }
+            else {
+                MessageBox.Show("Error please sell all Improvements first");
             }
 
         }
@@ -135,9 +138,12 @@ namespace Property_Tycoon
 
         private void UnMortgageBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (currentProperty.getMortgaged() == true)
+            if (currentProperty.getMortgaged() == true && CurrentPlayer.getMoney() > 0)
             {
                 CurrentPlayer.UnMortgageProperty(currentProperty);
+            }
+            else {
+                MessageBox.Show("You dont have enough money to buy back property");
             }
 
         }
@@ -163,7 +169,7 @@ namespace Property_Tycoon
 
         private void BuyHotelbtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show( currentProperty.convertHouseToHotel());
+            MessageBox.Show(currentProperty.convertHouseToHotel());
         }
 
         private void sellHotelbtn_Click(object sender, RoutedEventArgs e)

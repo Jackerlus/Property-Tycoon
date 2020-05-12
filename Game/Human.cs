@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace Property_Tycoon
 {
-    class Human : Player
+    public class Human : Player
     {
         private int JAIL = 31;
         private int VISITING = 11;
         private int GO = 0;
         private int FREE = 5;
-        private int Pot1 = 3;
+        private int Pot1 = 2;
         private int Pot2 = 34;
         public ArrayList properties;
         
@@ -24,6 +25,9 @@ namespace Property_Tycoon
         private bool rollBan;
         private int numJailFree;
         private Piece piece;
+        private bool PassedGo;
+        private int turnCount;
+        private bool isretired;
         int moveSpace;
   
       
@@ -38,6 +42,9 @@ namespace Property_Tycoon
         /// <param name="cg"></param>
         public Human(string name, int money, Piece _piece, Board cg)
         {
+            PassedGo = false;
+            turnCount = 0;
+            isretired = false;
             
             this.money = money;
             this.playerName = name;
@@ -121,7 +128,16 @@ namespace Property_Tycoon
             return money;
 
         }
-      
+
+        public void addToPropertyArray(Property p) {
+            properties.Add(p);
+        }
+
+        public void RemoveFromPropertyArray(Property p)
+        {
+            properties.Remove(p);
+        }
+
         /// <summary>
         /// this method allows the user to purchase a property
         /// </summary>
@@ -129,28 +145,35 @@ namespace Property_Tycoon
         public String buyProperty(Property p)
         {
             String s = "";
-            if (p.isBankOwned())
+            if (HasPassedGo() == true)
             {
-                s = p.getName() + " aquired";
-                money = money - p.getCost();
-                p.setBankOwned(false);
-                p.SetOwner(this);
-                properties.Add(p);
-            }
+                if (p.isBankOwned())
+                {
+                    s = p.getName() + " aquired";
+                    addmoney(-p.getCost());
+                    p.setBankOwned(false);
+                    p.SetOwner(this);
+                    properties.Add(p);
+                }
 
-            else if (p.getPlayer() == this)
-            {
-                s = "You already own this";
-            }
-            else if (getMoney() < p.getCost()) {
-                s = " You cannot afford this property";
-            }
+                else if (p.getPlayer() == this)
+                {
+                    s = "You already own this";
+                }
+                else if (getMoney() < p.getCost())
+                {
+                    s = " You cannot afford this property";
+                }
 
-            else
-            {
-                s = p.getName() + " is owned by" + p.getOwner();
+                else
+                {
+                    s = p.getName() + " is owned by" + p.getOwner();
+                }
             }
-            MessageBox.Show(s);
+            else {
+                s = "Please pass go before attempting to buy";
+            }
+            System.Windows.MessageBox.Show(s);
             return s;
         }
         /// <summary>
@@ -234,6 +257,7 @@ namespace Property_Tycoon
         /// <param name="index"></param>
         /// <returns></returns>
         public Property GetProperty(int index) {
+            
             return (Property)properties[index];
         }
         /// <summary>
@@ -266,14 +290,26 @@ namespace Property_Tycoon
                 p.mortgageProperty(p);
             }
         }
-
+        /// <summary>
+        /// a method to unmortgage a property 
+        /// </summary>
+        /// <param name="p"></param>
         public void UnMortgageProperty(Property p)
         {
             if (this.properties.Contains(p))
             {
                 addmoney(-((p.getCost()/2)+Convert.ToInt32(0.1*p.getCost())));
                 p.mortgageProperty(p);
+                System.Windows.MessageBox.Show(" Property no longer has a mortgage");
             }
+        }
+        /// <summary>
+        /// returns if the player has passed go
+        /// </summary>
+        /// <returns></returns>
+        public bool HasPassedGo() {
+
+            return PassedGo;
         }
         /// <summary>
         /// method to move a player around the board
@@ -282,12 +318,48 @@ namespace Property_Tycoon
         /// <returns></returns>
         public int move(int val)
         {
+
             setPosition(getPosition() + val);
             if (getPosition() > 40 && position != JAIL)
             {
-                setPosition(getPosition() % 40);
+                PassedGo = true;
+                setPosition(getPosition() % 39);
                 CurrentGame.GoTile.action(getPlayer());
-            }               
+
+              
+            }
+            if (HasPassedGo() == true && CurrentGame.GetProperty(getPosition()) is Property)
+            {
+                if (CurrentGame.GetProperty(getPosition()).isBankOwned() == true)
+                {
+                    String message = "this property doesnt have an owner. do you want to buy it?";
+                    string caption = "Option to purchase"+ CurrentGame.GetProperty(getPosition()).getName();
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result;
+
+                    result = System.Windows.Forms.MessageBox.Show(message, caption, buttons);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        System.Windows.Forms.MessageBox.Show("" + getPosition());
+
+                        if (CurrentGame.returnProperties()[this.getPosition()] is Property)
+                        {
+                            Property p = (Property)CurrentGame.returnProperties()[this.getPosition()];
+                            this.buyProperty((Property)CurrentGame.returnProperties()[this.getPosition()]);
+
+                        }
+                        else
+                        {
+                            System.Windows.MessageBox.Show("you cannot buy this...");
+                        }
+                    }
+                    else
+                    {
+                        new Auction(CurrentGame, CurrentGame.GetProperty(getPosition())).ShowDialog();
+                    }
+
+                }
+            }
             if (getPosition() == JAIL) {
                    goToJail();
                }
@@ -299,36 +371,48 @@ namespace Property_Tycoon
             {
                 CurrentGame.GoTile.action(getPlayer());
             }
-            if (getPosition() == 8 || getPosition() == 23)
+            if (getPosition() == 7|| getPosition() == 23)
             {
-                MessageBox.Show(" Opportunity knocks");
+                System.Windows.MessageBox.Show(" Opportunity knocks");
                 CurrentGame.opportunities.action(this);
             }
             if (getPosition() == Pot1 || getPosition() == Pot2)
             {
-                MessageBox.Show(" PotLuck");
+                System.Windows.MessageBox.Show(" Pot Luck");
                 CurrentGame.potLuck.action(this);
             }
-            if (getPosition() == 5)
+            if (getPosition() == 4)
             {
-                MessageBox.Show(CurrentGame.incomeTax.action(this));
+                System.Windows.MessageBox.Show(CurrentGame.incomeTax.action(this));
             }
             if (getPosition() == 39)
             {
-                MessageBox.Show(CurrentGame.SuperTax.action(this));
+                System.Windows.MessageBox.Show(CurrentGame.SuperTax.action(this));
             }
             if (CurrentGame.GetProperty(getPosition()) != null)
             {
                 if (CurrentGame.GetProperty(getPosition()).isBankOwned() == false) {
                     if (CurrentGame.GetProperty(getPosition()).getPlayer() != getPlayer() )
                     {
-                     CurrentGame.GetProperty(getPosition()).getPlayer().addmoney(CurrentGame.GetProperty(getPosition()).getRent());
-                    addmoney(-CurrentGame.GetProperty(getPosition()).getRent());
-                    MessageBox.Show("rent of " + CurrentGame.GetProperty(getPosition()).getRent()+" paid from " + getName() +" to " + CurrentGame.GetProperty(getPosition()).getOwner());
+                        if (Checkgrouping(CurrentGame.GetProperty(getPosition())) == true)
+                        {
+                            CurrentGame.GetProperty(getPosition()).getPlayer().addmoney(CurrentGame.GetProperty(getPosition()).getRent() + CurrentGame.GetProperty(getPosition()).getRent());
+                            addmoney(-CurrentGame.GetProperty(getPosition()).getRent() * 2);
+                            System.Windows.MessageBox.Show("rent of " + CurrentGame.GetProperty(getPosition()).getRent() * 2 + " paid from " + getName() + " to " + CurrentGame.GetProperty(getPosition()).getOwner());
+                        }
+                        else { 
+                            CurrentGame.GetProperty(getPosition()).getPlayer().addmoney(CurrentGame.GetProperty(getPosition()).getRent());
+                            addmoney(-CurrentGame.GetProperty(getPosition()).getRent());
+                            System.Windows.MessageBox.Show("rent of " + CurrentGame.GetProperty(getPosition()).getRent()  + " paid from " + getName() + " to " + CurrentGame.GetProperty(getPosition()).getOwner());
+
+
+                        }
+
                     }
                     
                 }
             }
+   
 
 
 
@@ -363,10 +447,10 @@ namespace Property_Tycoon
                 {
 
                     moveSpace = moveSpace + dice.rollValue();
-                    MessageBox.Show(moveSpace + "");
+                    System.Windows.MessageBox.Show(moveSpace + "");
                     if (dice.getDie1() == dice.getDie2())
                     {
-                        MessageBox.Show("Double 1!! both dice show " + dice.getDie1());
+                        System.Windows.MessageBox.Show("Double 1!! both dice show " + dice.getDie1());
 
                         dice.Rolls();
 
@@ -374,14 +458,14 @@ namespace Property_Tycoon
 
                         if (dice.getDie1() == dice.getDie2())
                         {
-                            MessageBox.Show("Double 2 !! Again! both dice show " + dice.getDie1());
+                            System.Windows.MessageBox.Show("Double 2 !! Again! both dice show " + dice.getDie1());
                             dice.Rolls();
                             moveSpace = moveSpace + dice.rollValue();
 
 
                             if (dice.getDie1() == dice.getDie2())
                             {
-                                MessageBox.Show("Jail time for you");
+                                System.Windows.MessageBox.Show("Jail time for you");
                                 goToJail();
                                 moveSpace = VISITING;
                             }
@@ -392,24 +476,24 @@ namespace Property_Tycoon
                 }
                 move(moveSpace);
             }
-            else if (inJail && jailTurn < 3 && dice.getDie1() == dice.getDie2())
+             else if (inJail && jailTurn < 3 && dice.getDie1() == dice.getDie2())
             {
 
                 jailTurn++;
                 rollBan = true;
-                MessageBox.Show("No double.you remain in jail");
+                System.Windows.MessageBox.Show("No double.you remain in jail");
             }
-            else if (inJail && jailTurn == 3)
+             else if (inJail && jailTurn == 3)
             {
                 leaveJail();
                 addmoney(-50);
                 rollBan = true;
                 jailTurn = 0;
-                MessageBox.Show("youve paid 50 and have left jail");
+                System.Windows.MessageBox.Show("youve paid 50 and have left jail");
             }
             else 
             {
-                MessageBox.Show("You have Previously Rolled please end your turn");
+                System.Windows.MessageBox.Show("You have Previously Rolled please end your turn");
             }
 
             return "";
@@ -462,6 +546,7 @@ namespace Property_Tycoon
         /// method that ends the players turn
         /// </summary>
         public void endTurn() {
+            turnCount++;
             rollBan = false;
         }
         /// <summary>
@@ -471,15 +556,26 @@ namespace Property_Tycoon
         public bool isInJail() {
             return inJail;
         }
-
+        /// <summary>
+        /// a method that returns a player
+        /// </summary>
+        /// <returns></returns>
         public Player getPlayer()
         {
+            
             return this;
-        }
+        }/// <summary>
+        /// A method to return the image filepath
+        /// </summary>
+        /// <returns></returns>
         public String getPieceImg() {
             return piece.getfilePath();
         }
-
+        /// <summary>
+        /// A method that sees if the player owns the set of properties
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public bool Checkgrouping(Property p) {
             ArrayList temp = CurrentGame.getList(p);
             int counter = 0;
@@ -489,9 +585,11 @@ namespace Property_Tycoon
                 if (temp[counter] is Property)
                 {
                     Property T = (Property)temp[counter];
+
                     if (T.getPlayer() == getPlayer())
                     {
                         flag = true;
+                       
                     }
                     else {
                         flag = false;
@@ -499,13 +597,22 @@ namespace Property_Tycoon
                 }
                 counter++;
             }
+            System.Windows.MessageBox.Show(""+flag);
             return flag;
         }
-        
-
-
-
-        
+        /// <summary>
+        /// a method that retires a player from the game
+        /// </summary>
+        public void retire()
+        {
+            foreach (Property item in properties)
+            {
+                isretired = true;
+                item.retire();
+                CurrentGame.removePlayer(this);
+                System.Windows.MessageBox.Show("player withdrawn");
+            }
+        }
     }
     
 }

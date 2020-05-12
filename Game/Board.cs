@@ -111,23 +111,54 @@ namespace Property_Tycoon
             addGroup();
 
         }
+        /// <summary>
+        /// this method removes a player 
+        /// </summary>
+        /// <param name="p"></param>
+        public void removePlayer(Player p) {
+            if (Players.Count != 1)
+            {
+                Players.Remove(p);
+                Players.TrimToSize();
+            }
+            else {
+                MessageBox.Show(p.getName() +"Wins!!");
+                    }
+            }
+        /// <summary>
+        /// this method gets the game type
+        /// </summary>
+        /// <returns></returns>
         public int getGameType()
         {
             return mode;
         }
+        /// <summary>
+        /// This method sets the game type 
+        /// </summary>
+        /// <param name="val"></param>
         public void SetGameType(int val)
         {
              mode = val;
-        }
+        }/// <summary>
+        /// This method gets the current time
+        /// </summary>
+        /// <returns></returns>
         public int getTime()
         {
             return time;
         }
+        /// <summary>
+        /// this method sets the time
+        /// </summary>
+        /// <param name="val"></param>
         public  void setTime(int val) {
             time = val;
         }
 
-
+        /// <summary>
+        /// this method sets the new pieces
+        /// </summary>
         private void populatePieces()
         {
                 pieces.Add(new Piece("Boot", "/Images/boot.png"));
@@ -138,7 +169,10 @@ namespace Property_Tycoon
                 pieces.Add(new Piece("Spoon", "/Images/spoon.png"));
             
         }
-
+        /// <summary>
+        /// This method generates the Board pieces
+        /// </summary>
+        /// <returns></returns>
         public ArrayList getBoardPieces() {
             ArrayList A = new ArrayList();
             foreach (Piece item in pieces)
@@ -150,7 +184,11 @@ namespace Property_Tycoon
             }
             return A;
         }
-        
+        /// <summary>
+        /// this method gets a current game piece
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public Piece getPiece(int val) {
             return (Piece)pieces[val];
         }
@@ -186,6 +224,9 @@ namespace Property_Tycoon
 
 
         }
+        /// <summary>
+        /// this method checks the minimum number of players
+        /// </summary>
         private void checkPlayers()
         {
             if (getNoOfPlayers() < 2)
@@ -193,6 +234,10 @@ namespace Property_Tycoon
                 throw new NotEnoughPlayersException();
             }
         }
+        /// <summary>
+        /// this method adds a player to the array
+        /// </summary>
+        /// <param name="p"></param>
         public void addToArray(Player p) {
             Players.Add(p);
         }
@@ -301,7 +346,10 @@ namespace Property_Tycoon
             }
             
         }
-
+        /// <summary>
+        /// this method gets the players names
+        /// </summary>
+        /// <returns></returns>
         public ArrayList getPlayerNames()
         {
             ArrayList names = new ArrayList();
@@ -317,6 +365,10 @@ namespace Property_Tycoon
             }
             return names;
         }
+        /// <summary>
+        /// this method gets the piece names
+        /// </summary>
+        /// <returns></returns>
         public ArrayList getPieceNames()
         {
             ArrayList names = new ArrayList();
@@ -438,6 +490,11 @@ namespace Property_Tycoon
             }
             
         }
+        /// <summary>
+        /// this method gets the name of the tile 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public String getspaceName(int val) {
             if (Tiles[val] is Property)
             {
@@ -486,6 +543,9 @@ namespace Property_Tycoon
                 return "NotFound ";
             }
         }
+        /// <summary>
+        /// this method abridges the game
+        /// </summary>
         public void abridgeGame()
         {
             string S ="";
@@ -495,7 +555,11 @@ namespace Property_Tycoon
             }
             MessageBox.Show(S);
         }
-
+        /// <summary>
+        /// this method calculates the assets of each player
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         private int calcAssets(Human p)
         {
             int houseCounter = 0;

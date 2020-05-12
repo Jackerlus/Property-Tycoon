@@ -5,6 +5,12 @@
     <Compile Update="addPlayer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Auction.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GetPlayerToTrade.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Player Prototype.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -15,6 +21,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SetTime.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TradeScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Window1.xaml.cs">
@@ -28,6 +37,12 @@
     <Page Update="addPlayer.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Auction.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GetPlayerToTrade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Player Prototype.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -38,6 +53,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SetTime.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TradeScreen.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Window1.xaml">

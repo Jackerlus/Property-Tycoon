@@ -90,12 +90,25 @@ namespace Property_Tycoon
 
         private void Normal_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentBoard.getNoOfPlayers() >= 2)
+            {
+                CurrentBoard.setTime(900000000);
+                CurrentBoard.SetGameType(0);
 
+
+                Close();
+            }
+            else {
+                MessageBox.Show("The minimum players must be 2");
+            
+            }
+                
         }
 
         private void Abridged_Click(object sender, RoutedEventArgs e)
         {
-            try
+
+            if (CurrentBoard.getNoOfPlayers() >=2)
             {
                 SetTime T = new SetTime();
                 T.ShowDialog();
@@ -105,12 +118,22 @@ namespace Property_Tycoon
                 CurrentBoard.SetGameType(1);
                 Close();
             }
-            catch (Exception)
+            else
             {
+                MessageBox.Show("The minimum players must be 2");
 
-                throw;
             }
+            
 
         }
+
+        private void RemovePlayer_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentBoard.getPlayerList().Remove(ListView.SelectedItem);
+            CurrentBoard.getPlayerList().TrimToSize();
+
+        }
+
+
     }
 }

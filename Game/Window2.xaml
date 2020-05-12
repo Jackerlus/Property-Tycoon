@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Property_Tycoon"
         mc:Ignorable="d"
+        Background="Cornsilk"
         
         Title="Add Player" Height="119" Width="304">
     <Grid Height="98">

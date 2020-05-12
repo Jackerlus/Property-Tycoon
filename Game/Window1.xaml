@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Property_Tycoon"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid Height="385" Margin="0,0,100,0">
-        <Label  Name="message" Content="" HorizontalAlignment="Left" Height="104" Margin="187,68,0,0" VerticalAlignment="Top" Width="368"/>
-        <Button Content="Pay" HorizontalAlignment="Left" Height="99" Margin="187,217,0,0" VerticalAlignment="Top" Width="152" Click="Button_Click"/>
-        <Button Content="Draw" HorizontalAlignment="Left" Height="99" Margin="403,217,0,0" VerticalAlignment="Top" Width="152" Click="Button_Click_1"/>
-        <Label Content="Or" HorizontalAlignment="Center" Height="46" Margin="0,172,0,0" VerticalAlignment="Top" Width="100"/>
+         Background="Cornsilk"
+        Title="Pick or Draw" Height="369" Width="524" ResizeMode="NoResize">
+    <Grid Height="385" Margin="30,0,70,0">
+        <Label  Name="message" Content="" HorizontalAlignment="Left" Height="104" Margin="50,55,0,0" VerticalAlignment="Top" Width="368" FontSize="18"/>
+        <Button Content="Pay" HorizontalAlignment="Left" Height="99" Margin="50,230,0,0" VerticalAlignment="Top" Width="152" Click="Button_Click" FontSize="20"/>
+        <Button Content="Draw" HorizontalAlignment="Left" Height="99" Margin="253,230,0,0" VerticalAlignment="Top" Width="152" Click="Button_Click_1" FontSize="20"/>
+        <Label Content="Or" HorizontalAlignment="Left" Height="66" Margin="190,143,0,0" VerticalAlignment="Top" Width="100" FontSize="48"/>
 
     </Grid>
 </Window>

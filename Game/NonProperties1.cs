@@ -13,17 +13,27 @@ namespace Property_Tycoon
         string action(Player p);
         String getName();
     }
+    /// <summary>
+    /// this is the Income Tax Class
+    /// </summary>
     class IncomeTax : Space, NonProperties
     {
         public IncomeTax(int position) : base(position)
         {
 
         }
-
+        /// <summary>
+        /// this method returns the name of the class
+        /// </summary>
+        /// <returns></returns>
         public String getName() {
             return "Income Tax"; ;
         }
-
+        /// <summary>
+        /// this method adds 200 to the players money
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public string action(Player player)
         {
             String s = " you have paid $200";
@@ -31,6 +41,9 @@ namespace Property_Tycoon
             return s;
         }
     }
+    /// <summary>
+    /// this method is for the Opportunity class
+    /// </summary>
     class Opportunity : Space, NonProperties
     {
         Cards c;
@@ -44,6 +57,11 @@ namespace Property_Tycoon
         {
             return "Opportinity Knocks"; ;
         }
+        /// <summary>
+        /// this method draws an opportunity knocks card
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public string action(Player p)
         {
            
@@ -51,6 +69,9 @@ namespace Property_Tycoon
                 return "";
         }
     }
+    /// <summary>
+    /// this is the class for the Pot Luck class
+    /// </summary>
     class Pot : Space, NonProperties
     {
         
@@ -61,12 +82,19 @@ namespace Property_Tycoon
             c = Deck;
 
         }
-        
+        /// <summary>
+        /// this method returns the name
+        /// </summary>
+        /// <returns></returns>
         public String getName()
         {
             return "Pot Luck"; ;
         }
-
+        /// <summary>
+        /// this method draws from the pot luck
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public string action(Player p)
         {
 
@@ -76,7 +104,9 @@ namespace Property_Tycoon
         }
     }
 
-
+    /// <summary>
+    /// This is the class for the Super tax class
+    /// </summary>
     class SuperTax : Space, NonProperties
     {
         public SuperTax(int position) : base(position)
@@ -102,7 +132,7 @@ namespace Property_Tycoon
     /// <summary>
     /// class for the goal tile
     /// </summary>
-    class Go : Space, NonProperties
+   public class Go : Space, NonProperties
     {
         public Go(int position) : base(position)
         {

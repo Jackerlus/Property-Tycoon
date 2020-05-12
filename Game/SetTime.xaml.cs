@@ -25,7 +25,16 @@ namespace Property_Tycoon
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            time = (Convert.ToInt32(Hour.Text) * 3600) + (Convert.ToInt32(Minutes.Text) * 60) + (Convert.ToInt32(Seconds.Text));
+            try
+            {
+time = (Convert.ToInt32(Hour.Text) * 3600) + (Convert.ToInt32(Minutes.Text) * 60) + (Convert.ToInt32(Seconds.Text));
+            }
+            catch (System.FormatException)
+            {
+
+                
+            }
+            
             Close();
 
         }

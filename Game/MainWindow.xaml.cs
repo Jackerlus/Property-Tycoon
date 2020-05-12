@@ -30,21 +30,24 @@ namespace Property_Tycoon
             properties = currentGame.returnProperties();
             prop = currentGame.getPlayerList();
             counter = currentGame.getTime();
+
             currentPlayer = (Player)prop[0];
+            currentPlayer.moveto(39);
+            
+
             InitializeComponent();
+            
             StartTime();
    
             generateBoard();
             generatePropertyText();
+            update();
 
 
 
 
         }
-        public void update()
-        {
-            
-        }
+
         private void StartTime()
         {
             timer1 = new System.Windows.Forms.Timer();
@@ -149,18 +152,9 @@ namespace Property_Tycoon
 
             }
 
-        private void EndTurnBtn_Click_1(object sender, RoutedEventArgs e)
+        private void update()
         {
-            if (prop.Count == prop.IndexOf(currentPlayer) + 1)
-            {
-                currentPlayer = (Player)prop[0];
-            }
-            else
-            {
-                currentPlayer = (Player)prop[prop.IndexOf(currentPlayer) + 1];
-            }
-            
-            currentPlayer.endTurn();
+
             ImageBox.Source = new BitmapImage(new Uri("H:/PropertyTycoon2/Game/" + currentPlayer.getPieceImg()));
             CurrentPlayerInfo.Content =
              "Name:  " + currentPlayer.getName() + "\n" +
@@ -169,16 +163,23 @@ namespace Property_Tycoon
                               "GOJFC: " + currentPlayer.getJailFreeNo() + "\n"
                               + "injail?: " + currentPlayer.isInJail() + "\n" +
                               "jailno: " + currentPlayer.getJailTurns() + "\n" + "Properties List: \n";
-
+            OwnedProperties.ItemsSource = (currentPlayer.getPropertyNames());
         }
 
-        private void EndTurnBtn_Click1(object sender, RoutedEventArgs e)
+        private void EndTurnBtn_Click(object sender, RoutedEventArgs e)
         {
-            Uri resourceUri = new Uri("H:/PropertyTycoon2/Game/Images/utility.png", UriKind.Relative);
-            System.Windows.MessageBox.Show(ImageBox.Source.ToString());
-            //@"H:\PropertyTycoon2/Game\Images\utility.png")
+            
+                 if (prop.Count == prop.IndexOf(currentPlayer) + 1)
+                 {
+                     currentPlayer = (Player)prop[0];
+                 }
+                 else
+                 {
+                     currentPlayer = (Player)prop[prop.IndexOf(currentPlayer) + 1];
+                 }
 
-           ImageBox.Source = new BitmapImage(new Uri("H:/PropertyTycoon2/Game/"+currentPlayer.getPieceImg() ));
+                 currentPlayer.endTurn();
+            update();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -190,12 +191,64 @@ namespace Property_Tycoon
              
 
                 currentprop = currentPlayer.GetProperty(OwnedProperties.SelectedIndex);
+                update();
             }
             catch (Exception)
             {
 
 
             }
+        }
+
+        private void DisplayBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                new PlayerMenu(currentprop,(Human)currentPlayer).ShowDialog();
+                update();
+            }
+            catch (NullReferenceException )
+            {
+
+                System.Windows.MessageBox.Show("Please seleect a property first");
+            }
+        }
+
+        private void RollBtn_Click(object sender, RoutedEventArgs e)
+        {
+            currentPlayer.rolldice();
+            update();
+        }
+
+
+        private void BuyProperty_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (properties[currentPlayer.getPosition()] is Property)
+            {
+                Property p = (Property)properties[currentPlayer.getPosition()];
+                currentPlayer.buyProperty((Property)properties[currentPlayer.getPosition()]);
+
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("you cannot buy this...");
+            }
+            update();
+
+        }
+
+        private void Retire_Click(object sender, RoutedEventArgs e)
+        {
+            currentPlayer.retire();
+            update();
+
+        }
+
+        private void Trade_Click(object sender, RoutedEventArgs e)
+        {
+             new TradeScreen(currentPlayer, currentGame).ShowDialog();
+             update();
         }
     }
 }
