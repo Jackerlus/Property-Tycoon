@@ -17,6 +17,13 @@
             <Label x:Name="PropertyInfo" FontWeight="DemiBold"  FontSize="12" BorderThickness="3px" Height="175" Width="195"/>
 
         </StackPanel>
+        <Button x:Name="MortgageBtn" Content="Mortgage" HorizontalAlignment="Left" Height="80" Margin="435,39,0,0" VerticalAlignment="Top" Width="200" Click="MortgageBtn_Click"/>
+        <Button x:Name="UnMortgageBtn" Content="Unmortgage" HorizontalAlignment="Left" Height="80" Margin="435,134,0,0" VerticalAlignment="Top" Width="200" Click="UnMortgageBtn_Click"/>
+        <Button x:Name="BuyHousebtn" Content="Buy House" HorizontalAlignment="Left" Height="80" Margin="435,234,0,0" VerticalAlignment="Top" Width="100" Click="BuyHousebtn_Click"/>
+        <Button x:Name="sellHousebtn" Content="Sell House" HorizontalAlignment="Left" Height="80" Margin="535,234,0,0" VerticalAlignment="Top" Width="100" Click="sellHousebtn_Click"/>
+        <Button x:Name="BuyHotelbtn" Content="Buy Hotel" HorizontalAlignment="Left" Height="80" Margin="435,329,0,0" VerticalAlignment="Top" Width="100" Click="BuyHotelbtn_Click"/>
+        <Button x:Name="sellHotelbtn" Content="Sell Hotel" HorizontalAlignment="Left" Height="80" Margin="535,329,0,0" VerticalAlignment="Top" Width="100" Click="sellHotelbtn_Click"/>
+
 
 
     </Grid>

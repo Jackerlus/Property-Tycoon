@@ -19,23 +19,34 @@ namespace Property_Tycoon
     /// </summary>
     public partial class PlayerMenu : Window
     {
-        Property property;
+        Human CurrentPlayer;
+        Property currentProperty;
         ArrayList images;
-        
-        public PlayerMenu(Property p)
+        /// <summary>
+        /// constructor for the class
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="player"></param>
+        public PlayerMenu(Property p,Human player)
         {
-  
-            property = p;
+
+            CurrentPlayer = player;
+            currentProperty = p;
             InitializeComponent();
             Refresh();
         }
+        /// <summary>
+        /// a method that gets the brush colour for a particualr property
+        /// </summary>
+        /// <returns></returns>
         private Brush getColour() {
-            switch (property.getColour())
+            switch (currentProperty.getColour())
             {
                 case Group.Brown:
                     return Brushes.Brown;
                 case Group.Blue:
-                    return Brushes.Blue;
+                    return Brushes.LightBlue;
+
                 case Group.Purple:
                     return Brushes.Purple;
                     
@@ -62,50 +73,102 @@ namespace Property_Tycoon
                     return Brushes.LightGray;
                     
                 default:
-                    return null;
+                    return Brushes.Fuchsia;
             }
 
         }
 
-
+        /// <summary>
+        /// a method that changes the property in view.
+        /// </summary>
         private void Refresh()
         {
 
             rect.Fill = getColour();
-            PropertyName.Content = property.getName();
-            if (!property.getColour().Equals(Group.Utility) || !property.getColour().Equals(Group.Station))
+            PropertyName.Content = currentProperty.getName();
+            if (!currentProperty.getColour().Equals(Group.Utility) || !currentProperty.getColour().Equals(Group.Station))
             {
                 PropertyInfo.Content =
-                    "Base rent :            \t £" + property.getRent1() + "\n"
-                  + "Rent with 1 property  :\t £" + property.getRent2() + "\n"
-                  + "Rent with 2 properties:\t £" + property.getRent3() + "\n"
-                  + "Rent with 3 properties:\t £" + property.getRent4() + "\n"
-                  + "Rent with 4 properties:\t £" + property.getRent5() + "\n"
-                  + "Rent with Hotel:       \t £" + property.getHotel() + "\n"
-                  + " Owner: \t" + property.getOwner(); 
+                    "Base rent :            \t £" + currentProperty.getRent1() + "\n"
+                  + "Rent with 1 house  :\t £" + currentProperty.getRent2() + "\n"
+                  + "Rent with 2 houses :\t £" + currentProperty.getRent3() + "\n"
+                  + "Rent with 3 houses :\t £" + currentProperty.getRent4() + "\n"
+                  + "Rent with 4 houses :\t £" + currentProperty.getRent5() + "\n"
+                  + "Rent with Hotel:       \t £" + currentProperty.getHotel() + "\n"
+                  + " Owner: \t" + currentProperty.getOwner(); 
             }
-            if (property.getColour().Equals(Group.Station))
+            if (currentProperty.getColour().Equals(Group.Station))
             {
                 PropertyInfo.Content = 
-                 "Rent with 1 Station : \t£" + property.getRent1() + "\n"
-                + "Rent with 2 Stations: \t£" + property.getRent2() + "\n"
-                + "Rent with 3 Stations: \t£" + property.getRent3() + "\n"
-                + "Rent with 4 Stations: \t£" + property.getRent4() + "\n"
-                + " Owner: \t" + property.getOwner();
+                 "Rent with 1 Station : \t£" + currentProperty.getRent1() + "\n"
+                + "Rent with 2 Stations: \t£" + currentProperty.getRent2() + "\n"
+                + "Rent with 3 Stations: \t£" + currentProperty.getRent3() + "\n"
+                + "Rent with 4 Stations: \t£" + currentProperty.getRent4() + "\n"
+                + " Owner: \t" + currentProperty.getOwner();
 
             }
 
         
-            if(property.getColour().Equals( Group.Utility)) {
+            if(currentProperty.getColour().Equals( Group.Utility)) {
                
                 PropertyInfo.FontSize = 13;
                 PropertyInfo.Content = "\n"
                 + "Rent with 1 Utility: 4* the value \n\tshown on the dice. \n\n"
                 + "Rent with 2 Utilities: 10* the \n\t value shown on the\n\t dice.\n"
-                + " Owner: \t" + property.getOwner();
+                + " Owner: \t" + currentProperty.getOwner();
 
 
             }
+        }
+
+        private void MortgageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentProperty.getMortgaged() == false)
+            {
+                CurrentPlayer.MortgageProperty(currentProperty);
+                
+            }
+
+        }
+
+
+
+        private void UnMortgageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentProperty.getMortgaged() == true)
+            {
+                CurrentPlayer.UnMortgageProperty(currentProperty);
+            }
+
+        }
+
+        private void BuyHousebtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                currentProperty.addHouse();
+                System.Windows.Forms.MessageBox.Show("Houses: " + currentProperty.checkHouses() + " Rent Value: " + currentProperty.getRent());
+            }
+            catch (System.NullReferenceException NoHouseSelected)
+            {
+
+                System.Windows.Forms.MessageBox.Show("Please select a currentProperty you own before attempting to add a house");
+            }
+        }
+
+        private void sellHousebtn_Click(object sender, RoutedEventArgs e)
+        {
+            currentProperty.sellHouse();
+        }
+
+        private void BuyHotelbtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show( currentProperty.convertHouseToHotel());
+        }
+
+        private void sellHotelbtn_Click(object sender, RoutedEventArgs e)
+        {
+            currentProperty.sellHotel();
         }
     }
 }
