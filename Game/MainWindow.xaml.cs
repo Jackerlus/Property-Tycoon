@@ -155,7 +155,7 @@ namespace Property_Tycoon
         private void update()
         {
 
-            ImageBox.Source = new BitmapImage(new Uri("H:/PropertyTycoon2/Game/" + currentPlayer.getPieceImg()));
+            ImageBox.Source = new BitmapImage(new Uri("\\" + currentPlayer.getPieceImg()));
             CurrentPlayerInfo.Content =
              "Name:  " + currentPlayer.getName() + "\n" +
                               "pos: " + currentPlayer.getPosition() + "\n" +
