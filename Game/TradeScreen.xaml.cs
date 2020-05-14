@@ -66,8 +66,20 @@ namespace Property_Tycoon
                 LeftPlayer.Clear();
                 LeftPlayer.AddRange(LeftPropetiesList.SelectedItems);
                
+
             }
 
+        }
+        private ArrayList findProperties(IList b,Player p) {
+            ArrayList temp = new ArrayList();
+            for (int i = 0; i < b.Count; i++)
+            {
+                if (b[i].Equals(p.GetProperty(i).getName()))
+                {
+                    temp.Add(p.GetProperty(i));
+                }
+            }
+            return temp;
         }
 
         private void RightPropertiesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -78,6 +90,7 @@ namespace Property_Tycoon
                 {
                     RightPlayer.Clear();
                     RightPlayer.AddRange(RightPropertiesList.SelectedItems);
+                  
                 }
             }
         
@@ -85,13 +98,7 @@ namespace Property_Tycoon
 
         private void leftConfirmBtn_Click(object sender, RoutedEventArgs e)
         {
-            String s = "";
-            foreach (var item in LeftPropetiesList.SelectedItems)
-            {
-                s += item.ToString();
-            }
-            MessageBox.Show(s);
-     
+ 
             if (Llock == false)
             {
                 Llock = true;
@@ -137,24 +144,22 @@ namespace Property_Tycoon
                 Left.addmoney(-leftMoney);
                 Right.addmoney(-RightMoney);
                 String s = "";
-                foreach (object item in RightPropertiesList.SelectedItems)
+                foreach (object item in findProperties(RightPlayer,Right))
                 {
                     if (item is Property)
                     {
                         Property p = (Property)item;
-                        s += "Was:" + p.getOwner();
                         p.SetOwner(Left);
                         Right.RemoveFromPropertyArray(p);
                         Left.addToPropertyArray(p);
-                        MessageBox.Show(p.getName() + "Has lost owner");
-                        s += "\nNOW:"+p.getOwner();
+    
                         MessageBox.Show(s);
                     }
 
                 }
-                foreach (object item in LeftPropetiesList.SelectedItems)
+                foreach (object item in findProperties(LeftPlayer,Left))
                 {
-                    currentGame.getProperties();
+                  
 
                     if (item is Property)
                     {
@@ -167,7 +172,7 @@ namespace Property_Tycoon
                 refresh();
             }
             else {
-                MessageBox.Show("both parties arent satisfied");
+                MessageBox.Show("both parties aren't satisfied");
                 Rlock = false;
                 Llock = false;
                 RightconfirmBtn.Background = Brushes.Red;
