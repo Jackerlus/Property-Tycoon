@@ -28,34 +28,63 @@ namespace Property_Tycoon
         public Auction(Board CG, Property prop)
         {
             Property = prop;
-            currentValue = 0;
+            currentValue = prop.getCost();
             CurrentGame = CG;
-            players = CG.getPlayerList();
+            players = callAuction();
+            currentBidder = (Player)players[0];
+            HighestBidder = currentBidder;
+
             InitializeComponent();
+            refresh();
         }
+
+        private ArrayList callAuction()
+        {
+            ArrayList p = new ArrayList();
+            foreach (Player item in CurrentGame.getPlayerList() )
+            {
+                if (item.HasPassedGo() == true)
+                {
+                    p.Add(item);
+                }
+            }
+            return p;
+        }
+
         private void refresh() {
-            CurrentBidlabel.Content = "CurrentBid:" +currentValue;
+            CurrentBidlabel.Content = "CurrentBid:" + currentValue;
+            HighestBidderlabel.Content = HighestBidder.getName();
             Propertylabel.Content = Property.getName() + "Base Cost :£" + Property.getCost();
-            Player p = (Player) players[0];
-            CurrentBidderlabel.Content = p.getName();
+
+            CurrentBidderlabel.Content = currentBidder.getName();
         }
         private void Nextplayer() {
-            if (players.Count == players.IndexOf(players) + 1)
+            try
             {
+                 currentBidder = (Player)players[players.IndexOf(currentBidder) + 1];
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+
                 currentBidder = (Player)players[0];
             }
-            else
-            {
-                currentBidder = (Player)players[players.IndexOf(currentBidder) + 1];
-            }
+            refresh();
         }
 
         private void submitBidBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (currentValue + bid < currentBidder.getMoney())
+            {
+                currentValue = currentValue + bid;
+                HighestBidder = currentBidder;
+                Nextplayer();
+            }
+            else {
+                MessageBox.Show("You cannot afford this bid. please choose a different value or drop out.");
+            }
            
-            currentValue = currentValue + bid;
-            HighestBidder = currentBidder;
-            Nextplayer();
+            
+            
         }
 
         private void BackOut_Click(object sender, RoutedEventArgs e)
@@ -66,13 +95,23 @@ namespace Property_Tycoon
                 Nextplayer();
             }
             else {
-                giveProperty();
-                }
-            
+                HighestBidder.addmoney(Property.getCost());
+                HighestBidder.buyProperty(Property);
+                HighestBidder.addmoney(-currentValue);
+                Close();
+            }
+            refresh();
         }
-        private void giveProperty() { 
-            HighestBidder.addmoney(Property.getCost());
-            HighestBidder.buyProperty(Property);
+        private void EnterValuebox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                bid = Convert.ToInt32(EnterValuebox.Text);
+            }
+            catch (FormatException)
+            {
+
+            }
         }
     }
 }
