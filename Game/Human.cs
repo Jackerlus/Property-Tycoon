@@ -143,7 +143,7 @@ namespace Property_Tycoon
                 if (p.isBankOwned())
                 {
                     s = p.getName() + " aquired";
-                    money = money - p.getCost();
+                    addmoney(-p.getCost());
                     p.setBankOwned(false);
                     p.SetOwner(this);
                     properties.Add(p);
@@ -334,10 +334,10 @@ namespace Property_Tycoon
                     {
                         System.Windows.Forms.MessageBox.Show("" + getPosition());
 
-                        if (properties[this.getPosition()] is Property)
+                        if (CurrentGame.returnProperties()[this.getPosition()] is Property)
                         {
-                            Property p = (Property)properties[this.getPosition()];
-                            this.buyProperty((Property)properties[this.getPosition()]);
+                            Property p = (Property)CurrentGame.returnProperties()[this.getPosition()];
+                            this.buyProperty((Property)CurrentGame.returnProperties()[this.getPosition()]);
 
                         }
                         else
