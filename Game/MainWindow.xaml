@@ -696,7 +696,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Image HorizontalAlignment="Left" Height="49" Margin="28,351,0,0" VerticalAlignment="Top" Width="49" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="49" Margin="78,347,0,0" VerticalAlignment="Top" Width="49" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

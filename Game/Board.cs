@@ -390,7 +390,7 @@ namespace Property_Tycoon
         /// </summary>
         private void PopulateGame()
         {
-            String file1 = ("H:/PropertyTycoon2/Game/properties.csv");
+            String file1 = ("properties.csv");
             Group name = Group.Station;
             const char fieldSeparator = ',';
             using (System.IO.StreamReader SR = new StreamReader(file1))    // the way to go
