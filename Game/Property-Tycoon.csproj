@@ -31,15 +31,36 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="585f90f0cb11b227491c3573.png" />
-    <Resource Include="Clipart-Email-10502696.png" />
-    <Resource Include="FreeParking.png" />
-    <Resource Include="GoToJail.png" />
-    <Resource Include="585f90f0cb11b227491c3573.png" />
-    <Resource Include="lightbulb.png" />
-    <Resource Include="monopoly-chance-clipart-1.jpg" />
-    <Resource Include="monopolyquestionmark.jpg" />
-    <Resource Include="water.png" />
+    <Resource Include="water.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    </Resource>
+    </Resource>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="monopolyquestionmark.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="monopoly-chance-clipart-1.jpg">
+    </Resource>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="lightbulb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GoToJail.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FreeParking.png">
+    </Resource>
+    <Resource Include="Clipart-Email-10502696.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="585f90f0cb11b227491c3573.png">
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="properties.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
