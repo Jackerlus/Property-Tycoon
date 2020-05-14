@@ -10,6 +10,8 @@ namespace Property_Tycoon
         void endTurn();
         int getPosition();
         string getName();
+        void RemoveFromPropertyArray(Property p);
+        void addToPropertyArray(Property p);
         String buyProperty(Property p);
         void addGetOutOfJail();
         String rolldice();

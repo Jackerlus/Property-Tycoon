@@ -681,11 +681,11 @@
         </TextBlock>
         <Image Name="ImageBox" HorizontalAlignment="Left" Height="135" Margin="760,194,0,0"  VerticalAlignment="Top" Width="115" Source="H:\PropertyTycoon2\Game\Images\bank.png"/>
         <Button  x:Name="Retire" Content="Retire
-" HorizontalAlignment="Left" Height="55" Margin="770,644,0,0" VerticalAlignment="Top" Width="110" Click="Retire_Click"/>
+" HorizontalAlignment="Left" Height="55" Margin="730,664,0,0" VerticalAlignment="Top" Width="110" Click="Retire_Click"/>
 
         <Label x:Name="CurrentPlayerInfo" Content="" HorizontalAlignment="Left" Height="160" Margin="760,334,0,0" VerticalAlignment="Top" Width="275" FontSize="16" FontWeight="Bold"/>
         <ComboBox Name="OwnedProperties" HorizontalAlignment="Left" Height="45" Margin="760,504,0,0" VerticalAlignment="Top" Width="270" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Image HorizontalAlignment="Left" Height="52" Margin="350,664,0,0" VerticalAlignment="Top" Width="52" Source="/Images/585f90f0cb11b227491c3573.png"/>
+        <Image HorizontalAlignment="Left" Height="52" Margin="350,664,0,0" VerticalAlignment="Top" Width="52" Source="/585f90f0cb11b227491c3573.png"/>
         <TextBlock x:Name="Label13_Copy" HorizontalAlignment="Left" Height="25" Margin="350,629,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Text="Brighton Station">
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -696,7 +696,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Image HorizontalAlignment="Left" Height="49" Margin="38,350,0,0" VerticalAlignment="Top" Width="49" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="49" Margin="78,347,0,0" VerticalAlignment="Top" Width="49" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -777,6 +777,7 @@
         <Button  x:Name="EndTurnBtn" Content="EndTurn" HorizontalAlignment="Left" Height="55" Margin="1115,604,0,0" VerticalAlignment="Top" Width="60" Click="EndTurnBtn_Click"/>
         <Button  x:Name="BuyProperty" HorizontalAlignment="Left" Height="55" Margin="1185,604,0,0" VerticalAlignment="Top" Width="60" Content="Buy " Click="BuyProperty_Click"/>
         <Button  x:Name="DisplayBtn" Content="Mangage Property" HorizontalAlignment="Left" Height="55" Margin="1045,664,0,0" VerticalAlignment="Top" Width="200" Click="DisplayBtn_Click"/>
+        <Button  x:Name="Trade" Content="Trade " HorizontalAlignment="Left" Height="55" Margin="850,664,0,0" VerticalAlignment="Top" Width="110" Click="Trade_Click" />
 
 
     </Grid>

@@ -128,7 +128,16 @@ namespace Property_Tycoon
             return money;
 
         }
-      
+
+        public void addToPropertyArray(Property p) {
+            properties.Add(p);
+        }
+
+        public void RemoveFromPropertyArray(Property p)
+        {
+            properties.Remove(p);
+        }
+
         /// <summary>
         /// this method allows the user to purchase a property
         /// </summary>
@@ -138,8 +147,6 @@ namespace Property_Tycoon
             String s = "";
             if (HasPassedGo() == true)
             {
-
-
                 if (p.isBankOwned())
                 {
                     s = p.getName() + " aquired";

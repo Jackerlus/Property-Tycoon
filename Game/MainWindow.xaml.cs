@@ -244,5 +244,11 @@ namespace Property_Tycoon
             update();
 
         }
+
+        private void Trade_Click(object sender, RoutedEventArgs e)
+        {
+             new TradeScreen(currentPlayer, currentGame).ShowDialog();
+             update();
+        }
     }
 }
