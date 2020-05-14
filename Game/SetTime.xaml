@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Property_Tycoon"
         mc:Ignorable="d"
-        Title="SetTime" Height="239" Width="294">
-    <Grid Height="440" Margin="5,0,35,0">
+        Title="SetTime" Height="239" Width="314">
+    <Grid Height="480" Margin="5,0,35,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="751*"/>

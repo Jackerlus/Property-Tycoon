@@ -42,6 +42,9 @@ namespace Property_Tycoon
             InitializeComponent();
             refresh();
         }
+        /// <summary>
+        /// this method Refreshes the window
+        /// </summary>
         private void refresh() {
             PlayerNameLlabel.Content = Left.getName();
             PlayerNameRlabel.Content = Right.getName();
@@ -50,7 +53,10 @@ namespace Property_Tycoon
             RightconfirmBtn.Background = Brushes.Red;
             leftConfirmBtn.Background = Brushes.Red;
         }
-
+        /// <summary>
+        /// this method calls the window to select the other player to trade with
+        /// </summary>
+        /// <returns></returns>
         private Player getRightPlayer()
         {
             GetPlayerToTrade Tradee = new GetPlayerToTrade(currentGame);
@@ -58,7 +64,11 @@ namespace Property_Tycoon
            
             return (Tradee.getPlayer());
         }
-
+        /// <summary>
+        /// This method gets the players properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LeftPropetiesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Llock == false)
@@ -70,6 +80,12 @@ namespace Property_Tycoon
             }
 
         }
+        /// <summary>
+        /// this method finds the  property object from the name
+        /// </summary>
+        /// <param name="b"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
         private ArrayList findProperties(IList b,Player p) {
             ArrayList temp = new ArrayList();
             for (int i = 0; i < b.Count; i++)
@@ -81,7 +97,11 @@ namespace Property_Tycoon
             }
             return temp;
         }
-
+        /// <summary>
+        /// This method gets the players properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RightPropertiesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Llock == false)
@@ -95,7 +115,11 @@ namespace Property_Tycoon
             }
         
         }
-
+        /// <summary>
+        /// this method locks in the left players assets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void leftConfirmBtn_Click(object sender, RoutedEventArgs e)
         {
  
@@ -115,7 +139,11 @@ namespace Property_Tycoon
 
 
         }
-
+        /// <summary>
+        /// this method locks in the right players assets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RightconfirmBtn_Click(object sender, RoutedEventArgs e)
         {
             if (Rlock == false)
@@ -133,7 +161,11 @@ namespace Property_Tycoon
             }
            
         }
-
+        /// <summary>
+        /// this method completes the trade
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
 

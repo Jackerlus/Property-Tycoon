@@ -30,7 +30,7 @@ namespace Property_Tycoon
             properties = currentGame.returnProperties();
             prop = currentGame.getPlayerList();
             counter = currentGame.getTime();
-
+            
             currentPlayer = (Player)prop[0];
             currentPlayer.moveto(39);
             
@@ -47,7 +47,9 @@ namespace Property_Tycoon
 
 
         }
-
+        /// <summary>
+        /// this is a method to start the timer
+        /// </summary>
         private void StartTime()
         {
             timer1 = new System.Windows.Forms.Timer();
@@ -55,7 +57,11 @@ namespace Property_Tycoon
             timer1.Interval = 1000;
             timer1.Start();
         }
-
+        /// <summary>
+        /// This method adds the tick for the countdown clock
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan time = TimeSpan.FromSeconds(counter);
@@ -70,7 +76,9 @@ namespace Property_Tycoon
 
             T.Content = time.Hours+" Hour(s) "+time.Minutes+ " Minute(s) and "+ time.Seconds +" Second(s)";
         }
-
+        /// <summary>
+        /// this method generates the property names
+        /// </summary>
         private void generatePropertyText() { 
             String s = "Label";
             for (int i = 0; i < 40; i++)
@@ -88,7 +96,9 @@ namespace Property_Tycoon
             }
 
         }
-
+        /// <summary>
+        /// Generate Board for the game
+        /// </summary>
         private void generateBoard()
             {
                 string s = "Property";
@@ -144,31 +154,74 @@ namespace Property_Tycoon
                     }
 
                 }
-
-
-
-
-
-
             }
+        /// <summary>
+        /// This is the method to add the maker to the board
+        /// </summary>
+        private void placeMarker() {
 
+            String s = "pos";
+            for (int i = 0; i < 40; i++)
+            {
+                var label = (System.Windows.Shapes.Ellipse)this.FindName((s + i.ToString()));
+
+                if (i == currentPlayer.getPosition())
+                {
+
+
+                    System.Windows.Shapes.Ellipse l = (System.Windows.Shapes.Ellipse)label;
+                    l.Fill = System.Windows.Media.Brushes.Red;
+
+                }
+            }
+        }
+        /// <summary>
+        /// This is the method used to remove the Marker for the current player
+        /// </summary>
+        private void removeMarker()
+        {
+
+            String s = "pos";
+            for (int i = 0; i < 40; i++)
+            {
+                var label = (System.Windows.Shapes.Ellipse)this.FindName((s + i.ToString()));
+
+                if (i == currentPlayer.getPosition())
+                {
+
+
+                    System.Windows.Shapes.Ellipse l = (System.Windows.Shapes.Ellipse)label;
+                    l.Fill = System.Windows.Media.Brushes.White;
+
+                }
+            }
+        }
+        /// <summary>
+        /// This is the method that updates the players menu
+        /// </summary>
         private void update()
         {
 
             ImageBox.Source = new BitmapImage(new Uri("H:/PropertyTycoon2/Game/" + currentPlayer.getPieceImg()));
             CurrentPlayerInfo.Content =
              "Name:  " + currentPlayer.getName() + "\n" +
-                              "pos: " + currentPlayer.getPosition() + "\n" +
+                              "pos: " + currentPlayer.getPosition() +"\n" +
                               "money: " + currentPlayer.getMoney() + "\n" +
                               "GOJFC: " + currentPlayer.getJailFreeNo() + "\n"
                               + "injail?: " + currentPlayer.isInJail() + "\n" +
                               "jailno: " + currentPlayer.getJailTurns() + "\n" + "Properties List: \n";
             OwnedProperties.ItemsSource = (currentPlayer.getPropertyNames());
+            
+            
         }
-
+        /// <summary>
+        /// this method ends the turn for the current player
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EndTurnBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+                removeMarker();
                  if (prop.Count == prop.IndexOf(currentPlayer) + 1)
                  {
                      currentPlayer = (Player)prop[0];
@@ -179,9 +232,15 @@ namespace Property_Tycoon
                  }
 
                  currentPlayer.endTurn();
+            
+            placeMarker();
             update();
         }
-
+        /// <summary>
+        /// this method selects the property from the combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -199,7 +258,11 @@ namespace Property_Tycoon
 
             }
         }
-
+        /// <summary>
+        /// this method calls the property managment tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DisplayBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -213,14 +276,24 @@ namespace Property_Tycoon
                 System.Windows.MessageBox.Show("Please seleect a property first");
             }
         }
-
+        /// <summary>
+        /// this method rolls the dice for the player
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RollBtn_Click(object sender, RoutedEventArgs e)
         {
+            removeMarker();
             currentPlayer.rolldice();
+            placeMarker();
             update();
         }
 
-
+        /// <summary>
+        /// this method is the process to buy a property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BuyProperty_Click(object sender, RoutedEventArgs e)
         {
 
@@ -237,14 +310,22 @@ namespace Property_Tycoon
             update();
 
         }
-
+        /// <summary>
+        /// this method is the process to Retire a player
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Retire_Click(object sender, RoutedEventArgs e)
         {
             currentPlayer.retire();
             update();
 
         }
-
+        /// <summary>
+        /// this method is the logic for the trade button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Trade_Click(object sender, RoutedEventArgs e)
         {
              new TradeScreen(currentPlayer, currentGame).ShowDialog();

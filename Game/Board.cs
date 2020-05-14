@@ -209,15 +209,16 @@ namespace Property_Tycoon
         /// </summary>
         private void populatePlayers()
         {
+            try { 
             setPlayers p = new setPlayers(this);
-            try
-            {
+            
+            
                 p.ShowDialog();
-                checkPlayers();
+                //checkPlayers();
             }
-            catch (NotEnoughPlayersException)
+            catch (System.ArgumentOutOfRangeException)
             {
-                
+                MessageBox.Show("Please Enter players into the game");
                 
             }
             
@@ -390,7 +391,7 @@ namespace Property_Tycoon
         /// </summary>
         private void PopulateGame()
         {
-            String file1 = ("properties.csv");
+            String file1 = ("H:/PropertyTycoon2/Game/properties.csv");
             Group name = Group.Station;
             const char fieldSeparator = ',';
             using (System.IO.StreamReader SR = new StreamReader(file1))    // the way to go

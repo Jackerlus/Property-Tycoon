@@ -66,31 +66,59 @@ namespace Property_Tycoon
         {
             ismortgaged = value;
         }
-
+        /// <summary>
+        /// returns ismortgaged
+        /// </summary>
+        /// <returns></returns>
         public bool getMortgaged()
         {
             return ismortgaged;
         }
+        /// <summary>
+        /// returns rent base
+        /// </summary>
+        /// <returns></returns>
         public int getRent1()
         {
             return rentBase;
         }
+        /// <summary>
+        /// returns rent1
+        /// </summary>
+        /// <returns></returns>
         public int getRent2()
         {
             return rent1;
         }
+        /// <summary>
+        /// returns rent 3
+        /// </summary>
+        /// <returns></returns>
         public int getRent3()
         {
             return rent2;
         }
+        /// <summary>
+        /// returns rent 3
+        /// </summary>
+        /// <returns></returns>
         public int getRent4()
         {
             return rent3;
         }
+
+        /// <summary>
+        /// returns rent 4
+        /// </summary>
+        /// <returns></returns>
         public int getRent5()
         {
             return rent4;
         }
+        /// <summary>
+        /// returns hotel rent
+        /// </summary>
+        /// <returns></returns>
         public int getHotel()
         {
             return rentH;
@@ -201,7 +229,10 @@ namespace Property_Tycoon
                 MessageBox.Show(p.getName() + " has already been mortgaged");
             }
         }
-
+        /// <summary>
+        /// This method is used to unmortgage a property
+        /// </summary>
+        /// <param name="p"></param>
         public void UnmortgageProperty(Property p)
         {
             if (p.getMortgaged() == true)
@@ -310,7 +341,9 @@ namespace Property_Tycoon
             MessageBox.Show(s);
             return s;
         }
-
+        /// <summary>
+        /// This method handles how to sell a house
+        /// </summary>
         public void sellHouse()
         {
             if (checkHouses() > 0)
@@ -325,7 +358,9 @@ namespace Property_Tycoon
             }
 
         }
-
+        /// <summary>
+        /// this method controls how a hotel is sold 
+        /// </summary>
         public void sellHotel()
         {
             if (hotelCheck() == true)
@@ -452,12 +487,17 @@ namespace Property_Tycoon
 
             }
         }
-
+        /// <summary>
+        /// this method sets the rent for a property
+        /// </summary>
+        /// <param name="v"></param>
         internal void setRent(int v)
         {
             rent = v;
         }
-
+        /// <summary>
+        /// this method reverts the property back to the owner
+        /// </summary>
         internal void retire()
         {
             SetOwner(null);
