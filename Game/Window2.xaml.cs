@@ -61,7 +61,8 @@ namespace Property_Tycoon
                     MessageBox.Show("this player is Human ");
                 }
                 else {
-                    CurrentBoard.addToArray(new Human(Name, 1500, piece, CurrentBoard));
+                    Human h = (new Human(Name, 150, piece, CurrentBoard));
+                    CurrentBoard.addToArray(h);
                     MessageBox.Show("this player is COMP ");
                 }
                 

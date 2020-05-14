@@ -445,7 +445,7 @@ namespace Property_Tycoon
 
 		private void moveToTuringHeights(Player p)
 		{
-			p.moveto(40);
+			p.moveto(39);
 
 			text = "Advance to Turing Heights";
 

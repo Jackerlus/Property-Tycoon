@@ -35,5 +35,7 @@ namespace Property_Tycoon
         int getNumOfStations();
         String getPieceImg();
         bool Checkgrouping(Property p);
+        void retire();
+        bool HasPassedGo();
     }
 }

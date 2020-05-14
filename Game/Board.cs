@@ -111,6 +111,17 @@ namespace Property_Tycoon
             addGroup();
 
         }
+
+        public void removePlayer(Player p) {
+            if (Players.Count != 1)
+            {
+                Players.Remove(p);
+                Players.TrimToSize();
+            }
+            else {
+                MessageBox.Show(p.getName() +"Wins!!");
+                    }
+            }
         public int getGameType()
         {
             return mode;

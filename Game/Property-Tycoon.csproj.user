@@ -5,6 +5,9 @@
     <Compile Update="addPlayer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Auction.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Player Prototype.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +29,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="addPlayer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Auction.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Player Prototype.xaml">

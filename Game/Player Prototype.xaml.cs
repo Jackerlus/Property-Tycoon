@@ -232,7 +232,7 @@ namespace Property_Tycoon
         {
             try
             {
-                PlayerMenu p = new PlayerMenu(currentprop);
+                PlayerMenu p = new PlayerMenu(currentprop,(Human)currentPlayer);
                 p.Show();
             }
             catch (Exception)

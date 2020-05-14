@@ -359,7 +359,6 @@
         <Rectangle HorizontalAlignment="Left" Height="18" Margin="586,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="43"/>
         <Rectangle x:Name="Property1" HorizontalAlignment="Left" Height="18" Margin="586,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="43"/>
         <Rectangle x:Name="Property3" HorizontalAlignment="Left" Height="18" Margin="470,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="44"/>
-        <Rectangle x:Name="Property4" HorizontalAlignment="Left" Height="18" Margin="412,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property6" HorizontalAlignment="Left" Height="18" Margin="297,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property8" HorizontalAlignment="Left" Height="18" Margin="181,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property9" HorizontalAlignment="Left" Height="18" Margin="122,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="43"/>
@@ -426,7 +425,6 @@
         <Rectangle x:Name="Property21" HorizontalAlignment="Left" Height="18" Margin="125,86,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property23" HorizontalAlignment="Left" Height="18" Margin="239,86,0,0" Stroke="Black" VerticalAlignment="Top" Width="44"/>
         <Rectangle x:Name="Property24" HorizontalAlignment="Left" Height="18" Margin="295,86,0,0" Stroke="Black" VerticalAlignment="Top" Width="43"/>
-        <Rectangle x:Name="Property28" HorizontalAlignment="Left" Height="18" Margin="527,86,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property27" HorizontalAlignment="Left" Height="18" Margin="469,86,0,0" Stroke="Black" VerticalAlignment="Top" Width="44"/>
         <Rectangle x:Name="Property26" HorizontalAlignment="Left" Height="18" Margin="411,86,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property29" HorizontalAlignment="Left" Height="18" Margin="585,86,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
@@ -460,7 +458,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="Property36" HorizontalAlignment="Left" Height="18" Margin="631,305,0,0" Stroke="Black" VerticalAlignment="Top" Width="42" RenderTransformOrigin="0.5,0.5">
+        <Rectangle x:Name="Property37" HorizontalAlignment="Left" Height="18" Margin="631,358,0,0" Stroke="Black" VerticalAlignment="Top" Width="42" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -480,10 +478,11 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <TextBlock x:Name="Label2" HorizontalAlignment="Left" Height="25" Margin="520,659,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label2" HorizontalAlignment="Left" Height="25" Margin="520,634,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label3" HorizontalAlignment="Left" Height="25" Margin="465,659,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label4" HorizontalAlignment="Left" Height="25" Margin="410,659,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label6" HorizontalAlignment="Left" Height="25" Margin="290,659,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
-        <TextBlock x:Name="Label7" HorizontalAlignment="Left" Height="25" Margin="230,659,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label7" HorizontalAlignment="Left" Height="25" Margin="235,634,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label8" HorizontalAlignment="Left" Height="25" Margin="170,659,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label9" HorizontalAlignment="Left" Height="25" Margin="115,659,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label1" HorizontalAlignment="Left" Height="25" Margin="580,659,0,0" Text="" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
@@ -581,15 +580,15 @@
         <Rectangle x:Name="Property6_Copy" HorizontalAlignment="Left" Height="18" Margin="297,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property8_Copy" HorizontalAlignment="Left" Height="18" Margin="181,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="42"/>
         <Rectangle x:Name="Property9_Copy" HorizontalAlignment="Left" Height="18" Margin="122,636,0,0" Stroke="Black" VerticalAlignment="Top" Width="43"/>
-        <TextBlock x:Name="Label28" HorizontalAlignment="Left" Height="25" Margin="520,59,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label28" HorizontalAlignment="Left" Height="25" Margin="520,24,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label27" HorizontalAlignment="Left" Height="25" Margin="465,59,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label26" HorizontalAlignment="Left" Height="25" Margin="410,59,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="8" FontWeight="Bold"/>
-        <TextBlock x:Name="Label25" HorizontalAlignment="Left" Height="25" Margin="350,59,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label25" HorizontalAlignment="Left" Height="25" Margin="350,19,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label24" HorizontalAlignment="Left" Height="25" Margin="290,59,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label23" HorizontalAlignment="Left" Height="25" Margin="235,59,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
-        <TextBlock x:Name="Label22" HorizontalAlignment="Left" Height="25" Margin="175,59,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label22" HorizontalAlignment="Left" Height="25" Margin="175,19,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label21" HorizontalAlignment="Left" Height="25" Margin="120,59,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="8" FontWeight="Bold"/>
-        <TextBlock x:Name="Label29" HorizontalAlignment="Left" Height="25" Margin="521,19,0,0" Text="Edison Water" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label29" HorizontalAlignment="Left" Height="25" Margin="580,59,0,0" Text="Edison Water" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label31" HorizontalAlignment="Left" Height="25" Margin="98,641,0,0" Text="opportunity Knocks" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -640,7 +639,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Label36" HorizontalAlignment="Left" Height="25" Margin="98,356,0,0" Text="opportunity Knocks" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBlock x:Name="Label36" HorizontalAlignment="Left" Height="25" Margin="78,354,0,0" Text="opportunity Knocks" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -650,7 +649,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Label37" HorizontalAlignment="Left" Height="25" Margin="73,294,0,0" Text="Pot Luck" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBlock x:Name="Label37" HorizontalAlignment="Left" Height="25" Margin="103,293,0,0" Text="Pot Luck" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -681,7 +680,8 @@
             </TextBlock.RenderTransform>
         </TextBlock>
         <Image Name="ImageBox" HorizontalAlignment="Left" Height="135" Margin="760,194,0,0"  VerticalAlignment="Top" Width="115" Source="H:\PropertyTycoon2\Game\Images\bank.png"/>
-        <Button  x:Name="EndTurnBtn" Content="Button" HorizontalAlignment="Left" Height="55" Margin="1130,489,0,0" VerticalAlignment="Top" Width="110" Click="EndTurnBtn_Click_1"/>
+        <Button  x:Name="Retire" Content="Retire
+" HorizontalAlignment="Left" Height="55" Margin="770,644,0,0" VerticalAlignment="Top" Width="110" Click="Retire_Click"/>
 
         <Label x:Name="CurrentPlayerInfo" Content="" HorizontalAlignment="Left" Height="160" Margin="760,334,0,0" VerticalAlignment="Top" Width="275" FontSize="16" FontWeight="Bold"/>
         <ComboBox Name="OwnedProperties" HorizontalAlignment="Left" Height="45" Margin="760,504,0,0" VerticalAlignment="Top" Width="270" SelectionChanged="ComboBox_SelectionChanged"/>
@@ -706,17 +706,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image HorizontalAlignment="Left" Height="50" Margin="351,56,0,0" VerticalAlignment="Top" Width="50" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.523,1.387"/>
-        <TextBlock x:Name="Label13_Copy1" HorizontalAlignment="Left" Height="25" Margin="348,20,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Text="Falmer Station">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
+        <Image HorizontalAlignment="Left" Height="50" Margin="350,59,0,0" VerticalAlignment="Top" Width="50" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.523,1.387"/>
         <Image HorizontalAlignment="Left" Height="51" Margin="695,306,0,0" VerticalAlignment="Top" Width="52" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.945,1.41">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -740,27 +730,7 @@
             </Image.RenderTransform>
         </Image>
         <Image HorizontalAlignment="Left" Height="52" Margin="524,41,0,0" VerticalAlignment="Top" Width="52" Source="/water.png"/>
-        <TextBlock x:Name="Label39_Copy" HorizontalAlignment="Left" Height="26" Margin="-33,227,0,0" Text="Pot Luck" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="360.053"/>
-                    <TranslateTransform X="554.035" Y="403.895"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock x:Name="Label39_Copy1" HorizontalAlignment="Left" Height="25" Margin="98,183,0,0" Text="opportunity Knocks" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="270.04"/>
-                    <TranslateTransform X="554.035" Y="403.895"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <Image HorizontalAlignment="Left" Height="55" Margin="521,659,0,0" VerticalAlignment="Top" Width="55" Source="/monopoly-chance-clipart-1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="520,662,0,0" VerticalAlignment="Top" Width="55" Source="/monopoly-chance-clipart-1.jpg"/>
         <Image HorizontalAlignment="Left" Height="55" Margin="34,227,0,0" VerticalAlignment="Top" Width="55" Source="/monopoly-chance-clipart-1.jpg" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -781,29 +751,9 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image HorizontalAlignment="Left" Height="55" Margin="234,651,0,0" VerticalAlignment="Top" Width="55" Source="/monopolyquestionmark.jpg"/>
-        <TextBlock x:Name="Label39_Copy2" HorizontalAlignment="Left" Height="26" Margin="-321,228,0,0" Text="Opportunity Knocks" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="360.053"/>
-                    <TranslateTransform X="554.035" Y="403.895"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
+        <Image HorizontalAlignment="Left" Height="55" Margin="235,659,0,0" VerticalAlignment="Top" Width="55" Source="/monopolyquestionmark.jpg"/>
         <Image HorizontalAlignment="Left" Height="50" Margin="177,45,0,0" VerticalAlignment="Top" Width="50" Source="/monopolyquestionmark.jpg" RenderTransformOrigin="0.523,1.387"/>
-        <TextBlock x:Name="Label39_Copy3" HorizontalAlignment="Left" Height="26" Margin="-379,-382,0,0" Text="Pot Luck" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="360.053"/>
-                    <TranslateTransform X="554.035" Y="403.895"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <Image HorizontalAlignment="Left" Height="55" Margin="659,457,0,0" VerticalAlignment="Top" Width="54" Source="/monopolyquestionmark.jpg" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="55" Margin="669,399,0,0" VerticalAlignment="Top" Width="54" Source="/monopolyquestionmark.jpg" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -823,6 +773,10 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Button  x:Name="RollBtn" HorizontalAlignment="Left" Height="55" Margin="1045,604,0,0" VerticalAlignment="Top" Width="60" Content="Roll" Click="RollBtn_Click" RenderTransformOrigin="0.417,0.546"/>
+        <Button  x:Name="EndTurnBtn" Content="EndTurn" HorizontalAlignment="Left" Height="55" Margin="1115,604,0,0" VerticalAlignment="Top" Width="60" Click="EndTurnBtn_Click"/>
+        <Button  x:Name="BuyProperty" HorizontalAlignment="Left" Height="55" Margin="1185,604,0,0" VerticalAlignment="Top" Width="60" Content="Buy " Click="BuyProperty_Click"/>
+        <Button  x:Name="DisplayBtn" Content="Mangage Property" HorizontalAlignment="Left" Height="55" Margin="1045,664,0,0" VerticalAlignment="Top" Width="200" Click="DisplayBtn_Click"/>
 
 
     </Grid>

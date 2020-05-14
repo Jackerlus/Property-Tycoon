@@ -102,7 +102,7 @@ namespace Property_Tycoon
     /// <summary>
     /// class for the goal tile
     /// </summary>
-    class Go : Space, NonProperties
+   public class Go : Space, NonProperties
     {
         public Go(int position) : base(position)
         {
