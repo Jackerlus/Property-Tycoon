@@ -112,6 +112,7 @@ namespace Property_Tycoon
                     RightPlayer.AddRange(RightPropertiesList.SelectedItems);
                   
                 }
+
             }
         
         }
@@ -122,28 +123,36 @@ namespace Property_Tycoon
         /// <param name="e"></param>
         private void leftConfirmBtn_Click(object sender, RoutedEventArgs e)
         {
- 
+
             if (Llock == false)
             {
                 Llock = true;
-                if (Convert.ToInt32(LeftMoneyBox.Text) < Left.getMoney())
-                {
-                    leftMoney = Convert.ToInt32(LeftMoneyBox.Text);
+                try {
+                    if (Convert.ToInt32(LeftMoneyBox.Text) < Left.getMoney())
+                    {
+                        leftMoney = Convert.ToInt32(LeftMoneyBox.Text);
+
+                    }
+                    else {
+                        MessageBox.Show("You do not have enough money money has been set to 0");
+                        leftMoney = 0;
+                    }
+                    LeftPlayer.AddRange(LeftPropetiesList.SelectedItems);
+                    leftConfirmBtn.Background = Brushes.Green;
 
                 }
-                else {
-                    MessageBox.Show("You do not have enough money money has been set to 0");
-                    leftMoney = 0;
+                catch (System.FormatException)
+                {
+
+                    MessageBox.Show("InvalidInput");
                 }
-                leftConfirmBtn.Background = Brushes.Green;
-               
             }
             else {
                 leftConfirmBtn.Background = Brushes.Red;
                 Llock = false;
 
             }
-            refresh();
+       
 
 
 
@@ -159,9 +168,27 @@ namespace Property_Tycoon
             {
                 Rlock = true;
 
-                RightPlayer.AddRange(RightPropertiesList.SelectedItems);
-                RightMoney = Convert.ToInt32(RightMoneyBox.Text);
-                RightconfirmBtn.Background = Brushes.Green; 
+                try
+                {
+                    if (Convert.ToInt32(RightMoneyBox.Text) < Right.getMoney())
+                    {
+                        RightMoney = Convert.ToInt32(RightMoneyBox.Text);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("You do not have enough money has been set to 0");
+                        RightMoney = 0;
+                    }
+                    RightPlayer.AddRange(RightPropertiesList.SelectedItems);
+                    RightconfirmBtn.Background = Brushes.Green;
+                }
+                catch (System.FormatException)
+                {
+
+                    MessageBox.Show("InvalidInput");
+                }
+             
             }
             else
             {
@@ -211,6 +238,7 @@ namespace Property_Tycoon
                     }
                 }
                 refresh();
+                Close();
             }
             else {
                 MessageBox.Show("both parties aren't satisfied");

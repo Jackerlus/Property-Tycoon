@@ -49,10 +49,28 @@ namespace Property_Tycoon
         /// <param name="e"></param>
         private void Plist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            try
+            {
+                piece = CurrentBoard.getPiece(Plist.SelectedIndex);
+            }
+            catch (NullReferenceException)
+            {
 
-            piece = CurrentBoard.getPiece(Plist.SelectedIndex);
+                MessageBox.Show("Piece cannot be empty");
+            }
+            catch ( ArgumentNullException)
+            {
+
+                MessageBox.Show("Piece cannot be empty");
+            }
             
-            
+           catch (System.ArgumentOutOfRangeException)
+            {
+
+                MessageBox.Show("Piece cannot be empty");
+            }
+
+
         }
         /// <summary>
         /// this method allows the player to choose AI or Human player
@@ -70,21 +88,30 @@ namespace Property_Tycoon
                 if (HumanCheckBox.IsChecked == true)
                 {
                     CurrentBoard.addToArray(new Human(Name, 1500, piece, CurrentBoard));
-                    MessageBox.Show("this player is Human ");
+
                 }
-                else {
-                    Human h = (new Human(Name, 150, piece, CurrentBoard));
+                else
+                {
+                    Human h = (new Human(Name, 1500, piece, CurrentBoard));
                     CurrentBoard.addToArray(h);
-                    MessageBox.Show("this player is COMP ");
                 }
-                
-                
+
+
                 this.Close();
             }
             catch (EmptyNameException)
             {
-                
-                
+
+                MessageBox.Show("Name cannot be empty");
+            }
+            catch (ArgumentNullException) { 
+            
+            
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Piece cannot be empty");
+
             }
 
         }
@@ -147,6 +174,7 @@ class EmptyNameException : Exception
 
     }
 }
+
 
 class NotEnoughPlayersException : Exception
 {
