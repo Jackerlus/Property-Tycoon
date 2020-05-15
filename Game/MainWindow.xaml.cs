@@ -139,7 +139,7 @@ namespace Property_Tycoon
                                     rect.Fill = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xff, 0xff, 0x90));
                                     break;
                                 case Group.Yellow:
-                                    rect.Fill = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 125, 0x90));
+                                    rect.Fill = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 255, 51));
                                     break;
                                 case Group.Utility:
                                     rect.Fill = new SolidColorBrush(System.Windows.Media.Color.FromRgb(128, 128, 128));

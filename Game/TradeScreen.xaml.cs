@@ -104,7 +104,7 @@ namespace Property_Tycoon
         /// <param name="e"></param>
         private void RightPropertiesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Llock == false)
+            if (Rlock == false)
             {
                 if (Rlock == false)
                 {
@@ -126,8 +126,17 @@ namespace Property_Tycoon
             if (Llock == false)
             {
                 Llock = true;
-                leftMoney = Convert.ToInt32(LeftMoneyBox.Text);
+                if (Convert.ToInt32(LeftMoneyBox.Text) < Left.getMoney())
+                {
+                    leftMoney = Convert.ToInt32(LeftMoneyBox.Text);
+
+                }
+                else {
+                    MessageBox.Show("You do not have enough money money has been set to 0");
+                    leftMoney = 0;
+                }
                 leftConfirmBtn.Background = Brushes.Green;
+               
             }
             else {
                 leftConfirmBtn.Background = Brushes.Red;

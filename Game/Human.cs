@@ -12,7 +12,7 @@ namespace Property_Tycoon
         private int JAIL = 30;
         private int VISITING = 11;
         private int GO = 0;
-        private int FREE = 5;
+        private int FREE = 20;
         private int Pot1 = 2;
         private int Pot2 = 34;
         public ArrayList properties;
@@ -353,7 +353,7 @@ namespace Property_Tycoon
 
                 }
             }
-            if (getPosition() == JAIL) {
+            if (getPosition() == 30) {
                    goToJail();
                }
             if (getPosition() == FREE)
@@ -364,7 +364,7 @@ namespace Property_Tycoon
             {
                 CurrentGame.GoTile.action(getPlayer());
             }
-            if (getPosition() == 7|| getPosition() == 22)
+            if (getPosition() == 7|| getPosition() == 22|| getPosition()==36)
             {
                 System.Windows.MessageBox.Show(" Opportunity knocks");
                 CurrentGame.opportunities.action(this);
@@ -378,7 +378,7 @@ namespace Property_Tycoon
             {
                 System.Windows.MessageBox.Show(CurrentGame.incomeTax.action(this));
             }
-            if (getPosition() == 39)
+            if (getPosition() == 38)
             {
                 System.Windows.MessageBox.Show(CurrentGame.SuperTax.action(this));
             }
