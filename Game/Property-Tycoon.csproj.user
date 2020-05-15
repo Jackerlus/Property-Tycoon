@@ -14,9 +14,6 @@
     <Compile Update="Images\Dice-ProtoType.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Player Prototype.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="PlayerMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +21,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SetTime.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StartScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="TradeScreen.xaml.cs">
@@ -49,9 +49,6 @@
     <Page Update="Images\Dice-ProtoType.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Player Prototype.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="PlayerMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -59,6 +56,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SetTime.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StartScreen.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TradeScreen.xaml">

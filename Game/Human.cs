@@ -325,8 +325,8 @@ namespace Property_Tycoon
             {
                 if (CurrentGame.GetProperty(getPosition()).isBankOwned() == true)
                 {
-                    String message = "this property doesnt have an owner. do you want to buy it?";
-                    string caption = "Option to purchase"+ CurrentGame.GetProperty(getPosition()).getName();
+                    String message = "This property doesn't have an owner. Do you want to buy it?";
+                    string caption = "Option to purchase "+ CurrentGame.GetProperty(getPosition()).getName();
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result;
 
@@ -369,7 +369,7 @@ namespace Property_Tycoon
                 System.Windows.MessageBox.Show(" Opportunity knocks");
                 CurrentGame.opportunities.action(this);
             }
-            if (getPosition() == Pot1 || getPosition() == Pot2)
+            if (getPosition() == 2 || getPosition() == 33 || getPosition() == 17)
             {
                 System.Windows.MessageBox.Show(" Pot Luck");
                 CurrentGame.potLuck.action(this);

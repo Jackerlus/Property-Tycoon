@@ -106,7 +106,7 @@ namespace Property_Tycoon
             Players = new ArrayList();
             populatePieces();
             
-            //populatePlayers();
+            populatePlayers();
             PopulateGame();
             addGroup();
 

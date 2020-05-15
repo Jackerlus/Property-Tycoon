@@ -46,4 +46,8 @@
     <Resource Include="water.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Prototypes\" />
+  </ItemGroup>
+
 </Project>

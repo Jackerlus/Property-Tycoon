@@ -6,11 +6,25 @@
         xmlns:local="clr-namespace:Property_Tycoon"
         mc:Ignorable="d"
         
-        Title="MainWindow" Height="763" Width="1318">
+        Title="MainWindow" Height="763" Width="1310" ResizeMode="NoResize">
+
     <Grid SnapsToDevicePixels="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="0,0,10,-6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Rectangle Fill="Cornsilk"  HorizontalAlignment="Left" Height="730" Margin="725,14,0,0" VerticalAlignment="Top" Width="575"/>
+        <Rectangle Fill="Cornsilk"  HorizontalAlignment="Left" Height="520" Margin="115,109,0,0" Stroke="Black" VerticalAlignment="Top" Width="520"/>
+        <Rectangle Fill="Cornsilk"  HorizontalAlignment="Left" Height="30" Margin="0,719,0,0" VerticalAlignment="Top" Width="730"/>
+        <Rectangle Fill="Cornsilk"  HorizontalAlignment="Left" Height="25" Margin="-353,355,0,0" VerticalAlignment="Top" Width="730" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.999"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="90" Margin="115,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="58"/>
         <Rectangle HorizontalAlignment="Left" Height="90" Margin="173,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="58"/>
         <Rectangle HorizontalAlignment="Left" Height="90" Margin="231,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="59"/>
@@ -480,7 +494,7 @@
         </Rectangle>
         <TextBlock x:Name="Label2" HorizontalAlignment="Left" Height="25" Margin="520,634,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label3" HorizontalAlignment="Left" Height="25" Margin="465,659,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
-        <TextBlock x:Name="Label4" HorizontalAlignment="Left" Height="25" Margin="410,659,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
+        <TextBlock x:Name="Label4" HorizontalAlignment="Left" Height="25" Margin="410,639,0,0"  TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label6" HorizontalAlignment="Left" Height="25" Margin="290,659,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label7" HorizontalAlignment="Left" Height="25" Margin="235,634,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" FontSize="8" FontWeight="Bold"/>
         <TextBlock x:Name="Label8" HorizontalAlignment="Left" Height="25" Margin="170,659,0,0" Text=" " TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="8" FontWeight="Bold"/>
@@ -888,7 +902,7 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
-        <Ellipse x:Name="pos22" HorizontalAlignment="Left" Height="10" Margin="524,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+        <Ellipse x:Name="pos22" HorizontalAlignment="Left" Height="10" Margin="524,95,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -908,7 +922,7 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
-        <Ellipse x:Name="pos24" HorizontalAlignment="Left" Height="10" Margin="409,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+        <Ellipse x:Name="pos24" HorizontalAlignment="Left" Height="10" Margin="409,21,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -948,7 +962,7 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
-        <Ellipse x:Name="pos28" HorizontalAlignment="Left" Height="10" Margin="176,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+        <Ellipse x:Name="pos28" HorizontalAlignment="Left" Height="10" Margin="176,96,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -1080,6 +1094,17 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
+        <Rectangle Fill="Cornsilk"  HorizontalAlignment="Center" Height="19" VerticalAlignment="Top" Width="1298" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.215"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
 
 
     </Grid>

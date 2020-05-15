@@ -19,8 +19,6 @@ namespace Property_Tycoon
     public partial class setPlayers : Window
     {
         Board CurrentBoard;
-        private  ArrayList a;
-        private ArrayList b;
         Player CurrentPlayer;
         int time;
         /// <summary>
@@ -30,8 +28,6 @@ namespace Property_Tycoon
         public setPlayers(Board cg)
         {  
             CurrentBoard = cg;
-            a = new ArrayList();
-            b = new ArrayList();
             
             InitializeComponent();
            

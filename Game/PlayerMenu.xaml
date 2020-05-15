@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Property_Tycoon"
+        Background="Cornsilk"
         mc:Ignorable="d"
         Title="PlayerMenu" Height="450" Width="800">
     <Grid>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="335" Margin="45,69,0,0" VerticalAlignment="Top" Width="230">
+        <Border BorderThickness="1" Background="AntiqueWhite" BorderBrush="Black" HorizontalAlignment="Left" Height="335" Margin="45,69,0,0" VerticalAlignment="Top" Width="230">
 
         </Border>
 

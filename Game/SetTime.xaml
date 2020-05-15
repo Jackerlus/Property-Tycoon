@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Property_Tycoon"
         mc:Ignorable="d"
+        Background="Cornsilk"
         Title="SetTime" Height="239" Width="314">
     <Grid Height="480" Margin="5,0,35,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="751*"/>
         </Grid.ColumnDefinitions>
-        <TextBox TextAlignment="Center" Padding="5,3,5,8" x:Name="Hour" HorizontalAlignment="Left" Margin="44,105,0,289" Text="00" TextWrapping="Wrap" Width="55" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
+        <TextBox  TextAlignment="Center" Padding="5,3,5,8" x:Name="Hour" HorizontalAlignment="Left" Margin="44,105,0,289" Text="00" TextWrapping="Wrap" Width="55" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
         <TextBox TextAlignment="Center" Padding="5,3,5,8" x:Name="Minutes" HorizontalAlignment="Left" Margin="108,105,0,289" Text="00" TextWrapping="Wrap" Width="55" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
         <TextBox TextAlignment="Center" Padding="5,3,5,8" x:Name="Seconds" HorizontalAlignment="Left" Margin="174,104,0,289" Text="00" TextWrapping="Wrap" Width="56" FontWeight="Bold" FontSize="24" Grid.Column="1"/>
         <Label x:Name="EnterTimeLabel" Content="Enter Timer count:" HorizontalAlignment="Left" Height="23" Margin="50,64,0,0" VerticalAlignment="Top" Width="112" Grid.Column="1"/>

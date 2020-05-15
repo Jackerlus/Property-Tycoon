@@ -425,7 +425,7 @@ namespace Property_Tycoon
 
 		private void tripToHove(Player p)
 		{
-			p.moveto(16);
+			p.moveto(15);
 
 			text = "Take a trip to Hove station. If you pass GO collect £200";
 
