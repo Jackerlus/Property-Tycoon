@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Background="Cornsilk"
         
-        Title="Add Player" Height="119" Width="304">
+        Title="Add Player" Height="119" Width="304" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Height="98">
         <Button x:Name="Remove" Content="X" HorizontalAlignment="Left" Margin="20,16,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" Height="18" Width="35" Grid.Row="2" Grid.RowSpan="2" Click="Remove_Click"/>
         <ComboBox x:Name="Plist" HorizontalAlignment="Left" Margin="185,16,0,0" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="Plist_SelectionChanged"/>

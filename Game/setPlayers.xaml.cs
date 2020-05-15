@@ -19,8 +19,6 @@ namespace Property_Tycoon
     public partial class setPlayers : Window
     {
         Board CurrentBoard;
-        Player CurrentPlayer;
-        int time;
         /// <summary>
         /// this method sets the players
         /// </summary>
@@ -48,6 +46,7 @@ namespace Property_Tycoon
                 ListView.ItemsSource = CurrentBoard.getPlayerNames();
                 CheckMinPlayer();
                 CheckMaxPlayer();
+                
 
 
             }
@@ -63,9 +62,14 @@ namespace Property_Tycoon
             catch (NotEnoughPlayersException) {
                 
             }
+
             
 
         }
+     
+
+
+
         /// <summary>
         /// this method checks the minimum number of players
         /// </summary>
@@ -94,14 +98,28 @@ namespace Property_Tycoon
         {
             if (CurrentBoard.getNoOfPlayers() >= 2)
             {
-                CurrentBoard.setTime(0);
-                CurrentBoard.SetGameType(0);
+                try
+                {
+                    CurrentBoard.setTime(0);
+                    CurrentBoard.SetGameType(0);
 
 
-                Close();
+                    Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("The minimum players must be 2");
+                    Window2 p = new Window2(CurrentBoard, this);
+                    p.ShowDialog();
+                    ListView.ItemsSource = CurrentBoard.getPlayerNames();
+                    CheckMinPlayer();
+                    CheckMaxPlayer();
+                    
+                }
+        
             }
             else {
-                MessageBox.Show("The minimum players must be 2");
+               
             
             }
                 
@@ -141,6 +159,7 @@ namespace Property_Tycoon
         {
             CurrentBoard.getPlayerList().Remove(ListView.SelectedItem);
             CurrentBoard.getPlayerList().TrimToSize();
+            ListView.ItemsSource = CurrentBoard.getPlayerNames();
 
         }
 

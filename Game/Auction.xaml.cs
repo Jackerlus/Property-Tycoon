@@ -52,11 +52,11 @@ namespace Property_Tycoon
         }
 
         private void refresh() {
-            CurrentBidlabel.Content = "CurrentBid:" + currentValue;
+            CurrentBidlabel.Content = "CurrentBid: " + currentValue;
             HighestBidderlabel.Content = HighestBidder.getName();
-            Propertylabel.Content = Property.getName() + "Base Cost :£" + Property.getCost();
+            Propertylabel.Content = Property.getName() + " Base Cost :£ " + Property.getCost();
 
-            CurrentBidderlabel.Content = currentBidder.getName();
+            CurrentBidderlabel.Content = "Current Bidder"+ currentBidder.getName();
         }
         private void Nextplayer() {
             try

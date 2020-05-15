@@ -37,8 +37,7 @@ namespace Property_Tycoon
         /// </summary>
         /// <param name="name"></param>
         /// <param name="money"></param>
-        /// <param name="position"></param>
-        /// <param name="playerno"></param>
+
         /// <param name="cg"></param>
         public Human(string name, int money, Piece _piece, Board cg)
         {

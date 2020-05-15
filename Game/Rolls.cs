@@ -12,7 +12,6 @@ namespace Property_Tycoon
         private int die1, die2;
         private Dice diceOne;
         private Dice diceTwo;
-        int seed;
         /// <summary>
         /// constuctor for the class
         /// </summary>

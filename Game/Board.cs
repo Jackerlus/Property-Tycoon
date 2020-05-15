@@ -192,6 +192,7 @@ namespace Property_Tycoon
             }
             return A;
         }
+     
         /// <summary>
         /// this method gets a current game piece
         /// </summary>
@@ -215,20 +216,21 @@ namespace Property_Tycoon
         /// <summary>
         /// this mehtod adds the new players to the game (Player array)
         /// </summary>
-        private void populatePlayers()
+        public void populatePlayers()
         {
-            try { 
-            setPlayers p = new setPlayers(this);
-            
-            
-                p.ShowDialog();
-                //checkPlayers();
-            }
-            catch (System.ArgumentOutOfRangeException)
+            try
             {
-                MessageBox.Show("Please Enter players into the game");
-                
+                setPlayers p = new setPlayers(this);
+
+
+                p.ShowDialog();
+                checkPlayers();
             }
+            catch (NotEnoughPlayersException)
+            {
+                MessageBox.Show("Please add at least 2 players");
+            }
+
             
 
 

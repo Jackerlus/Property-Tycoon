@@ -30,8 +30,16 @@ namespace Property_Tycoon
             properties = currentGame.returnProperties();
             prop = currentGame.getPlayerList();
             counter = currentGame.getTime();
+            try
+            {
+                currentPlayer = (Player)prop[0];
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                System.Windows.MessageBox.Show("No players detected!\n please add players");
+                currentGame.populatePlayers();
+            }
             
-            currentPlayer = (Player)prop[0];
             
             
 

@@ -253,7 +253,6 @@ namespace Property_Tycoon
         /// <summary>
         /// This method adds money to the Free parking tile
         /// </summary>
-        /// <param name="p"></param>
         /// <returns></returns>
         public void addMoney(int value) {
             FreeMoney = FreeMoney + value;

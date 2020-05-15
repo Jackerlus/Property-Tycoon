@@ -19,7 +19,6 @@ namespace Property_Tycoon
     /// </summary>
     public partial class Player_Prototype : Window
     {
-        int A = 12;
 
         Property currentprop;
         public Board currentGame;
