@@ -22,12 +22,16 @@ namespace Property_Tycoon
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// this method Submits the time
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-time = (Convert.ToInt32(Hour.Text) * 3600) + (Convert.ToInt32(Minutes.Text) * 60) + (Convert.ToInt32(Seconds.Text));
+            time = (Convert.ToInt32(Hour.Text) * 3600) + (Convert.ToInt32(Minutes.Text) * 60) + (Convert.ToInt32(Seconds.Text));
             }
             catch (System.FormatException)
             {
@@ -38,6 +42,10 @@ time = (Convert.ToInt32(Hour.Text) * 3600) + (Convert.ToInt32(Minutes.Text) * 60
             Close();
 
         }
+        /// <summary>
+        /// this method gets the time
+        /// </summary>
+        /// <returns></returns>
         public int getTime() {
             return time;
         }

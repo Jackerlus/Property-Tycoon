@@ -696,7 +696,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Image HorizontalAlignment="Left" Height="49" Margin="78,347,0,0" VerticalAlignment="Top" Width="49" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Left" Height="49" Margin="38,350,0,0" VerticalAlignment="Top" Width="49" Source="/585f90f0cb11b227491c3573.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -778,6 +778,308 @@
         <Button  x:Name="BuyProperty" HorizontalAlignment="Left" Height="55" Margin="1185,604,0,0" VerticalAlignment="Top" Width="60" Content="Buy " Click="BuyProperty_Click"/>
         <Button  x:Name="DisplayBtn" Content="Mangage Property" HorizontalAlignment="Left" Height="55" Margin="1045,664,0,0" VerticalAlignment="Top" Width="200" Click="DisplayBtn_Click"/>
         <Button  x:Name="Trade" Content="Trade " HorizontalAlignment="Left" Height="55" Margin="850,664,0,0" VerticalAlignment="Top" Width="110" Click="Trade_Click" />
+        <Image HorizontalAlignment="Left" Height="55" Margin="520,662,0,0" VerticalAlignment="Top" Width="55" Source="monopoly-chance-clipart-1.jpg"/>
+        <Ellipse x:Name="pos1" HorizontalAlignment="Left" Height="10" Margin="625,707,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos2" HorizontalAlignment="Left" Height="10" Margin="567,707,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos3" HorizontalAlignment="Left" Height="10" Margin="508,708,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos4" HorizontalAlignment="Left" Height="10" Margin="452,708,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos5" HorizontalAlignment="Left" Height="10" Margin="394,708,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos6" HorizontalAlignment="Left" Height="10" Margin="335,709,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos7" HorizontalAlignment="Left" Height="10" Margin="277,708,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos8" HorizontalAlignment="Left" Height="10" Margin="219,708,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos9" HorizontalAlignment="Left" Height="10" Margin="160,709,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos11" HorizontalAlignment="Left" Height="10" Margin="257,385,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-231.991" Y="233.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos12" HorizontalAlignment="Left" Height="10" Margin="199,385,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-173.869" Y="175.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos13" HorizontalAlignment="Left" Height="10" Margin="140,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-115.744" Y="115.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos14" HorizontalAlignment="Left" Height="10" Margin="84,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-59.626" Y="59.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos15" HorizontalAlignment="Left" Height="10" Margin="26,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-1.503" Y="1.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos16" HorizontalAlignment="Left" Height="10" Margin="-33,387,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="56.621" Y="-58.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos17" HorizontalAlignment="Left" Height="10" Margin="-91,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="115.744" Y="-115.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos18" HorizontalAlignment="Left" Height="10" Margin="-149,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="173.866" Y="-173.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos19" HorizontalAlignment="Left" Height="10" Margin="-208,387,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="231.991" Y="-233.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos21" HorizontalAlignment="Left" Height="10" Margin="582,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="-466.2" Y="3.017"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos22" HorizontalAlignment="Left" Height="10" Margin="524,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="-350.2" Y="2.759"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos23" HorizontalAlignment="Left" Height="10" Margin="465,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="-232.205" Y="0.497"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos24" HorizontalAlignment="Left" Height="10" Margin="409,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="-120.205" Y="0.247"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos25" HorizontalAlignment="Left" Height="10" Margin="351,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="-4.207" Y="-0.01"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos26" HorizontalAlignment="Left" Height="10" Margin="292,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="113.79" Y="-2.274"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos27" HorizontalAlignment="Left" Height="10" Margin="234,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="229.793" Y="-0.532"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos28" HorizontalAlignment="Left" Height="10" Margin="176,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="345.793" Y="-0.79"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos29" HorizontalAlignment="Left" Height="10" Margin="117,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="517.607"/>
+                    <TranslateTransform X="463.787" Y="-3.051"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos39" HorizontalAlignment="Left" Height="10" Margin="947,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-231.991" Y="233.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos38" HorizontalAlignment="Left" Height="10" Margin="889,384,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-173.869" Y="175.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos37" HorizontalAlignment="Left" Height="10" Margin="830,385,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-115.744" Y="115.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos36" HorizontalAlignment="Left" Height="10" Margin="774,385,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-59.626" Y="59.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos35" HorizontalAlignment="Left" Height="10" Margin="716,385,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-1.503" Y="1.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos34" HorizontalAlignment="Left" Height="10" Margin="657,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="56.621" Y="-58.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos33" HorizontalAlignment="Left" Height="10" Margin="599,385,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="115.744" Y="-115.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos32" HorizontalAlignment="Left" Height="10" Margin="541,385,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="173.866" Y="-173.5"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos31" HorizontalAlignment="Left" Height="10" Margin="482,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="231.991" Y="-233.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos10" HorizontalAlignment="Left" Height="10" Margin="100,649,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Ellipse x:Name="pos9_Copy" HorizontalAlignment="Left" Height="10" Margin="30,704,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="-12.5,0.004"/>
+        <Ellipse x:Name="pos20" HorizontalAlignment="Left" Height="10" Margin="497,21,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.745"/>
+                    <TranslateTransform X="-466.2" Y="3.017"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="pos0" HorizontalAlignment="Left" Height="10" Margin="947,468,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.121"/>
+                    <TranslateTransform X="-231.991" Y="233.502"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
 
 
     </Grid>

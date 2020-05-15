@@ -1,0 +1,1410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Property-Tycoon</name>
+    </assembly>
+    <members>
+        <member name="T:Property_Tycoon.addPlayer">
+            <summary>
+            Interaction logic for addPlayer.xaml
+            </summary>
+            <summary>
+            addPlayer
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.addPlayer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Auction">
+            <summary>
+            Interaction logic for Auction.xaml
+            </summary>
+            <summary>
+            Auction
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Auction.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:Property_Tycoon.Board.properties">
+            <summary>
+            arrays for all the properties and their groups along with the player array
+            </summary>
+        </member>
+        <member name="F:Property_Tycoon.Board.GoTile">
+            <summary>
+            intitalises all the Non obtainable properties
+            </summary>
+        </member>
+        <member name="F:Property_Tycoon.Board.Brighton">
+            <summary>
+            initalises all the different Special properties
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Board.removePlayer(Property_Tycoon.Player)">
+            <summary>
+            this method removes a player 
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Board.getGameType">
+            <summary>
+            this method gets the game type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.SetGameType(System.Int32)">
+            <summary>
+            This method sets the game type 
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Property_Tycoon.Board.getTime">
+            <summary>
+            This method gets the current time
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.setTime(System.Int32)">
+            <summary>
+            this method sets the time
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Property_Tycoon.Board.populatePieces">
+            <summary>
+            this method sets the new pieces
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Board.getBoardPieces">
+            <summary>
+            This method generates the Board pieces
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.getPiece(System.Int32)">
+            <summary>
+            this method gets a current game piece
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.returnProperties">
+            <summary>
+            this method gets the Tiles array
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.populatePlayers">
+            <summary>
+            this mehtod adds the new players to the game (Player array)
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Board.checkPlayers">
+            <summary>
+            this method checks the minimum number of players
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Board.addToArray(Property_Tycoon.Player)">
+            <summary>
+            this method adds a player to the array
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Board.getPlayerList">
+            <summary>
+            this method returns a list of all the current players
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.getNoOfPlayers">
+            <summary>
+            This method gets the count of all the players currently in the game
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.getList(Property_Tycoon.Property)">
+            <summary>
+            This method gets the grouping array of the property P
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.addGroup">
+            <summary>
+            this method goes though the tiles array and assigns each property to its colour array
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Board.getPlayerNames">
+            <summary>
+            this method gets the players names
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.getPieceNames">
+            <summary>
+            this method gets the piece names
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.PopulateGame">
+            <summary>
+            This method reads in the properties from the CSV and constructs each property from this data
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Board.getProperties">
+            <summary>
+            this method returns the properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.GetProperty(System.Int32)">
+            <summary>
+            this method gets the property at the specific index
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.getspaceName(System.Int32)">
+            <summary>
+            this method gets the name of the tile 
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Board.abridgeGame">
+            <summary>
+            this method abridges the game
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Board.calcAssets(Property_Tycoon.Human)">
+            <summary>
+            this method calculates the assets of each player
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Property_Tycoon.GetPlayerToTrade">
+            <summary>
+            Interaction logic for GetPlayerToTrade.xaml
+            </summary>
+            <summary>
+            GetPlayerToTrade
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.GetPlayerToTrade.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Human.#ctor(System.String,System.Int32,Property_Tycoon.Piece,Property_Tycoon.Board)">
+            <summary>
+            This method is the constructor to make a new Player Object.
+            </summary>
+            <param name="name"></param>
+            <param name="money"></param>
+            <param name="position"></param>
+            <param name="playerno"></param>
+            <param name="cg"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.setPosition(System.Int32)">
+            <summary>
+            This method sets the current player postion
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.hasBothUtilities">
+            <summary>
+            This method checks to see if the player owns both utilites
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getNumOfStations">
+            <summary>
+            This method gets the number of Stations that the player has 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.addGetOutofJail(System.Int32)">
+            <summary>
+            This method adds to the get out of jail free cards part
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.addmoney(System.Int32)">
+            <summary>
+            this method adds money to the players account
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.addToPropertyArray(Property_Tycoon.Property)">
+            <summary>
+            a method that adds to a property array
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.RemoveFromPropertyArray(Property_Tycoon.Property)">
+            <summary>
+            Method that removes from the property array 
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.buyProperty(Property_Tycoon.Property)">
+            <summary>
+            this method allows the user to purchase a property
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.getJailFreeNo">
+            <summary>
+            this method returns the number of get out of jail free cards avalible to the player.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getJailTurns">
+            <summary>
+            this method allows the user to see how many turns left in jail they have.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getMoney">
+            <summary>
+            returns the amount of money the player has
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getName">
+            <summary>
+            returns player name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getProperties">
+            <summary>
+            returns property list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getPropertyNames">
+            <summary>
+            this method gets the names of the properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.GetProperty(System.Int32)">
+            <summary>
+            this method returns the property at the index
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.goToJail">
+            <summary>
+            method that simulates jail
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Human.leaveJail">
+            <summary>
+            method that simulates leaving jail
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Human.MortgageProperty(Property_Tycoon.Property)">
+            <summary>
+            method to mortgage a property
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.UnMortgageProperty(Property_Tycoon.Property)">
+            <summary>
+            a method to unmortgage a property 
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Human.HasPassedGo">
+            <summary>
+            returns if the player has passed go
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.move(System.Int32)">
+            <summary>
+            method to move a player around the board
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getRollValue">
+            <summary>
+            methood to get the value of the dice roll
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.rolldice">
+            <summary>
+            this method rolls the dice classes and returns a result. unless there is a double the user cannot roll again. if there are 
+            too many doubles in a row then the current player is sent to jail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.moveto(System.Int32)">
+            <summary>
+            this method moves to moves the player to a position specified buy pos
+            </summary>
+            <param name="pos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.addGetOutOfJail">
+            <summary>
+            this method adds to the current players get out of jail free cards 
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Human.useGetOutofJail">
+            <summary>
+            method that uses a get of jail free card;
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getPosition">
+            <summary>
+            method to get the current position of a player
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.endTurn">
+            <summary>
+            method that ends the players turn
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Human.isInJail">
+            <summary>
+             method to check if the player is in jail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getPlayer">
+            <summary>
+            a method that returns a player
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.getPieceImg">
+            <summary>
+            A method to return the image filepath
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.Checkgrouping(Property_Tycoon.Property)">
+            <summary>
+            A method that sees if the player owns the set of properties
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Human.retire">
+            <summary>
+            a method that retires a player from the game
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.StartTime">
+            <summary>
+            this is a method to start the timer
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.timer1_Tick(System.Object,System.EventArgs)">
+            <summary>
+            This method adds the tick for the countdown clock
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.generatePropertyText">
+            <summary>
+            this method generates the property names
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.generateBoard">
+            <summary>
+            Generate Board for the game
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.placeMarker">
+            <summary>
+            This is the method to add the maker to the board
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.removeMarker">
+            <summary>
+            This is the method used to remove the Marker for the current player
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.update">
+            <summary>
+            This is the method that updates the players menu
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.EndTurnBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method ends the turn for the current player
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.ComboBox_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            this method selects the property from the combobox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.DisplayBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method calls the property managment tile
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.RollBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method rolls the dice for the player
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.BuyProperty_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method is the process to buy a property
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.Retire_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method is the process to Retire a player
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.Trade_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method is the logic for the trade button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.NonProperties">
+            <summary>
+            interface for the non purchaceable tiles
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.IncomeTax">
+            <summary>
+            this is the Income Tax Class
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.IncomeTax.getName">
+            <summary>
+            this method returns the name of the class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.IncomeTax.action(Property_Tycoon.Player)">
+            <summary>
+            this method adds 200 to the players money
+            </summary>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Property_Tycoon.Opportunity">
+            <summary>
+            this method is for the Opportunity class
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Opportunity.action(Property_Tycoon.Player)">
+            <summary>
+            this method draws an opportunity knocks card
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Property_Tycoon.Pot">
+            <summary>
+            this is the class for the Pot Luck class
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Pot.getName">
+            <summary>
+            this method returns the name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Pot.action(Property_Tycoon.Player)">
+            <summary>
+            this method draws from the pot luck
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Property_Tycoon.SuperTax">
+            <summary>
+            This is the class for the Super tax class
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Go">
+            <summary>
+            class for the goal tile
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.GoToJail">
+            <summary>
+            class for the go to jail tile
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Visting">
+            <summary>
+            This class is for the just visining tile
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.FreeParking">
+            <summary>
+            class for the free parking tile
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.FreeParking.addMoney(System.Int32)">
+            <summary>
+            This method adds money to the Free parking tile
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.FreeParking.action(Property_Tycoon.Player)">
+            <summary>
+            this version of action gives the player that has landed on the space all the money in free parking
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Piece.getPicked">
+            <summary>
+            this method returns the picked string
+            </summary>
+            <returns> The picked string</returns>
+        </member>
+        <member name="M:Property_Tycoon.Piece.getfilePath">
+            <summary>
+            this method gets the filepath for the game
+            </summary>
+            <returns> a string for of the filepath </returns>
+        </member>
+        <member name="M:Property_Tycoon.Piece.setPicked(System.Boolean)">
+            <summary>
+            this method checks to see if the piece can be selected
+            </summary>
+            <param name="val"> boolean</param>
+        </member>
+        <member name="M:Property_Tycoon.Piece.getName">
+            <summary>
+            Returns the name of the piece
+            </summary>
+            <returns> string containing the name</returns>
+        </member>
+        <member name="T:Property_Tycoon.Player_Prototype">
+            <summary>
+            Interaction logic for Player_Prototype.xaml
+            </summary>
+            <summary>
+            Player_Prototype
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player_Prototype.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player.endTurn">
+            <summary>
+            method that ends the players turn
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player.getPosition">
+            <summary>
+            method to get the current position of a player
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.getName">
+            <summary>
+            returns player name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.RemoveFromPropertyArray(Property_Tycoon.Property)">
+            <summary>
+            Method that removes from the property array 
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Player.addToPropertyArray(Property_Tycoon.Property)">
+            <summary>
+            a method that adds to a property array
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Player.addGetOutOfJail">
+            <summary>
+            this method adds to the current players get out of jail free cards 
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player.rolldice">
+            <summary>
+            this method rolls the dice classes and returns a result. unless there is a double the user cannot roll again. if there are 
+            too many doubles in a row then the current player is sent to jail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.hasBothUtilities">
+            <summary>
+            This method checks to see if the player owns both utilites
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.getRollValue">
+            <summary>
+            methood to get the value of the dice roll
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.moveto(System.Int32)">
+            <summary>
+            this method moves to moves the player to a position specified buy pos
+            </summary>
+            <param name="pos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.MortgageProperty(Property_Tycoon.Property)">
+            <summary>
+            method to mortgage a property
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Player.getProperties">
+            <summary>
+            returns property list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.GetProperty(System.Int32)">
+            <summary>
+            this method returns the property at the index
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.setPosition(System.Int32)">
+            <summary>
+            method to get the current position of a player
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.addmoney(System.Int32)">
+            <summary>
+            this method adds money to the players account
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.leaveJail">
+            <summary>
+            method that simulates leaving jail
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player.goToJail">
+            <summary>
+            A method that sends the player to jail
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player.useGetOutofJail">
+            <summary>
+            method that uses a get of jail free card;
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.getPlayer">
+            <summary>
+            a method that returns a player
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.addGetOutofJail(System.Int32)">
+            <summary>
+            this method adds to the current players get out of jail free cards 
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player.getJailFreeNo">
+            <summary>
+            a method that shows remaining jail free cards
+            </summary>
+            <returns>Int</returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.getJailTurns">
+            <summary>
+            A method that says how many turns the user has been in jail for
+            </summary>
+            <returns>integer</returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.isInJail">
+            <summary>
+            A boolean that checks if the user is in jail
+            </summary>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.getNumOfStations">
+            <summary>
+            This method gets the number of Stations that the player has 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.Checkgrouping(Property_Tycoon.Property)">
+            <summary>
+            A method that sees if the player owns the set of properties
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Player.retire">
+            <summary>
+            a method that retires a player from the game
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Player.HasPassedGo">
+            <summary>
+            returns if the player has passed go
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Property_Tycoon.PlayerMenu">
+            <summary>
+            Interaction logic for PlayerMenu.xaml
+            </summary>
+            <summary>
+            PlayerMenu
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.#ctor(Property_Tycoon.Property,Property_Tycoon.Human)">
+            <summary>
+            constructor for the class
+            </summary>
+            <param name="p"></param>
+            <param name="player"></param>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.getColour">
+            <summary>
+            a method that gets the brush colour for a particualr property
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.Refresh">
+            <summary>
+            a method that changes the property in view.
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.MortgageBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            This handles the process of mortgaging a property
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.UnMortgageBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            This method handles the process of unmortgaging a property
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.BuyHousebtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            This method handles the process of buying a house for a property
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.sellHousebtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            This method handles the process of selling a house for a property
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.BuyHotelbtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            This method handles the process of buying a house for a property
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.sellHotelbtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            This method handles the process of buying a hotel for a property
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.PlayerMenu.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Property">
+            <summary>
+            A class for all the properties in the game. 
+            </summary>
+        </member>
+        <member name="F:Property_Tycoon.Property.price">
+            <summary>
+            these are the varibles in order to get the data for each purchaceable currentProperty
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Property.#ctor(System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Property_Tycoon.Group)">
+            <summary>
+            constructor for the class
+            </summary>
+            <param name="position">The current position of the currentProperty</param>
+            <param name="_price">The cost to buy the currentProperty</param>
+            <param name="_name">The name of the currentProperty </param>
+            <param name="_rent"> The current rent of the currentProperty</param>
+            <param name="_bankOwned"> Boolean to see if the bank owns the currentProperty</param>
+            <param name="_colour"> Current Group that the currentProperty belongs to </param>
+        </member>
+        <member name="M:Property_Tycoon.Property.getMortgaged">
+            <summary>
+            returns ismortgaged
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getRent1">
+            <summary>
+            returns rent base
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getRent2">
+            <summary>
+            returns rent1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getRent3">
+            <summary>
+            returns rent 3
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getRent4">
+            <summary>
+            returns rent 3
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getRent5">
+            <summary>
+            returns rent 4
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getHotel">
+            <summary>
+            returns hotel rent
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getName">
+            <summary>
+            gets the name of the currentProperty
+            </summary>
+            <returns>String Value. name variable</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getCost">
+            <summary>
+            Gets the Cost of the currentProperty 
+            </summary>
+            <returns>price variable</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getRent">
+            <summary>
+            This method returns the current Rent of the currentProperty
+            </summary>
+            <returns> rent variable</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getPlayer">
+            <summary>
+            returns the player that currently owns the builing
+            </summary>
+            <returns>Owner Obejct</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.getOwner">
+            <summary>
+            returns the current owners name 
+            </summary>
+            <returns>String value. Owners name</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.SetOwner(Property_Tycoon.Player)">
+            <summary>
+            sets the owner of currentProperty
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Property.isBankOwned">
+            <summary>
+            checks to see if the bank owns the currentProperty
+            </summary>
+            <returns>Boolean value. True if the currentProperty is owned by the bank</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.setBankOwned(System.Boolean)">
+            <summary>
+            sets the boolean if the bank owns the currentProperty or not
+            </summary>
+            <param name="a">boolean value to be assigned to the bankOwned variable</param>
+        </member>
+        <member name="M:Property_Tycoon.Property.getColour">
+            <summary>
+            returns The enum value of the group that the currentProperty belongs to
+            </summary>
+            <returns> Enum value of the group</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.mortgageProperty(Property_Tycoon.Property)">
+            <summary>
+            Method  called when a player mortgages the currentProperty. if it is owned by the bank then no rent is due
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Property.UnmortgageProperty(Property_Tycoon.Property)">
+            <summary>
+            This method is used to unmortgage a property
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Property.checkHouses">
+            <summary>
+             This method returns the current number of houses
+            </summary>
+            <returns>integer value. current number of houses</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.hotelCheck">
+            <summary>
+            this method checks to see if there is a hotel at the currentProperty
+            </summary>
+            <returns>boolean value . True if there is a hotel</returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.addHouse">
+            <summary>
+             method to change the value of the rent taken. dependant on the number of houses currently on the currentProperty
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.sellHouse">
+            <summary>
+            This method handles how to sell a house
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Property.sellHotel">
+            <summary>
+            this method controls how a hotel is sold 
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Property.getHouseCost">
+            <summary>
+            Method checks the group cost and returns a value of the cost to buld a house
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.convertHouseToHotel">
+            <summary>
+            This method converts the houses into a hotel. a new rent price is also assigned
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.UtilityRent(Property_Tycoon.Player)">
+            <summary>
+            This method calculates the rent of the utility properties.
+            </summary>
+            <param name="p">current player</param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.StationRent(Property_Tycoon.Player)">
+            <summary>
+            This method calculates the rent of the Station properties.
+            </summary>
+            <param name="p">current player</param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Property.setRent(System.Int32)">
+            <summary>
+            this method sets the rent for a property
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:Property_Tycoon.Property.retire">
+            <summary>
+            this method reverts the property back to the owner
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Roll">
+            <summary>
+            class for each roll of the dice
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Roll.#ctor">
+            <summary>
+            constuctor for the class
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Roll.Rolls">
+            <summary>
+            this method rolls the two dice objects
+            </summary>
+            <returns> the sum of the two dice objects</returns>
+        </member>
+        <member name="M:Property_Tycoon.Roll.rollValue">
+            <summary>
+            gets the sum of the two dice variables
+            </summary>
+            <returns>returns sum of dice variable</returns>
+        </member>
+        <member name="M:Property_Tycoon.Roll.getDie1">
+            <summary>
+            gets the value of the dice number
+            </summary>
+            <returns>integer value of the roll function of die one </returns>
+        </member>
+        <member name="M:Property_Tycoon.Roll.getDie2">
+            <summary>
+            gets the value of the dice number
+            </summary>
+            <returns>integer value of the roll function of die two </returns>
+        </member>
+        <member name="M:Property_Tycoon.Roll.getDoubleCounter">
+            <summary>
+            This method gets the number of doubles
+            </summary>
+            <returns> current number of doubles </returns>
+        </member>
+        <member name="M:Property_Tycoon.Roll.isEqual(System.Int32,System.Int32)">
+            <summary>
+            this method checks to see if the dice are equal
+            </summary>
+            <param name="val1"></param>
+            <param name="val2"></param>
+            <returns> boolean value. True if val 1 is equal to val 2</returns>
+        </member>
+        <member name="M:Property_Tycoon.Roll.DiceRollsText">
+            <summary>
+            message when both dice are rolled
+            </summary>
+            <returns>A string if the dice are equal</returns>
+        </member>
+        <member name="T:Property_Tycoon.setPlayers">
+            <summary>
+            Interaction logic for setPlayers.xaml
+            </summary>
+            <summary>
+            setPlayers
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.#ctor(Property_Tycoon.Board)">
+            <summary>
+            this method sets the players
+            </summary>
+            <param name="cg"></param>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.AddPlayer_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method add the new window to the board
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.CheckMinPlayer">
+            <summary>
+            this method checks the minimum number of players
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.CheckMaxPlayer">
+            <summary>
+            this checks if the max number of players has been exceeded
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.Normal_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method starts the normal method
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.Abridged_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method starts the abridge game
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.RemovePlayer_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method removes a player from the list
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.setPlayers.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.SetTime">
+            <summary>
+            Interaction logic for SetTime.xaml
+            </summary>
+            <summary>
+            SetTime
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.SetTime.Submit_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method Submits the time
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.SetTime.getTime">
+            <summary>
+            this method gets the time
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.SetTime.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Space">
+            <summary>
+            parent class for both ownable and not ownable properties
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Space.#ctor(System.Int32)">
+            <summary>
+            constructor for the space tiles 
+            </summary>
+            <param name="position"></param>
+        </member>
+        <member name="M:Property_Tycoon.Space.getPosition">
+            <summary>
+            retruns the position of the space
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Property_Tycoon.TradeScreen">
+            <summary>
+            Interaction logic for TradeScreen.xaml
+            </summary>
+            <summary>
+            TradeScreen
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.refresh">
+            <summary>
+            this method Refreshes the window
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.getRightPlayer">
+            <summary>
+            this method calls the window to select the other player to trade with
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.LeftPropetiesList_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            This method gets the players properties
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.findProperties(System.Collections.IList,Property_Tycoon.Player)">
+            <summary>
+            this method finds the  property object from the name
+            </summary>
+            <param name="b"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.RightPropertiesList_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            This method gets the players properties
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.leftConfirmBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method locks in the left players assets
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.RightconfirmBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method locks in the right players assets
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.Complete_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method completes the trade
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.TradeScreen.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Window1">
+            <summary>
+            Interaction logic for Window1.xaml
+            </summary>
+            <summary>
+            Window1
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Window1.data(System.String)">
+            <summary>
+            this method sets the message for the dialogue box
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window1.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this button sets the value to the integer then closes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window1.getChoice">
+            <summary>
+            This method returns the choice
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Window1.Button_Click_1(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method returns the choice
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window1.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Property_Tycoon.Window2">
+            <summary>
+            Interaction logic for Window2.xaml
+            </summary>
+            <summary>
+            Window2
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Window2.#ctor(Property_Tycoon.Board,Property_Tycoon.setPlayers)">
+            
+        </member>
+        <member name="M:Property_Tycoon.Window2.getName">
+            <summary>
+            this method returns the name 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Property_Tycoon.Window2.Plist_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            this method gets the curren piece 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window2.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method allows the player to choose AI or Human player
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window2.validateName(System.String)">
+            <summary>
+            this method makes sure that the name is valid 
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window2.UserBox_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            this method sets the textbox value to the name
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window2.Remove_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this menu clears the TextBox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window2.CheckBox_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            this method starts the human selection as true
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Property_Tycoon.Window2.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

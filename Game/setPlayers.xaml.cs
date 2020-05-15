@@ -23,6 +23,10 @@ namespace Property_Tycoon
         private ArrayList b;
         Player CurrentPlayer;
         int time;
+        /// <summary>
+        /// this method sets the players
+        /// </summary>
+        /// <param name="cg"></param>
         public setPlayers(Board cg)
         {  
             CurrentBoard = cg;
@@ -32,19 +36,11 @@ namespace Property_Tycoon
             InitializeComponent();
            
         }
-
-        public ArrayList getArrayList() {
-            return a;
-        }
-        
-        public ArrayList getArrayListb()
-        {
-            return b;
-        }
-        public void AddToArray(Player P) {
-        
-        }
-
+        /// <summary>
+        /// this method add the new window to the board
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddPlayer_Click(object sender, RoutedEventArgs e)
         {
 
@@ -74,6 +70,9 @@ namespace Property_Tycoon
             
 
         }
+        /// <summary>
+        /// this method checks the minimum number of players
+        /// </summary>
         private void CheckMinPlayer()
         {
             if ((CurrentBoard.getNoOfPlayers() < 2))
@@ -81,18 +80,25 @@ namespace Property_Tycoon
                 throw new NotEnoughPlayersException();
             }
         }
+        /// <summary>
+        /// this checks if the max number of players has been exceeded
+        /// </summary>
         private void CheckMaxPlayer() {
             if (CurrentBoard.getNoOfPlayers() == 6)
             {
                 throw new TooManyPlayersException();
             }
         }
-
+        /// <summary>
+        /// this method starts the normal method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Normal_Click(object sender, RoutedEventArgs e)
         {
             if (CurrentBoard.getNoOfPlayers() >= 2)
             {
-                CurrentBoard.setTime(900000000);
+                CurrentBoard.setTime(0);
                 CurrentBoard.SetGameType(0);
 
 
@@ -104,7 +110,11 @@ namespace Property_Tycoon
             }
                 
         }
-
+        /// <summary>
+        /// this method starts the abridge game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Abridged_Click(object sender, RoutedEventArgs e)
         {
 
@@ -126,7 +136,11 @@ namespace Property_Tycoon
             
 
         }
-
+        /// <summary>
+        /// this method removes a player from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemovePlayer_Click(object sender, RoutedEventArgs e)
         {
             CurrentBoard.getPlayerList().Remove(ListView.SelectedItem);

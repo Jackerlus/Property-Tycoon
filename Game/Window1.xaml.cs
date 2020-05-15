@@ -22,9 +22,18 @@ namespace Property_Tycoon
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// this method sets the message for the dialogue box
+        /// </summary>
+        /// <param name="input"></param>
         public void data(String input) {
             message.Content = input;
         }
+        /// <summary>
+        /// this button sets the value to the integer then closes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             a = 0;  
@@ -32,10 +41,18 @@ namespace Property_Tycoon
             
            
         }
+        /// <summary>
+        /// This method returns the choice
+        /// </summary>
+        /// <returns></returns>
         public int getChoice() {
             return a;
         }
-
+        /// <summary>
+        /// this method returns the choice
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             a = 1;

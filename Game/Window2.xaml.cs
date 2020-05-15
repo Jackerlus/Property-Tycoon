@@ -24,7 +24,7 @@ namespace Property_Tycoon
         String Name;
         Piece piece;
         bool Human;
-        
+        ///
         public Window2(Board cg, setPlayers setPlayers)
         {
             SetPlayers = setPlayers;
@@ -35,10 +35,18 @@ namespace Property_Tycoon
             InitializeComponent();
             Plist.ItemsSource = CurrentBoard.getPieceNames();
         }
+        /// <summary>
+        /// this method returns the name 
+        /// </summary>
+        /// <returns></returns>
         public string getName() {
             return Name;
         }
-
+        /// <summary>
+        /// this method gets the curren piece 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Plist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -46,7 +54,11 @@ namespace Property_Tycoon
             
             
         }
-
+        /// <summary>
+        /// this method allows the player to choose AI or Human player
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -77,7 +89,10 @@ namespace Property_Tycoon
 
         }
 
-
+        /// <summary>
+        /// this method makes sure that the name is valid 
+        /// </summary>
+        /// <param name="p"></param>
         private void validateName(string p)
         {
             Regex regex = new Regex("^[a-zA-Z]+$");
@@ -86,20 +101,32 @@ namespace Property_Tycoon
                 throw new EmptyNameException(p);
             }
         }
-
+        /// <summary>
+        /// this method sets the textbox value to the name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             Name = UserBox.Text;
             
         }
-
+        /// <summary>
+        /// this menu clears the TextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
             Name = "";
             UserBox.Clear();
             
         }
-
+        /// <summary>
+        /// this method starts the human selection as true
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             Human = true;

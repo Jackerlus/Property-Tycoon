@@ -9,7 +9,7 @@ namespace Property_Tycoon
 {
     public class Human : Player
     {
-        private int JAIL = 31;
+        private int JAIL = 30;
         private int VISITING = 11;
         private int GO = 0;
         private int FREE = 5;
@@ -128,11 +128,17 @@ namespace Property_Tycoon
             return money;
 
         }
-
+        /// <summary>
+        /// a method that adds to a property array
+        /// </summary>
+        /// <param name="p"></param>
         public void addToPropertyArray(Property p) {
             properties.Add(p);
         }
-
+        /// <summary>
+        /// Method that removes from the property array 
+        /// </summary>
+        /// <param name="p"></param>
         public void RemoveFromPropertyArray(Property p)
         {
             properties.Remove(p);
@@ -203,19 +209,6 @@ namespace Property_Tycoon
         {
             return money;
         }
-
-
-        /// <summary>
-        /// this method calls the GO tiles action method
-        /// </summary>
-        /// <param name="goSpace"></param>
-        /// <param name="p"></param>
-        /// <returns></returns>
-        public String goSpace(Go goSpace,Player p) {
-            goSpace.action(p);
-            return "you have recieved 200";
-        }
-
 
         /// <summary>
         /// returns player name
@@ -318,6 +311,7 @@ namespace Property_Tycoon
         /// <returns></returns>
         public int move(int val)
         {
+
             setPosition(getPosition() + val);
             if (getPosition() > 40 && position != JAIL)
             {
@@ -332,7 +326,7 @@ namespace Property_Tycoon
                 if (CurrentGame.GetProperty(getPosition()).isBankOwned() == true)
                 {
                     String message = "this property doesnt have an owner. do you want to buy it?";
-                    string caption = "Free property to purchase";
+                    string caption = "Option to purchase"+ CurrentGame.GetProperty(getPosition()).getName();
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result;
 
@@ -370,7 +364,7 @@ namespace Property_Tycoon
             {
                 CurrentGame.GoTile.action(getPlayer());
             }
-            if (getPosition() == 7|| getPosition() == 23)
+            if (getPosition() == 7|| getPosition() == 22)
             {
                 System.Windows.MessageBox.Show(" Opportunity knocks");
                 CurrentGame.opportunities.action(this);
@@ -380,7 +374,7 @@ namespace Property_Tycoon
                 System.Windows.MessageBox.Show(" Pot Luck");
                 CurrentGame.potLuck.action(this);
             }
-            if (getPosition() == 5)
+            if (getPosition() == 4)
             {
                 System.Windows.MessageBox.Show(CurrentGame.incomeTax.action(this));
             }
@@ -596,7 +590,7 @@ namespace Property_Tycoon
                 }
                 counter++;
             }
-            
+            System.Windows.MessageBox.Show(""+flag);
             return flag;
         }
         /// <summary>

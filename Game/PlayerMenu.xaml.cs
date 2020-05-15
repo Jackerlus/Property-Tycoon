@@ -121,6 +121,11 @@ namespace Property_Tycoon
             }
         }
 
+        /// <summary>
+        /// This handles the process of mortgaging a property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MortgageBtn_Click(object sender, RoutedEventArgs e)
         {
             if (currentProperty.getMortgaged() == false && currentProperty.hotelCheck() == false && currentProperty.checkHouses() == 0)
@@ -135,7 +140,11 @@ namespace Property_Tycoon
         }
 
 
-
+        /// <summary>
+        /// This method handles the process of unmortgaging a property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UnMortgageBtn_Click(object sender, RoutedEventArgs e)
         {
             if (currentProperty.getMortgaged() == true && CurrentPlayer.getMoney() > 0)
@@ -148,6 +157,11 @@ namespace Property_Tycoon
 
         }
 
+        /// <summary>
+        /// This method handles the process of buying a house for a property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BuyHousebtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -161,17 +175,29 @@ namespace Property_Tycoon
                 System.Windows.Forms.MessageBox.Show("Please select a currentProperty you own before attempting to add a house");
             }
         }
-
+        /// <summary>
+        /// This method handles the process of selling a house for a property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sellHousebtn_Click(object sender, RoutedEventArgs e)
         {
             currentProperty.sellHouse();
         }
-
+        /// <summary>
+        /// This method handles the process of buying a house for a property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BuyHotelbtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(currentProperty.convertHouseToHotel());
         }
-
+        /// <summary>
+        /// This method handles the process of buying a hotel for a property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sellHotelbtn_Click(object sender, RoutedEventArgs e)
         {
             currentProperty.sellHotel();
