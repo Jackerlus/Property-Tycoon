@@ -63,7 +63,7 @@ namespace Property_Tycoon
             {
                  currentBidder = (Player)players[players.IndexOf(currentBidder) + 1];
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException )
             {
 
                 currentBidder = (Player)players[0];

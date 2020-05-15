@@ -60,9 +60,9 @@ namespace Property_Tycoon
 
 
 
-        public NonProperties justVising = new Visting(11);
-        public NonProperties Jail = new GoToJail(31);
-        public NonProperties FreeParking = new FreeParking(21);
+        public NonProperties justVising = new Visting(10);
+        public NonProperties Jail = new GoToJail(30);
+        public NonProperties FreeParking = new FreeParking(20);
 
         public NonProperties incomeTax = new IncomeTax(2);
         public NonProperties SuperTax = new SuperTax(39);
@@ -101,7 +101,7 @@ namespace Property_Tycoon
             dBlue = new ArrayList();
             station = new ArrayList();
             Utility = new ArrayList();
-            //mode = GameMode;
+
 
             Players = new ArrayList();
             populatePieces();
@@ -130,7 +130,7 @@ namespace Property_Tycoon
                 Players.TrimToSize();
             }
             else {
-                MessageBox.Show(p.getName() +"Wins!!");
+                MessageBox.Show(p.getName() +" Wins!!");
                     }
             }
         /// <summary>

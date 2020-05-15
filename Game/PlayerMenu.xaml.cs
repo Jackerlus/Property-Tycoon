@@ -169,7 +169,7 @@ namespace Property_Tycoon
                 currentProperty.addHouse();
                 System.Windows.Forms.MessageBox.Show("Houses: " + currentProperty.checkHouses() + " Rent Value: " + currentProperty.getRent());
             }
-            catch (System.NullReferenceException NoHouseSelected)
+            catch (System.NullReferenceException )
             {
 
                 System.Windows.Forms.MessageBox.Show("Please select a currentProperty you own before attempting to add a house");

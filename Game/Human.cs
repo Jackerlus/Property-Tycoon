@@ -10,11 +10,10 @@ namespace Property_Tycoon
     public class Human : Player
     {
         private int JAIL = 30;
-        private int VISITING = 11;
+        private int VISITING = 10;
         private int GO = 0;
         private int FREE = 20;
-        private int Pot1 = 2;
-        private int Pot2 = 34;
+
         public ArrayList properties;
         
         private String playerName;
@@ -269,6 +268,7 @@ namespace Property_Tycoon
             money = money - 50;
             jailTurn = 0;
             inJail = false;
+            position = VISITING;
         }
         /// <summary>
         /// method to mortgage a property

@@ -240,7 +240,7 @@ namespace Property_Tycoon
                  }
 
                  currentPlayer.endTurn();
-            
+            Trade.IsEnabled = true;
             placeMarker();
             update();
         }
@@ -338,6 +338,7 @@ namespace Property_Tycoon
         {
              new TradeScreen(currentPlayer, currentGame).ShowDialog();
              update();
+            Trade.IsEnabled = false;
         }
     }
 }
