@@ -11,6 +11,9 @@
     <Compile Update="GetPlayerToTrade.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Images\Dice-ProtoType.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Player Prototype.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +44,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GetPlayerToTrade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Images\Dice-ProtoType.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Player Prototype.xaml">

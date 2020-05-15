@@ -14,21 +14,17 @@
         </Grid.ColumnDefinitions>
         <Button Content="End Turn" HorizontalAlignment="Left" Height="64" Margin="247,277,0,0" VerticalAlignment="Top" Width="74" Click="EndTurn" Grid.Column="1"/>
         <Button Content="Buy property" HorizontalAlignment="Left" Height="64" Margin="0,277,0,0" VerticalAlignment="Top" Width="75" Click="BuyProperty" Grid.Column="2"/>
-        <Button Content="add House" HorizontalAlignment="Left" Height="68" Margin="247,342,0,0" VerticalAlignment="Top" Width="74" Click="addHouse" Grid.Column="1"/>
-        <Button Content="morgage prperty " HorizontalAlignment="Left" Height="68" Margin="0,342,0,0" VerticalAlignment="Top" Width="75" Click="morgageProperty" Grid.Column="2"/>
         <Label x:Name="Player" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="186" Margin="8,10,0,0"/>
         <Button Content="Roll" HorizontalAlignment="Left" Margin="176,277,0,0" VerticalAlignment="Top" Height="64" Width="70" Click="RollDice" Grid.Column="1"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="176,342,0,0" VerticalAlignment="Top" Height="68" Width="70" Click="Update" Grid.Column="1"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="151,349,0,0" VerticalAlignment="Top" Height="68" Width="70" Click="Update" Grid.Column="1"/>
         <Label x:Name="Selected" HorizontalAlignment="Left" Height="44" Margin="101,355,0,0" VerticalAlignment="Top" Width="116"/>
         <ComboBox Name="PropertyList" HorizontalAlignment="Left" Height="46" Margin="0,288,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="ComboBox_SelectionChanged"/>
         <Label Content="Properties" HorizontalAlignment="Left" Margin="0,254,0,0" VerticalAlignment="Top" Height="34" Width="105"/>
         <Label x:Name="CurrentProperty" HorizontalAlignment="Left" Height="54" Margin="270,60,0,0" VerticalAlignment="Top" Width="117"/>
-        <Button Content="Opp" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="54,334,0,0" VerticalAlignment="Top" Width="78" Click="Button_Click"/>
+        <Button Content="Management" Grid.Column="2" HorizontalAlignment="Left" Height="75" Margin="1,344,0,0" VerticalAlignment="Top" Width="78" Click="Button_Click"/>
         <TextBox HorizontalAlignment="Left" Height="25" Margin="270,34,0,0" Text="Current Property:" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="roll6" Content="Go to BTN" Grid.Column="1" HorizontalAlignment="Left" Height="65" Margin="51,259,0,0" VerticalAlignment="Top" Width="80" Click="roll6_Click"/>
-        <Button  x:Name="Tesla" Content="Go to telsa" HorizontalAlignment="Left" Height="75" Margin="350,334,0,0" VerticalAlignment="Top" Width="78" Grid.ColumnSpan="2" Click="Tesla_Click"/>
-        <Button  x:Name="randroll" Content="Random roll" HorizontalAlignment="Left" Height="75" Margin="347,249,0,0" VerticalAlignment="Top" Width="78"  Grid.ColumnSpan="2" Click="randroll_Click"/>
-        <Button x:Name="Completeutil" Content="buy both util" HorizontalAlignment="Left" Height="75" Margin="260,334,0,0" VerticalAlignment="Top" Width="78" Click="Completeutil_Click" />
+        <Button  x:Name="Tesla" Content="Go to telsa" HorizontalAlignment="Left" Height="75" Margin="241,344,0,0" VerticalAlignment="Top" Width="78" Click="Tesla_Click" Grid.Column="1"/>
+        <Button x:Name="BuySet" Content="Buy Browns" HorizontalAlignment="Left" Height="75" Margin="11,334,0,0" VerticalAlignment="Top" Width="85" Click="Completeutil_Click" Grid.Column="1" />
 
 
     </Grid>

@@ -40,10 +40,26 @@ namespace Property_Tycoon
 				potLuck.TrimToSize();
 				pot(cardTaken, p);
 		}
+
+		public void drawPotLuck(Player p,int i)
+		{
+
+			int cardTaken = i;
+			potLuck.TrimToSize();
+			pot(cardTaken, p);
+		}
+
 		public void drawOppKnocks(Player p)
 		{
 
 			int cardTaken = (int)potLuck[rand.Next(0, potLuck.Capacity)];
+			opportunityKnocks.TrimToSize();
+			oppKnocks(cardTaken, p);
+		}
+		public void drawOppKnocks(Player p, int i)
+		{
+
+			int cardTaken = i;
 			opportunityKnocks.TrimToSize();
 			oppKnocks(cardTaken, p);
 		}

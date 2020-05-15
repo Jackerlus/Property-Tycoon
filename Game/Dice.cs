@@ -25,6 +25,13 @@ namespace Property_Tycoon
             setDice(value);
             return value;
         }
+        public int rollDice(int seed)
+        {
+             randomiser = new Random(1);
+            int value = randomiser.Next(6) + 1;
+            setDice(value);
+            return value;
+        }
 
     }
 }

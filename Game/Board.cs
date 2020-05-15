@@ -106,10 +106,18 @@ namespace Property_Tycoon
             Players = new ArrayList();
             populatePieces();
             
-            populatePlayers();
+            //populatePlayers();
             PopulateGame();
             addGroup();
 
+        }
+        public ArrayList getGameBoard() {
+
+            return Tiles;
+        }
+        public void addplayer(Player p) {
+            Players.Add(p);
+        
         }
         /// <summary>
         /// this method removes a player 

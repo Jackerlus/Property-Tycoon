@@ -428,6 +428,19 @@
             a method that retires a player from the game
             </summary>
         </member>
+        <member name="T:Property_Tycoon.Images.Dice_ProtoType">
+            <summary>
+            Interaction logic for Dice_ProtoType.xaml
+            </summary>
+            <summary>
+            Dice_ProtoType
+            </summary>
+        </member>
+        <member name="M:Property_Tycoon.Images.Dice_ProtoType.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:Property_Tycoon.MainWindow">
             <summary>
             Interaction logic for MainWindow.xaml
@@ -554,6 +567,12 @@
             <summary>
             this method is for the Opportunity class
             </summary>
+        </member>
+        <member name="M:Property_Tycoon.Opportunity.getName">
+            <summary>
+            this method returns the name of the class
+            </summary>
+            <returns>String</returns>
         </member>
         <member name="M:Property_Tycoon.Opportunity.action(Property_Tycoon.Player)">
             <summary>
@@ -1093,7 +1112,7 @@
             constuctor for the class
             </summary>
         </member>
-        <member name="M:Property_Tycoon.Roll.Rolls">
+        <member name="M:Property_Tycoon.Roll.Rolls(System.Int32)">
             <summary>
             this method rolls the two dice objects
             </summary>

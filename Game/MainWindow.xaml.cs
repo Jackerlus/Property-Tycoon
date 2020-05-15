@@ -32,7 +32,7 @@ namespace Property_Tycoon
             counter = currentGame.getTime();
             
             currentPlayer = (Player)prop[0];
-            currentPlayer.moveto(39);
+            
             
 
             InitializeComponent();

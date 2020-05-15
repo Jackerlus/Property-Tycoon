@@ -11,12 +11,13 @@ namespace Property_Tycoon
     public interface  NonProperties {
        
         string action(Player p);
+        string action(Player p , int a);
         String getName();
     }
     /// <summary>
     /// this is the Income Tax Class
     /// </summary>
-    class IncomeTax : Space, NonProperties
+    public class IncomeTax : Space, NonProperties
     {
         public IncomeTax(int position) : base(position)
         {
@@ -40,11 +41,16 @@ namespace Property_Tycoon
             player.addmoney(-200);
             return s;
         }
+
+        public string action(Player p, int a)
+        {
+            throw new NotImplementedException();
+        }
     }
     /// <summary>
     /// this method is for the Opportunity class
     /// </summary>
-    class Opportunity : Space, NonProperties
+    public class Opportunity : Space, NonProperties
     {
         Cards c;
         public Opportunity(int position,Cards Deck) : base(position)
@@ -52,7 +58,10 @@ namespace Property_Tycoon
 
              c = Deck;
         }
- 
+ /// <summary>
+ /// this method returns the name of the class
+ /// </summary>
+ /// <returns>String</returns>
         public String getName()
         {
             return "Opportinity Knocks"; ;
@@ -68,11 +77,17 @@ namespace Property_Tycoon
             c.drawOppKnocks(p);
                 return "";
         }
+        public string action(Player p, int a)
+        {
+
+            c.drawOppKnocks(p,1);
+            return "";
+        }
     }
     /// <summary>
     /// this is the class for the Pot Luck class
     /// </summary>
-    class Pot : Space, NonProperties
+    public class Pot : Space, NonProperties
     {
         
         
@@ -102,12 +117,19 @@ namespace Property_Tycoon
 
             return "";
         }
+        public string action(Player p, int a)
+        {
+
+            c.drawPotLuck(p,1);
+
+            return "";
+        }
     }
 
     /// <summary>
     /// This is the class for the Super tax class
     /// </summary>
-    class SuperTax : Space, NonProperties
+    public class SuperTax : Space, NonProperties
     {
         public SuperTax(int position) : base(position)
         {
@@ -125,6 +147,11 @@ namespace Property_Tycoon
 
             player.addmoney(-100);
             return s;
+        }
+
+        public string action(Player p, int a)
+        {
+            throw new NotImplementedException();
         }
     }
 
@@ -149,11 +176,16 @@ namespace Property_Tycoon
             string s = "you have recieved $200";
             return s;
         }
+
+        public string action(Player p, int a)
+        {
+            throw new NotImplementedException();
+        }
     }
     /// <summary>
     /// class for the go to jail tile
     /// </summary>
-    class GoToJail : Space, NonProperties
+    public class GoToJail : Space, NonProperties
     {
         public GoToJail(int position) : base(position)
         {
@@ -169,11 +201,16 @@ namespace Property_Tycoon
             String s = "thats it youre in jail buckeroo";
             return s;
         }
+
+        public string action(Player p, int a)
+        {
+            throw new NotImplementedException();
+        }
     }
     /// <summary>
     /// This class is for the just visining tile
     /// </summary>
-    class Visting : Space, NonProperties
+    public class Visting : Space, NonProperties
     {
         public Visting(int position) : base(position)
         {
@@ -190,12 +227,17 @@ namespace Property_Tycoon
             String s = "";
             return s;
         }
+
+        public string action(Player p, int a)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     /// <summary>
     /// class for the free parking tile
     /// </summary>
-    class FreeParking : Space, NonProperties {
+    public class FreeParking : Space, NonProperties {
         private int FreeMoney;
         public FreeParking(int position) : base(position)
         {
@@ -229,7 +271,11 @@ namespace Property_Tycoon
             return s;
         }
 
-}
+        public string action(Player p, int a)
+        {
+            throw new NotImplementedException();
+        }
+    }
         }
 
     

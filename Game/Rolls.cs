@@ -11,7 +11,8 @@ namespace Property_Tycoon
         private int sumOfDice;
         private int die1, die2;
         private Dice diceOne;
-        private Dice diceTwo; 
+        private Dice diceTwo;
+        int seed;
         /// <summary>
         /// constuctor for the class
         /// </summary>
@@ -21,15 +22,26 @@ namespace Property_Tycoon
             numOfDoubles = 0;
             sumOfDice = 0;
         }
+        
         /// <summary>
         /// this method rolls the two dice objects
         /// </summary>
         /// <returns> the sum of the two dice objects</returns>
+        public int Rolls(int seed)
+        {
+            //Roll Dice
+             die1 = diceOne.rollDice(seed);
+             die2 = diceTwo.rollDice(seed);
+
+            sumOfDice = die1 + die2;
+            numOfDoubles++;
+            return sumOfDice;
+        }
         public int Rolls()
         {
             //Roll Dice
-             die1 = diceOne.rollDice();
-             die2 = diceTwo.rollDice();
+            die1 = diceOne.rollDice();
+            die2 = diceTwo.rollDice();
 
             sumOfDice = die1 + die2;
             numOfDoubles++;
