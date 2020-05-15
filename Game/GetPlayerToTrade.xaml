@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Property_Tycoon"
         mc:Ignorable="d"
-        Title="GetPlayerToTrade" Height="450" Width="800">
+        Title="GetPlayerToTrade" Height="450" Width="800" ResizeMode="NoResize" Background="Cornsilk">
     <Grid>
         <ComboBox x:Name="PlayerCombo" HorizontalAlignment="Left" Height="75" Margin="220,94,0,0" VerticalAlignment="Top" Width="365" SelectionChanged="ComboBox_SelectionChanged"/>
         <Button Content="Trade" HorizontalAlignment="Left" Height="80" Margin="285,304,0,0" VerticalAlignment="Top" Width="225" Click="Button_Click"/>
